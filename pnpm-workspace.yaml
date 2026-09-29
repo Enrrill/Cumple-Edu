@@ -1,0 +1,8 @@
+# Ajustes de pnpm (pnpm 10+ los lee aquí, no en package.json).
+# pnpm 12 rechaza por defecto los paquetes publicados hace menos de 24 h
+# (minimumReleaseAge = 1440). next@16.3.7 se publicó hoy y el instalador
+# lo bloqueaba; se desactiva la espera para poder instalar.
+minimumReleaseAge: 0
+
+allowBuilds:
+  unrs-resolver: true

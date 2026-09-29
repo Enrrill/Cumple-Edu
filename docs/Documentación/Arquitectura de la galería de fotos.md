@@ -44,6 +44,7 @@ Flujo de datos:
 | Lenguaje | TypeScript | Tipado de metadatos y componentes |
 | UI | React | Componentes de interfaz |
 | Estilos | Tailwind CSS | Sistema de diseño basado en utilidades |
+| Gestor de paquetes | pnpm 12 | Instalación rápida y eficiente en disco |
 | Carrusel | `embla-carousel-react` | Carrusel destacado de la portada |
 | Visor de imagen | `yet-another-react-lightbox` | Lightbox a pantalla completo |
 | Animación | `framer-motion` | Entradas y transiciones suaves |
@@ -179,6 +180,7 @@ Campos de cada foto:
 | Portada con carrusel + secciones | Rejilla tipo masonry única | Elección de diseño del proyecto: impacto en la portada y orden por categoría |
 | `embla-carousel-react` | Swiper | Más ligero y es la base del carrusel de shadcn/ui |
 | Tailwind CSS | CSS modules | Consistencia visual rápida mediante tokens |
+| pnpm | npm | Instalaciones más rápidas y menor uso de disco; Vercel lo detecta por el lockfile |
 
 ## Referencias
 

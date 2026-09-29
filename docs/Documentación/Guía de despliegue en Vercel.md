@@ -26,7 +26,8 @@ Vercel es la plataforma prevista para alojar la galería: tiene plan gratuito, s
 
 - Una cuenta en GitHub (gratis) con el repositorio del proyecto.
 - Una cuenta en Vercel (gratis), que se puede crear con la misma cuenta de GitHub.
-- El proyecto compila sin errores en local (`npm run build`).
+- El proyecto compila sin errores en local (`pnpm build`).
+- Node.js instalado y `pnpm` disponible (`npm install -g pnpm --prefix ~/.local`).
 
 ### Publicación inicial
 
