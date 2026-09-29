@@ -45,7 +45,7 @@ Flujo de datos:
 | UI | React | Componentes de interfaz |
 | Estilos | Tailwind CSS | Sistema de diseño basado en utilidades |
 | Carrusel | `embla-carousel-react` | Carrusel destacado de la portada |
-| Visor de imagen | `yet-anverse-react-lightbox` | Lightbox a pantalla completo |
+| Visor de imagen | `yet-another-react-lightbox` | Lightbox a pantalla completo |
 | Animación | `framer-motion` | Entradas y transiciones suaves |
 | Iconos | `lucide-react` | Iconos ligeros y consistentes |
 

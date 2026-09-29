@@ -28,7 +28,7 @@ area: galeria-fotos
 
 - [x] Decisiones técnicas (sin BD, Vercel, carrusel + secciones)
 - [x] Documentación en Obsidian
-- [ ] Andamiaje del proyecto (`create-next-app` + dependencias)
+- [x] Andamiaje del proyecto (`create-next-app` + dependencias)
 - [ ] Contexto de diseño: `impeccable context` → `init` → `shape`
 - [ ] Selección de fotos y categorías con el fotógrafo
 - [ ] Componentes: hero con carrusel, secciones, lightbox, bio, footer
