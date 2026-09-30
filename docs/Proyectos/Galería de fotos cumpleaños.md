@@ -34,7 +34,7 @@ area: galeria-fotos
 - [ ] Selección de fotos y categorías con el fotógrafo (mientras tanto: muestra sintética de 4 categorías × 8 fotos, marcada con `syntheticImages: true` en `albums.json`)
 - [ ] Componentes: hero con carrusel, secciones, lightbox, bio, footer
 - [ ] Pasadas finales: `polish` y `audit`
-- [ ] Repositorio en GitHub y despliegue en Vercel
+- [x] Repositorio en GitHub y despliegue en Vercel (producción: https://cumple-edu-seven.vercel.app)
 - [ ] Verificación en producción y entrega del regalo
 
 ## Documentación relacionada
