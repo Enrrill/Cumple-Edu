@@ -29,6 +29,7 @@ area: galeria-fotos
 - [x] Decisiones técnicas (sin BD, Vercel, carrusel + secciones)
 - [x] Documentación en Obsidian
 - [x] Andamiaje del proyecto (`create-next-app` + dependencias)
+- [x] Reparto de tareas entre integrantes ([Plan de equipo - tareas](Plan%20de%20equipo%20-%20tareas.md))
 - [ ] Contexto de diseño: `impeccable context` → `init` → `shape`
 - [ ] Selección de fotos y categorías con el fotógrafo
 - [ ] Componentes: hero con carrusel, secciones, lightbox, bio, footer
@@ -38,6 +39,7 @@ area: galeria-fotos
 
 ## Documentación relacionada
 
+- [Plan de equipo - tareas](Plan%20de%20equipo%20-%20tareas.md)
 - [Arquitectura de la galería de fotos](../Documentaci%C3%B3n/Arquitectura%20de%20la%20galer%C3%ADa%20de%20fotos.md)
 - [Diseño de la galería de fotos](../Documentaci%C3%B3n/Dise%C3%B1o%20de%20la%20galer%C3%ADa%20de%20fotos.md)
 - [Guía de despliegue en Vercel](../Documentaci%C3%B3n/Gu%C3%ADa%20de%20despliegue%20en%20Vercel.md)
