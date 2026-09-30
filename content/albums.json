@@ -1,0 +1,389 @@
+{
+  "syntheticImages": true,
+  "site": {
+    "name": "«[Nombre pendiente]»",
+    "bio": "«[Bio pendiente: texto breve del fotógrafo]»",
+    "dedication": "«[Dedicatoria pendiente]»",
+    "credit": "«[Nombre pendiente]»",
+    "portrait": {
+      "src": "/images/retrato/01.jpg",
+      "alt": "Imagen de muestra sintética en lugar del retrato real (pendiente)"
+    }
+  },
+  "categories": [
+    {
+      "id": "retrato",
+      "title": "Retrato",
+      "description": "Personas, gestos y luz."
+    },
+    {
+      "id": "paisaje",
+      "title": "Paisaje",
+      "description": "Horizontes, cielo y tierra."
+    },
+    {
+      "id": "bn",
+      "title": "Blanco y negro",
+      "description": "La forma sin color."
+    },
+    {
+      "id": "urbano",
+      "title": "Urbano",
+      "description": "Calles, líneas y ritmo de ciudad."
+    }
+  ],
+  "photos": [
+    {
+      "id": "retrato-01",
+      "src": "/images/retrato/01.jpg",
+      "title": "Luz de tarde",
+      "category": "retrato",
+      "featured": true,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 01)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "retrato-02",
+      "src": "/images/retrato/02.jpg",
+      "title": "Quietud",
+      "category": "retrato",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 02)",
+      "width": 1067,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAeABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "retrato-03",
+      "src": "/images/retrato/03.jpg",
+      "title": "Perfil",
+      "category": "retrato",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 03)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "retrato-04",
+      "src": "/images/retrato/04.jpg",
+      "title": "Umbral",
+      "category": "retrato",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 04)",
+      "width": 1200,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAbABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "retrato-05",
+      "src": "/images/retrato/05.jpg",
+      "title": "Contenido",
+      "category": "retrato",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 05)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "retrato-06",
+      "src": "/images/retrato/06.jpg",
+      "title": "Bruma cálida",
+      "category": "retrato",
+      "featured": true,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 06)",
+      "width": 1600,
+      "height": 1200,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAPABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "retrato-07",
+      "src": "/images/retrato/07.jpg",
+      "title": "Gesto",
+      "category": "retrato",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 07)",
+      "width": 1080,
+      "height": 1350,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAZABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "retrato-08",
+      "src": "/images/retrato/08.jpg",
+      "title": "Respiro",
+      "category": "retrato",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (retrato, foto 08)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "paisaje-01",
+      "src": "/images/paisaje/01.jpg",
+      "title": "Horizonte",
+      "category": "paisaje",
+      "featured": true,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 01)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "paisaje-02",
+      "src": "/images/paisaje/02.jpg",
+      "title": "Cielo largo",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 02)",
+      "width": 1067,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAeABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "paisaje-03",
+      "src": "/images/paisaje/03.jpg",
+      "title": "Niebla baja",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 03)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "paisaje-04",
+      "src": "/images/paisaje/04.jpg",
+      "title": "Línea de árboles",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 04)",
+      "width": 1200,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAbABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "paisaje-05",
+      "src": "/images/paisaje/05.jpg",
+      "title": "Tarde verde",
+      "category": "paisaje",
+      "featured": true,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 05)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "paisaje-06",
+      "src": "/images/paisaje/06.jpg",
+      "title": "Agua quieta",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 06)",
+      "width": 1600,
+      "height": 1200,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAPABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "paisaje-07",
+      "src": "/images/paisaje/07.jpg",
+      "title": "Colina",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 07)",
+      "width": 1080,
+      "height": 1350,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAZABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "paisaje-08",
+      "src": "/images/paisaje/08.jpg",
+      "title": "Después de la lluvia",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (paisaje, foto 08)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "bn-01",
+      "src": "/images/bn/01.jpg",
+      "title": "Contraluz",
+      "category": "bn",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 01)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "bn-02",
+      "src": "/images/bn/02.jpg",
+      "title": "Sombra dura",
+      "category": "bn",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 02)",
+      "width": 1067,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAeABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "bn-03",
+      "src": "/images/bn/03.jpg",
+      "title": "Escala",
+      "category": "bn",
+      "featured": true,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 03)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "bn-04",
+      "src": "/images/bn/04.jpg",
+      "title": "Grano",
+      "category": "bn",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 04)",
+      "width": 1200,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAbABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "bn-05",
+      "src": "/images/bn/05.jpg",
+      "title": "Geometría",
+      "category": "bn",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 05)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "bn-06",
+      "src": "/images/bn/06.jpg",
+      "title": "Silencio",
+      "category": "bn",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 06)",
+      "width": 1600,
+      "height": 1200,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAPABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "bn-07",
+      "src": "/images/bn/07.jpg",
+      "title": "Reflejo",
+      "category": "bn",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 07)",
+      "width": 1080,
+      "height": 1350,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAZABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "bn-08",
+      "src": "/images/bn/08.jpg",
+      "title": "Mitad",
+      "category": "bn",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (blanco y negro, foto 08)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "urbano-01",
+      "src": "/images/urbano/01.jpg",
+      "title": "Avenida",
+      "category": "urbano",
+      "featured": true,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 01)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "urbano-02",
+      "src": "/images/urbano/02.jpg",
+      "title": "Semáforo",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 02)",
+      "width": 1067,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAeABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "urbano-03",
+      "src": "/images/urbano/03.jpg",
+      "title": "Fachada",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 03)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "urbano-04",
+      "src": "/images/urbano/04.jpg",
+      "title": "Reflejo en cristal",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 04)",
+      "width": 1200,
+      "height": 1600,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAbABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "urbano-05",
+      "src": "/images/urbano/05.jpg",
+      "title": "Esquina",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 05)",
+      "width": 1600,
+      "height": 1067,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAANABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "urbano-06",
+      "src": "/images/urbano/06.jpg",
+      "title": "Andén",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 06)",
+      "width": 1600,
+      "height": 1200,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAPABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    },
+    {
+      "id": "urbano-07",
+      "src": "/images/urbano/07.jpg",
+      "title": "Distancia",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 07)",
+      "width": 1080,
+      "height": 1350,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAAZABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAAAH/2Q=="
+    },
+    {
+      "id": "urbano-08",
+      "src": "/images/urbano/08.jpg",
+      "title": "Última luz",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Imagen de muestra sintética: composición abstracta de formas suaves en degradado de tonos apagados (urbano, foto 08)",
+      "width": 1600,
+      "height": 900,
+      "blur": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABsSFBcUERsXFhceHBsgKEIrKCUlKFE6PTBCYFVlZF9VXVtqeJmBanGQc1tdhbWGkJ6jq62rZ4C8ybqmx5moq6T/wAALCAALABQBAREA/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/9oACAEBAAA/AKYAH//Z"
+    }
+  ]
+}
