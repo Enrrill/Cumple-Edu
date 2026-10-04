@@ -31,7 +31,7 @@ area: galeria-fotos
 - [x] Andamiaje del proyecto (`create-next-app` + dependencias)
 - [x] Reparto de tareas entre integrantes ([Plan de equipo - tareas](Plan%20de%20equipo%20-%20tareas.md))
 - [x] Contexto de diseño: `impeccable context` → `init` → `shape` (ver [PRODUCT.md](../../PRODUCT.md) y [DESIGN.md](../../DESIGN.md))
-- [ ] Selección de fotos y categorías con el fotógrafo (mientras tanto: muestra sintética de 4 categorías × 8 fotos, marcada con `syntheticImages: true` en `albums.json`)
+- [x] Selección de fotos y categorías (54 fotos reales organizadas en 5 categorías temáticas, `syntheticImages: false` en `albums.json`)
 - [ ] Componentes: hero con carrusel, secciones, lightbox, bio, footer
 - [ ] Pasadas finales: `polish` y `audit`
 - [x] Repositorio en GitHub y despliegue en Vercel (producción: https://cumple-edu-seven.vercel.app)

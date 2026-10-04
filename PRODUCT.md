@@ -32,8 +32,8 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 - Ruta opcional `/categoria/[slug]` y página 404.
 - Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm; carrusel con `embla-carousel-react`, lightbox con `yet-another-react-lightbox`, animaciones con `framer-motion`.
 - Contenido sin programación posible vía `albums.json` (ver `docs/Documentación/Guía de uso sin programación.md`).
-- **Sin fotos reales aún**: el sitio se construye con fotos de ejemplo sintéticas, claramente etiquetadas como sustituibles; la selección con el fotógrafo es una tarea pendiente del plan de trabajo.
-- **Nombre del sitio y del fotógrafo: pendiente** (decidir antes de la entrega; afecta a metadatos, cabecera, crédito y dedicatoria).
+- **Fotos reales integradas**: 54 fotografías reales clasificadas en 5 categorías (edu, amigos, retratos, paisaje, urbano).
+- **Nombre**: Eduardo. Bio y dedicatoria pendientes de redactar.
 
 ## Brand Commitments
 
@@ -44,7 +44,7 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 
 - Documentación completa en `docs/`: arquitectura, diseño, decisión sin backend, guías de despliegue y de uso, y ficha del proyecto.
 - Código de andamiaje: `app/` con layout/page/globals por defecto de create-next-app, sin componentes propios todavía.
-- **Ausencias que no deben fabricarse**: no hay todavía fotos del fotógrafo, nombre real, bio real ni dedicatoria real. El contenido de muestra se marca como sintético.
+- **Ausencias que no deben fabricarse**: bio real ni dedicatoria real (pendientes de redactar). El contenido fotográfico y el nombre ya son reales.
 
 ## Product Principles
 
