@@ -16,13 +16,13 @@ area: galeria-fotos
 | Campo | Valor |
 | --- | --- |
 | Objetivo | Página-galería como regalo de cumpleaños para un fotógrafo |
-| Estado | En documentación |
+| Estado | En construcción (portada integrada; faltan pasadas finales) |
 | Stack | Next.js + React + TypeScript + Tailwind CSS |
 | Contenido | Fotos estáticas en `public/` + metadatos en `albums.json` |
 | Backend y BD | No procede (ver [Decisión - galería sin backend](../Documentaci%C3%B3n/Decisi%C3%B3n%20-%20galer%C3%ADa%20sin%20backend.md)) |
 | Diseño | Modo *Experience*, paleta verde, carrusel + secciones |
 | Despliegue | [Vercel](../Referencias/Vercel.md), plan gratuito |
-| Repositorio | Por definir |
+| Repositorio | [Enrrill/Cumple-Edu](https://github.com/Enrrill/Cumple-Edu) (público: la colaboración en Vercel es gratis en plan Hobby) |
 
 ## Plan de trabajo
 
@@ -32,7 +32,8 @@ area: galeria-fotos
 - [x] Reparto de tareas entre integrantes ([Plan de equipo - tareas](Plan%20de%20equipo%20-%20tareas.md))
 - [x] Contexto de diseño: `impeccable context` → `init` → `shape` (ver [PRODUCT.md](../../PRODUCT.md) y [DESIGN.md](../../DESIGN.md))
 - [x] Selección de fotos y categorías (54 fotos reales organizadas en 5 categorías temáticas, `syntheticImages: false` en `albums.json`)
-- [ ] Componentes: hero con carrusel, secciones, lightbox, bio, footer
+- [x] Componentes: hero con carrusel, secciones, lightbox, bio, footer (C1-C7, PRs #1-#7, fusionados en `main`)
+- [x] Portada ensamblada en `app/page.tsx` con `HomeGallery` (T4, PR #8, verificada en producción)
 - [ ] Pasadas finales: `polish` y `audit`
 - [x] Repositorio en GitHub y despliegue en Vercel (producción: https://cumple-edu-seven.vercel.app)
 - [ ] Verificación en producción y entrega del regalo

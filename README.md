@@ -63,10 +63,11 @@ Cumple-Edu/
 │   ├── page.tsx                # Portada (carrusel, secciones, bio, footer)
 │   ├── globals.css             # Tokens de diseño (Tailwind 4, @theme)
 │   ├── not-found.tsx           # Página 404
-│   └── categoria/[slug]/       # Página por categoría (opcional)
+│   └── categoria/[slug]/       # Página por categoría
 ├── components/
 │   ├── gallery/                # PhotoCard, GalleryGrid, CategorySection,
-│   │                           # HeroCarousel, Lightbox
+│   │                           # HeroCarousel, Lightbox, HomeGallery,
+│   │                           # CategoryGallery
 │   └── layout/                 # SiteHeader, SiteFooter, Bio
 ├── lib/
 │   └── albums.ts               # Tipos y helpers de contenido
@@ -74,7 +75,7 @@ Cumple-Edu/
 │   └── albums.json             # Categorías y metadatos de fotos
 ├── public/images/              # Fotos por categoría
 ├── docs/                       # Documentación del proyecto
-├── DESIGN.md                   # Sistema de diseño (se crea en la fase de diseño)
+├── DESIGN.md                   # Sistema de diseño (autoridad visual)
 └── next.config.ts
 ```
 
