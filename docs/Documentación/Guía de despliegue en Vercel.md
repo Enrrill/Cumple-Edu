@@ -96,6 +96,7 @@ Este plan no se aplica en la versión actual del proyecto (ver [Decisión - gale
 | Decisión | Alternativa descartada | Motivo |
 | --- | --- | --- |
 | Vercel como hosting | Netlify, Cloudflare Pages, VPS | Soporte óptimo de Next.js y flujo git automático |
+| Repositorio público | Repositorio privado | En plan Hobby solo despliega el dueño del team; con repo público la colaboración es gratis y los commits de otros autores despliegan sin bloqueo |
 | Despliegue desde `main` | Despliegue manual por FTP | Actualización automática y trazable |
 | Plan gratuito | Plan de pago | El proyecto no supera los límites del plan Hobby |
 
