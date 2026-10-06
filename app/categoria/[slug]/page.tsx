@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { getCategories, getCategory, getPhotosByCategory } from "@/lib/albums";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { PhotoLightbox } from "@/components/gallery/PhotoLightbox";
+import { FloatingBackButton } from "@/components/layout/FloatingBackButton";
 
 export function generateStaticParams() {
   return getCategories().map((category) => ({ slug: category.id }));
@@ -41,7 +42,7 @@ export default async function CategoryPage({ params }: PageProps<"/categoria/[sl
   return (
     <main className="flex-1">
       {/* pt-20 mínimo: el encabezado fijo (h-16) no debe pisar el enlace */}
-      <header className="mx-auto max-w-7xl px-6 pt-20 pb-8 md:pt-24 md:pb-10">
+      <header className="mx-auto max-w-7xl px-4 sm:px-6 pt-20 pb-8 md:pt-24 md:pb-10">
         <Link
           href="/"
           className="mb-6 inline-flex h-11 items-center gap-2 text-base text-accent transition-colors hover:text-accent-strong"
@@ -64,10 +65,14 @@ export default async function CategoryPage({ params }: PageProps<"/categoria/[sl
         </p>
       </header>
 
-      <div className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
+      <div className="mx-auto max-w-7xl px-1 sm:px-3 md:px-6 pb-16 md:pb-24">
         <GalleryGrid photos={photos} />
         <PhotoLightbox />
       </div>
+
+      {/* Retorno persistente: mismo sitio, tamaño y estilo que el FAB de la portada.
+          El enlace textual de arriba se mantiene para SEO y semántica. */}
+      <FloatingBackButton slug={category.id} />
     </main>
   );
 }

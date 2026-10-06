@@ -28,33 +28,41 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 
 ## Capabilities and Constraints
 
-- Portada con carrusel de destacados (`Hero`), secciones por categoría con rejilla dinámica tipo Pinterest (`GalleryGrid`), lightbox interactivo (`Lightbox`), bio/dedicatoria con marcos ornamentales (`Bio`) y pie de página con identidad (`SiteFooter`).
-- **Diseño v2 mejorado**:
-  - Rejilla Masonry nativa con CSS Columns (`columns-2` en móvil, `md:columns-3` en tablet, `lg:columns-4` en desktop), adaptada al aspect ratio original sin recortes.
-  - Tarjetas `PhotoCard` con `rounded-xl`, hover multi-capa con halo esmeralda, micro-escala, pie animado y distintivo `FEATURED` pulsante.
-  - Navegación móvil con menú hamburguesa dinámico (Opción B) implementado en CSS puro con `<details>`, animación a cruz "X" y panel flotante con `backdrop-blur`.
-  - Lightbox enriquecido con glassmorphism, botones circulares flotantes y controles táctiles/teclado.
-  - Hero con nombre destacado "Eduardo" y estado de sala activa.
-  - Arquitectura limpia: 100% Server Components en grid, tarjetas, bio y hero; cero JS innecesario añadido al cliente.
+- Portada con bienvenida visual (`Hero`), secciones por categoría con rejilla dinámica tipo Pinterest (`GalleryGrid`), visor inmersivo con botones minimalistas (`Lightbox`), bio con tarjeta de dedicatoria de cumpleaños (`Bio`) y pie de página con identidad (`SiteFooter`).
+- **Navegación persistente**: FAB flotante (`NavSidebar`) con las secciones y scroll-spy en cualquier punto del scroll, y botón de retorno `←` (`FloatingBackButton`) en las páginas de categoría.
+- **Diseño v3 moderno & festivo**:
+  - Rejilla Masonry tipo Pinterest pura: tarjetas **100% fotográficas** con `rounded-2xl`, sin bandas muertas inferiores; hover overlay deslizante con título y badge de fotograma.
+  - Foco accesible con anillo redondeado uniforme (`focus-visible:ring-2 rounded-2xl`).
+  - **Sistema de 3 Modos de Color** (selector `ThemeToggle` en la cabecera, persistido en `localStorage`):
+    - ☀️ **Modo Claro (Por Defecto)**: Luminoso, limpio y fresco en tonos salvia y esmeralda (`#F8FAF8`).
+    - 🌿 **Modo Esmeralda Moderno**: Identidad botánica revitalizada con fondo verde agua (`#E8F5EE`) y acento esmeralda profundo.
+    - 🌙 **Modo Oscuro**: Carbón y grafito elegante para navegación nocturna (`#0F1412`).
+  - Tipografías modernas y juveniles: **Outfit** (títulos dinámicos) + **Plus Jakarta Sans** (lectura nítida) + **Geist Mono** (números de fotograma y contadores).
+  - Visor `Lightbox` inmersivo: overlay negro al 88 %, título en píldora inferior, contador arriba a la izquierda y controles de solo icono sin discos.
+  - Hero conceptual de bienvenida (*"Historias & Miradas"*) y categoría renombrada a *"Retratos de Eduardo"*, eliminando cualquier redundancia.
+  - Dedicatoria de cumpleaños presentada como una tarjeta de regalo afectuosa y moderna.
+  - Selector de temas accesible (`ThemeToggle`) en la cabecera, en todos los tamaños de pantalla.
+  - `NavSidebar`: bottom-sheet en móvil y **popover anclado al botón** en escritorio (`transform-origin: bottom right`), con scroll-spy y conteo de fotos por sección.
+  - `FloatingBackButton`: retorno `←` persistente en `/categoria/[slug]`, con la misma coordenada y estilo que el FAB de navegación.
 - Ruta opcional `/categoria/[slug]` y página 404.
-- Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm; lightbox con `yet-another-react-lightbox` (sin carrusel: el hero es estático desde 21c8fdb).
+- Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm + Lucide Icons; lightbox con `yet-another-react-lightbox`.
 - Contenido sin programación posible vía `albums.json` (ver `docs/Documentación/Guía de uso sin programación.md`).
-- **Fotos reales integradas**: 54 fotografías reales clasificadas en 5 categorías (edu, amigos, retratos, paisaje, urbano).
-- **Nombre**: Eduardo. Bio y dedicatoria: texto de ejemplo en `albums.json`, aprobado por el mantenedor para editar después a mano.
+- **Fotos reales integradas**: 133 fotografías reales clasificadas en 5 categorías (edu 38, urbano 35, paisaje 26, amigos 21, retratos 13).
+- **Nombre**: Eduardo.
 
 ## Brand Commitments
 
-- Dirección visual ya decidida y documentada por el usuario en `docs/Documentación/Diseño de la galería de fotos.md` y formalizada en `DESIGN.md`: paleta en tonos verdes sobre fondo oscuro, modo *Experience*, serif con carácter en títulos (Fraunces), y micro-interacciones refinadas con acento esmeralda.
+- Dirección visual: Enfoque de **regalo de cumpleaños**, moderno, cálido, limpio y vívido; las fotos son las protagonistas absolutas sin ruido innecesario.
 - Nombre del sitio: «Eduardo · Galería de fotos de cumpleaños» (metadata de `app/layout.tsx`).
 
 ## Evidence on Hand
 
-- Documentación completa en `docs/`: arquitectura, diseño, decisión sin backend, guías de despliegue y de uso, y ficha del proyecto.
-- Sitio completo, modernizado (v2) y verificado:
+- Documentación completa en `docs/`: arquitectura, diseño, decisión sin backend, guías de despliegue y de uso, y ficha del proyecto; espejo sincronizado en el vault de Obsidian.
+- Sitio completo, modernizado (v3) y verificado en cada iteración:
+  - Lint sin errores (`pnpm lint`).
   - TypeScript verificado con 0 errores (`pnpm exec tsc --noEmit`).
-  - Build de producción Next.js 16 completado con éxito (`pnpm build`).
-  - Dev server activo en puerto 3000.
-- **Ausencias que no deben fabricarse**: nada estructural — nombre, 54 fotos reales, bio y dedicatoria ya están. La bio y la dedicatoria son **texto de ejemplo** a la espera de la edición manual del mantenedor.
+  - Build de producción Next.js 16 completado con éxito (`pnpm build`, 9 rutas).
+- **Ausencias que no deben fabricarse**: nada estructural — nombre, 133 fotos reales, bio y dedicatoria ya están. La bio y la dedicatoria son **texto de ejemplo** a la espera de la edición manual del mantenedor.
 
 ## Product Principles
 

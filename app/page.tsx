@@ -8,13 +8,13 @@ import { Bio } from "@/components/layout/Bio";
 import { Hero } from "@/components/gallery/Hero";
 import { CategorySection } from "@/components/gallery/CategorySection";
 import { PhotoLightbox } from "@/components/gallery/PhotoLightbox";
+import { NavSidebar } from "@/components/layout/NavSidebar";
 
 /**
- * Portada — composición «Hoja de contactos» (DESIGN.md v2):
+ * Portada — composición «Hoja de contactos» (DESIGN.md v3):
  * hero a sangre → bandas con rejilla masonry → bio del fotógrafo → colofón.
  *
- * v2: pasa `sectionIndex` a cada CategorySection para los separadores
- * numerados entre categorías.
+ * v3: añade NavSidebar con conteo de fotos por sección.
  */
 export default function Home() {
   const site = getSite();
@@ -27,9 +27,10 @@ export default function Home() {
 
   return (
     <main className="flex-1">
-      {/* h1 único de la portada: el nombre visible vive en el hero y en el header */}
-      <h1 className="sr-only">{`${site.name} · Galería de fotos de cumpleaños`}</h1>
-      <Hero photo={hero} />
+      {/* El h1 único de la portada vive en Hero: el nombre del sitio entra como
+          prefijo `sr-only` para que el encabezado accesible y el SEO sigan
+          hablando de la galería sin duplicar encabezados. */}
+      <Hero photo={hero} name={site.name} />
       {sections.map(({ category, photos }, index) => (
         <CategorySection
           key={category.id}
@@ -40,6 +41,15 @@ export default function Home() {
       ))}
       <PhotoLightbox />
       <Bio site={site} />
+
+      {/* Sidebar flotante de navegación con scroll-spy */}
+      <NavSidebar
+        sections={sections.map(({ category, photos }) => ({
+          id: category.id,
+          title: category.title,
+          count: photos.length,
+        }))}
+      />
     </main>
   );
 }

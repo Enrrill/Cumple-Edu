@@ -7,7 +7,7 @@ tags:
   - usuario
 created: 2026-09-29
 area: galeria-fotos
-version: 0.1
+version: 0.2
 ---
 
 # Guía de uso sin programación
@@ -29,21 +29,21 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 - **Publicar (deploy)**: hacer que la web real muestre los últimos cambios. Aquí ocurre solo al guardar.
 - **[Vercel](../Referencias/Vercel.md)**: el servicio que muestra la página a los visitantes. Se conecta a GitHub y se actualiza por sí mismo.
 - **`albums.json`**: el inventario de fotos. Una fila por foto con su título, su categoría y su texto alternativo.
-- **Categoría**: una sección de la galería (Retrato, Paisaje, Blanco y negro…).
+- **Categoría**: una sección de la galería (Edu, Amigos, Retratos, Paisaje, Urbano…).
 
 ### Cómo añadir una foto (paso a paso)
 
 1. Entrar en el repositorio en GitHub y pulsar el botón **Add file → Upload files**.
-2. Arrastrar la foto a la zona de subida. Debe ir dentro de la carpeta de su categoría, por ejemplo `public/images/retrato/`.
+2. Arrastrar la foto a la zona de subida. Debe ir dentro de la carpeta de su categoría, por ejemplo `public/images/retratos/`.
 3. Pulsar **Commit changes** para guardar.
 4. Abrir `content/albums.json`, pulsar el lápiz para editarlo y añadir una fila copiando el formato de las existentes:
 
 ```json
 {
-  "id": "retrato-07",
-  "src": "/images/retrato/07.jpg",
+  "id": "retratos-07",
+  "src": "/images/retratos/07.webp",
   "title": "Título de la foto",
-  "category": "retrato",
+  "category": "retratos",
   "featured": false,
   "alt": "Descripción de lo que se ve",
   "width": 1600,
@@ -72,16 +72,17 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 
 ### Cómo cambiar un texto o la dedicatoria
 
-1. Editar `content/albums.json` (títulos y descripciones) desde el lápiz de GitHub.
-2. La dedicatoria de cumpleaños y la bio están en el componente `components/Bio.tsx`; el texto a cambiar está entre comillas.
-3. Commit y listo.
+1. Abrir `content/albums.json` desde el lápiz de GitHub.
+2. Títulos y descripciones: bloques `categories` y `photos` del mismo fichero.
+3. Bio, dedicatoria, nombre, crédito y retrato: bloque `site` (`bio`, `dedication`, `name`, `credit`, `portrait.src` y `portrait.alt`); el texto a cambiar está entre comillas.
+4. Commit y listo.
 
 ### Consejos para las fotos
 
 - Renombrar los archivos antes de subirlos: sin espacios ni acentos (`luz-de-tarde.jpg`).
 - Exportar a un ancho máximo de 2000 px y calidad 80-90 %: se ve igual y carga mucho más rápido.
 - Rellenar bien el campo `alt`: es lo que leen los lectores de pantalla y también ayuda al posicionamiento.
-- `"featured": true` solo en 4-6 fotos: son las que aparecen en el carrusel de portada.
+- `"featured": true` solo en unas pocas fotos: esas tarjetas muestran el distintivo «Destacada» con el punto esmeralda pulsante.
 
 ### Qué no hay que tocar
 

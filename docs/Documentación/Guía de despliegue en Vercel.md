@@ -7,7 +7,7 @@ tags:
   - vercel
 created: 2026-09-29
 area: galeria-fotos
-version: 0.1
+version: 0.2
 ---
 
 # Guía de despliegue en Vercel
@@ -61,10 +61,11 @@ La primera versión queda publicada en una URL temporal tipo `<proyecto>-<usuari
 ### Verificación tras desplegar
 
 1. Abrir la URL pública en móvil y escritorio.
-2. Comprobar que el carrusel avanza y que el lightbox abre, navega con ← → y cierra con Escape.
-3. Revisar que todas las fotos cargan (no hay ninguna rota en la rejilla).
-4. Pasar un Lighthouse en Chrome DevTools: rendimiento y accesibilidad ≥ 95.
-5. Probar un 404: escribir una ruta inexistente y verificar que aparece la página de "no encontrada".
+2. Comprobar que el FAB de navegación abre el panel de secciones (bottom-sheet en móvil, popover anclado en escritorio) y que el lightbox abre, navega con ← → y cierra con Escape.
+3. Entrar en una categoría (`/categoria/…`) y verificar que el botón `←` flotante, siempre visible al hacer scroll, vuelve a la portada anclada a esa sección.
+4. Revisar que todas las fotos cargan (no hay ninguna rota en la rejilla).
+5. Pasar un Lighthouse en Chrome DevTools: rendimiento y accesibilidad ≥ 95.
+6. Probar un 404: escribir una ruta inexistente y verificar que aparece la página de "no encontrada".
 
 ### Costes y límites
 

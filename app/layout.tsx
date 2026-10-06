@@ -1,49 +1,55 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
 import { getCategories, getSite } from "@/lib/albums";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
   display: "swap",
-  // Sin preload: las fuentes no deben pelear por ancho de banda en la cola
-  // crítica (doc → CSS → LCP); con `swap` el texto pinta con la de reserva.
   preload: false,
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
   preload: false,
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
   preload: false,
 });
 
-// Título y descripción con el nombre real del fotógrafo (Eduardo).
 export const metadata: Metadata = {
   title: "Eduardo · Galería de fotos de cumpleaños",
   description:
     "Galería de fotografías de Eduardo: retratos, paisajes, rincones urbanos y amigos — regalo de cumpleaños.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const site = getSite();
   const categories = getCategories();
 
   return (
     <html
       lang="es"
-      className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-theme="light"
+      suppressHydrationWarning
+      className={`${outfit.variable} ${plusJakarta.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-canvas text-ink">
-        {/* Chrome compartido por todas las rutas (portada, categoría y 404) */}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('edu-theme')||'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
+      </head>
+      <body className="min-h-full flex flex-col bg-canvas text-ink transition-colors duration-300">
         <SiteHeader
           name={site.name}
           sections={categories.map(({ id, title }) => ({ id, title }))}

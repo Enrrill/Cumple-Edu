@@ -60,15 +60,15 @@ Abre [http://localhost:3000](http://localhost:3000) en el navegador. El código 
 Cumple-Edu/
 ├── app/
 │   ├── layout.tsx              # Plantilla base: html, fuentes, metadatos
-│   ├── page.tsx                # Portada (carrusel, secciones, bio, footer)
-│   ├── globals.css             # Tokens de diseño (Tailwind 4, @theme)
+│   ├── page.tsx                # Portada (hero, secciones, bio, footer, NavSidebar)
+│   ├── globals.css             # Tokens de diseño (Tailwind 4, @theme, 3 modos)
 │   ├── not-found.tsx           # Página 404
-│   └── categoria/[slug]/       # Página por categoría
+│   └── categoria/[slug]/       # Página por categoría (+ FloatingBackButton)
 ├── components/
-│   ├── gallery/                # PhotoCard, GalleryGrid, CategorySection,
-│   │                           # HeroCarousel, Lightbox, HomeGallery,
-│   │                           # CategoryGallery
-│   └── layout/                 # SiteHeader, SiteFooter, Bio
+│   ├── gallery/                # Hero, CategorySection, GalleryGrid,
+│   │                           # PhotoCard, Lightbox, PhotoLightbox
+│   └── layout/                 # SiteHeader, ThemeToggle, NavSidebar,
+│                               # FloatingBackButton, Bio, SiteFooter
 ├── lib/
 │   └── albums.ts               # Tipos y helpers de contenido
 ├── content/

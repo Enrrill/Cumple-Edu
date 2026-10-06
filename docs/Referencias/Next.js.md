@@ -25,7 +25,7 @@ Framework de JavaScript construido sobre React. Convierte componentes de React e
 ## Conceptos clave
 
 - **Server-side rendering / estatizado**: el HTML se prepara en el servidor o en la compilación, no solo en el navegador.
-- **`use client`**: marca los componentes interactivos (carrusel, lightbox).
+- **`use client`**: marca los componentes interactivos (panel de secciones, selector de tema, lightbox).
 - **`next/image`**: componente que sustituye a la etiqueta `<img>` habitual.
 
 ## Enlaces

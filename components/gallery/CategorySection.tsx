@@ -10,14 +10,11 @@ export interface CategorySectionProps {
 }
 
 /**
- * Sección de categoría — v2:
+ * Sección de categoría — v3:
  * - Separador con gradiente + número de sección en mono (ritmo editorial)
+ * - Encabezado con padding de texto para legibilidad óptima
+ * - Rejilla de fotos con margen lateral mínimo en móvil (px-1) para inmersión total
  * - `scroll-mt-20` para compensar el header fijo al navegar con anclas
- * - Tipografía de la placa ligeramente refinada (tracking más ajustado)
- * - Animación de entrada CSS pura (igual que v1, sin framer-motion)
- *
- * El separador solo aparece cuando `sectionIndex > 0` (no antes de la
- * primera categoría, que ya viene inmediatamente después del hero).
  */
 const SECTION_CSS = `
 @keyframes category-plate-in {
@@ -64,8 +61,9 @@ export function CategorySection({
         {SECTION_CSS}
       </style>
 
-      <div className="mx-auto max-w-7xl px-6">
-        {/* Separador con número de sección — solo entre categorías (no antes de la primera) */}
+      {/* Encabezado y separador con padding para legibilidad de textos */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Separador con número de sección — solo entre categorías */}
         {sectionIndex > 0 && (
           <div
             aria-hidden="true"
@@ -81,7 +79,7 @@ export function CategorySection({
 
         {/* Placa de entrada de la categoría con animación */}
         <header
-          className={`category-plate mb-8 md:mb-12 ${sectionIndex === 0 ? "pt-10 md:pt-16" : ""}`}
+          className={`category-plate mb-6 md:mb-10 ${sectionIndex === 0 ? "pt-10 md:pt-16" : ""}`}
         >
           <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
             <h2
@@ -103,7 +101,10 @@ export function CategorySection({
             {category.description}
           </p>
         </header>
+      </div>
 
+      {/* Grid de fotos: full-bleed / margen mínimo (px-1) en móvil para máxima inmersión */}
+      <div className="mx-auto max-w-7xl px-1 sm:px-3 md:px-6">
         <GalleryGrid photos={photos} />
       </div>
     </section>

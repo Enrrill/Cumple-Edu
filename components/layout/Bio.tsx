@@ -18,7 +18,7 @@ export function Bio({ site }: BioProps) {
     <section className="category-plate mx-auto max-w-7xl px-6 py-16 md:py-24">
       <div className="grid gap-8 md:grid-cols-2 md:gap-16">
         {/* Retrato con marco de esquina esmeralda */}
-        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+        <div className="relative aspect-4/5 overflow-hidden rounded-2xl">
           {/* Borde base del frame */}
           <div
             aria-hidden="true"
@@ -61,17 +61,28 @@ export function Bio({ site }: BioProps) {
           </h2>
           <p className="mt-6 text-base leading-7 text-muted">{site.bio}</p>
 
-          {/* Dedicatoria con letra capital en accent */}
-          <p
-            className={[
-              "mt-8 font-display text-xl leading-relaxed text-ink md:text-[25px]",
-              // Letra capital: la primera letra en accent y más grande
-              "first-letter:float-left first-letter:mr-2 first-letter:text-5xl",
-              "first-letter:font-medium first-letter:leading-none first-letter:text-accent",
-            ].join(" ")}
-          >
-            {site.dedication}
-          </p>
+          {/* Tarjeta de Dedicatoria de Cumpleaños */}
+          <div className="mt-8 relative overflow-hidden rounded-2xl border border-line/70 bg-surface/70 p-6 md:p-8 shadow-sm backdrop-blur-xs">
+            {/* Cabecera de la nota */}
+            <div className="flex items-center gap-2 mb-4">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent">
+                <span>🎂</span> Dedicatoria Especial
+              </span>
+            </div>
+
+            {/* Texto de la dedicatoria limpio y moderno */}
+            <blockquote className="font-sans text-lg md:text-xl font-medium leading-relaxed text-ink italic">
+              “{site.dedication}”
+            </blockquote>
+
+            {/* Pie de la dedicatoria */}
+            <div className="mt-5 flex items-center justify-between border-t border-line/40 pt-4">
+              <span className="font-mono text-xs uppercase tracking-wider text-muted">
+                Con cariño · Feliz Cumpleaños
+              </span>
+              <span className="text-sm">✨</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ tags:
   - galeria
 created: 2026-09-30
 area: galeria-fotos
-version: 0.1
+version: 0.2
 ---
 
 # Plan de equipo - tareas
@@ -16,6 +16,8 @@ version: 0.1
 ## Resumen
 
 Distribución del trabajo entre los dos integrantes del proyecto. Cada uno tiene un territorio de archivos propio y tareas independientes para que los *pull requests* nunca se solapen: el mantenedor hace la base de diseño, los datos y el despliegue; el contribuidor construye los componentes siguiendo esa base.
+
+> **Estado**: el plan se ejecutó por completo (C1-C7 y T1-T5) y este documento conserva los contratos originales como referencia histórica. Desde entonces el código evolucionó: `HeroCarousel`, `HomeGallery` y `CategoryGallery` ya no existen (hero estático y `PhotoLightbox` centralizado), `framer-motion` y `embla-carousel-react` se sustituyeron por CSS puro, y la navegación vive en `NavSidebar`. El estado actual está en [Arquitectura de la galería de fotos](../Documentaci%C3%B3n/Arquitectura%20de%20la%20galer%C3%ADa%20de%20fotos.md) y en [DESIGN.md](../../DESIGN.md).
 
 ## Contexto
 

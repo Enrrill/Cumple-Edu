@@ -1,0 +1,27 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+  "cSpell.language": "es,en",
+  "cSpell.words": [
+    "antimetas",
+    "colofón",
+    "contactos",
+    "dedicatoria",
+    "Eduardo",
+    "embla",
+    "fotograma",
+    "fotogramas",
+    "fotógrafo",
+    "Fraunces",
+    "Geist",
+    "glassmorphism",
+    "keyframes",
+    "lightbox",
+    "masonry",
+    "pnpm",
+    "tailwindcss",
+    "vercel",
+    "yarl"
+  ]
+}
