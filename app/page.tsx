@@ -10,12 +10,11 @@ import { CategorySection } from "@/components/gallery/CategorySection";
 import { PhotoLightbox } from "@/components/gallery/PhotoLightbox";
 
 /**
- * Portada (T4) — composición «Hoja de contactos» (DESIGN.md):
- * hero a sangre → bandas con rejilla → bio del fotógrafo → colofón.
- * El encabezado y el pie fijos viven en `app/layout.tsx` para que todas las
- * rutas (categoría y 404 incluidas) compartan la navegación.
- * Server Component íntegro: hero, secciones y tarjetas son HTML estático;
- * el único cliente de la galería es `PhotoLightbox` (visor + delegación).
+ * Portada — composición «Hoja de contactos» (DESIGN.md v2):
+ * hero a sangre → bandas con rejilla masonry → bio del fotógrafo → colofón.
+ *
+ * v2: pasa `sectionIndex` a cada CategorySection para los separadores
+ * numerados entre categorías.
  */
 export default function Home() {
   const site = getSite();
@@ -28,11 +27,16 @@ export default function Home() {
 
   return (
     <main className="flex-1">
-      {/* h1 único de la portada: el nombre visible vive en el encabezado fijo */}
+      {/* h1 único de la portada: el nombre visible vive en el hero y en el header */}
       <h1 className="sr-only">{`${site.name} · Galería de fotos de cumpleaños`}</h1>
       <Hero photo={hero} />
-      {sections.map(({ category, photos }) => (
-        <CategorySection key={category.id} category={category} photos={photos} />
+      {sections.map(({ category, photos }, index) => (
+        <CategorySection
+          key={category.id}
+          category={category}
+          photos={photos}
+          sectionIndex={index}
+        />
       ))}
       <PhotoLightbox />
       <Bio site={site} />

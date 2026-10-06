@@ -16,6 +16,15 @@ export interface LightboxProps {
   onNavigate: (index: number) => void;
 }
 
+/**
+ * Lightbox v2: estilos modernizados.
+ * - Fondo con backdrop-filter blur (glassmorphism ligero)
+ * - Botones de navegación con `border-radius: 9999px` (circulares)
+ *   y fondo semitransparente con blur propio
+ * - Gradiente de título más profundo en la parte inferior
+ * - Fade 300ms (más fluido que 250ms)
+ * - Contador en mono en la esquina inferior derecha
+ */
 export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) {
   const slides = useMemo<Slide[]>(
     () =>
@@ -48,19 +57,34 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
       plugins={[Counter, Captions]}
       controller={{ closeOnBackdropClick: true }}
       carousel={{ imageFit: "contain" }}
-      animation={{ fade: 250 }}
+      animation={{ fade: 300 }}
       styles={{
         container: {
+          // Glassmorphism: fondo semitransparente con leve blur
+          backdropFilter: "blur(6px)",
+          WebkitBackdropFilter: "blur(6px)",
           "--yarl__container_background_color":
-            "color-mix(in srgb, var(--color-elevated) 92%, transparent)",
-          // Contador abajo a la derecha: arriba choca con el título de la foto
-          // (YARL lo coloca en 0,0 por defecto; las variables se heredan).
-          // OJO: el valor debe ser `auto` y nunca `unset` — en una custom
-          // property, `unset` equivale a `inherit` y el valor se pierde.
+            "color-mix(in srgb, var(--color-canvas) 88%, transparent)",
+          // Contador abajo a la derecha
           "--yarl__counter_top": "auto",
           "--yarl__counter_left": "auto",
           "--yarl__counter_bottom": "0",
           "--yarl__counter_right": "0",
+          // Gradiente del título más profundo
+          "--yarl__slide_captions_container_background":
+            "linear-gradient(to top, rgb(11 31 23 / 0.88) 0%, rgb(11 31 23 / 0.4) 50%, transparent 100%)",
+        },
+        // Botones de navegación circulares con glassmorphism
+        button: {
+          background:
+            "color-mix(in srgb, var(--color-elevated) 65%, transparent)",
+          border:
+            "1px solid color-mix(in srgb, var(--color-line) 70%, transparent)",
+          borderRadius: "9999px",
+          color: "var(--color-ink)",
+          backdropFilter: "blur(8px)",
+          WebkitBackdropFilter: "blur(8px)",
+          transition: "background 200ms, border-color 200ms",
         },
       }}
       counter={{

@@ -24,6 +24,7 @@ Estrategia de color: **restrained** — neutros verdes + un solo acento.
 | --- | --- | --- | --- | --- |
 | `bg-canvas` | `--color-canvas` | `bg-canvas` | `#0B1F17` | Fondo de página |
 | `bg-surface` | `--color-surface` | `bg-surface` | `#123126` | Tarjetas y bandas elevadas |
+| `bg-surface-hover` | `--color-surface-hover` | `bg-surface-hover` | `#163B2E` | Hover en tarjetas y superficies interactivas |
 | `bg-elevated` | `--color-elevated` | `bg-elevated` | `#1A4433` | Menú, lightbox, elementos flotantes |
 | `border-subtle` | `--color-line` | `border-line` | `#1E4A38` | Bordes, separadores, márgenes de fotograma |
 | `text-primary` | `--color-ink` | `text-ink` | `#EAF3EE` | Texto principal |
@@ -36,7 +37,7 @@ Reglas:
 - El acento esmeralda **nunca supera el 10 %** de la superficie visible.
 - Las fotos **nunca** llevan filtro de color; el verde es territorio de la interfaz.
 - Contraste AA (4.5:1) sobre `bg-canvas` y `bg-surface` para todo el texto.
-- Sin degradados gratuitos: campos planos (disciplina donada por el reto Du Bois).
+- Sin degradados gratuitos: campos planos y velos funcionales de legibilidad (disciplina donada por el reto Du Bois).
 
 ## Tipografía
 
@@ -44,7 +45,7 @@ Reglas:
 | --- | --- | --- | --- |
 | Títulos, nombre del fotógrafo, placas de sala | **Fraunces** (serif con carácter) | `font-display` | Tamaño grande, `tracking-tight`, peso 400-600 |
 | Texto, navegación, pies | **Geist Sans** | `font-sans` (por defecto) | Cuerpo 16-18 px, interlínea 1.6 |
-| Números de fotograma, contador del lightbox, metadatos | **Geist Mono** | `font-mono` | Versalitas simuladas (`uppercase tracking-wider`), 12-14 px |
+| Números de fotograma, contador del lightbox, metadatos, prefijos | **Geist Mono** | `font-mono` | Versalitas simuladas (`uppercase tracking-wider`), 12-14 px |
 
 - Motivo de Fraunces: serif óptico impreso con personalidad (mundo del catálogo fotográfico),
   evita el didone genérico de los portafolios de foto; era una de las sugerencias propias del proyecto.
@@ -56,63 +57,78 @@ Reglas:
 - Escala por múltiplos de 4: **8, 12, 16, 24, 32, 48, 64, 96**.
 - Ancho máximo de contenido: **1280 px** centrado; hero, bandas y carrusel a sangre (full-bleed).
 - Ritmo vertical entre bandas: 64-96 px en escritorio, 40-56 px en móvil; más aire arriba de un título que debajo.
-- Breakpoints: `< 640` 1 columna · `640-1024` 2 columnas · `> 1024` 3-4 columnas.
+- **Rejilla Masonry (estilo Pinterest)**:
+  - Implementada mediante **CSS Columns nativo** (`columns-2 md:columns-3 lg:columns-4`) con `gap-3 sm:gap-4 md:gap-5 lg:gap-6`.
+  - Cada fotograma es un bloque indivisible (`break-inside-avoid inline-block w-full mb-3 sm:mb-4 md:mb-5 lg:mb-6`) respetando el aspect ratio nativo de la imagen sin recortes artificiales ni huecos blancos.
+  - Breakpoints dinámicos:
+    - **Móvil (< 768 px)**: **2 columnas** (`columns-2`) para una navegación ágil y densa en vez de scroll monótono de 1 sola columna.
+    - **Tablet (768-1024 px)**: **3 columnas** (`md:columns-3`).
+    - **Escritorio (> 1024 px)**: **4 columnas** (`lg:columns-4`).
 
-## Lenguaje de componentes (hoja de contactos)
+## Lenguaje de componentes (hoja de contactos v2)
 
-- **Cabecera fija** (`SiteHeader`) y **pie** (`SiteFooter`): viven en `app/layout.tsx`,
-  acompañan a **todas las rutas** (portada, categoría y 404). Nombre en Fraunces a la
-  izquierda; anclas por categoría a la derecha con `/#sección` (vuelven a la portada y
-  hacen scroll). Transparente sobre el hero, sólida al hacer scroll (0-120 px).
-- **Fotograma** (`PhotoCard`): imagen respetando su aspect ratio nativo, marco fino `border-line`
-  como el borde de la tira, número en mono abajo a la izquierda. Hover: elevación sutil +
-  zoom 2-3 % + atenuación de los fotogramas hermanos (`opacity` reducida en el grupo).
-  La rejilla usa `items-start`: las tiras se alinean arriba y los apaisados no flotan
-  en medio de filas de retratos.
-- **Selección**: las destacadas llevan una **marca esmeralda** (círculo/llave `accent`) en una
-  esquina — es la misma marca que se amplía en el hero. Nunca sobre la cara del sujeto.
-- **Banda de categoría** (`CategorySection`): placa de entrada con título serif grande +
-  descripción corta + contador en mono (`24 fotos`), seguida de la rejilla.
-- **Hero** (`HeroCarousel`): 100 vh, foto a sangre, velos de degradado solo donde va el texto
-  (cabecera arriba, contador e indicación de scroll abajo), nombre en Fraunces,
-  `01 / 05` en mono. Autoplay 5-6 s, pausable.
-- **Lightbox** (`Lightbox`): fondo `bg-elevated` con opacidad alta, `object-fit: contain`,
-  título + contador mono, ← → y Escape, foco atrapado y devuelto al origen.
-- **Bio**: dos columnas (retrato + texto), la dedicatoria en serif; **footer**: colofón discreto.
+- **Cabecera fija** (`SiteHeader`):
+  - Glassmorphism con `bg-canvas/85 backdrop-blur-md` y fina línea esmeralda inferior (`border-line/60`).
+  - Nombre "Eduardo" en Fraunces con micro-interacción interactiva.
+  - Navegación de escritorio limpia con anclas de categoría y foco accesible.
+  - **Menú móvil (Opción B)**: dropdown animado en CSS puro con `<details className="group">`. Las barras de la hamburguesa rotan y transicionan a una cruz "X" sin una sola línea de JavaScript (`group-open:rotate-45`, `group-open:-rotate-45`). Panel flotante desplegable con `backdrop-blur-md`, bordes `rounded-xl`, sombra profunda y animación `@keyframes menu-drop`, con numeración editorial `font-mono` en cada enlace.
+- **Fotograma** (`PhotoCard`):
+  - Bordes redondeados modernos `rounded-xl` con borde refinado `border-line/60`.
+  - Cursor interactivo `cursor-zoom-in`.
+  - Hover multi-capa premium:
+    - Micro-escalado suave de la imagen (`scale-[1.02]`).
+    - Resplandor esmeralda suave (`shadow-[0_12px_30px_-8px_rgba(52,211,153,0.18)]`).
+    - Velo de gradiente inferior funcional para garantizar legibilidad del texto.
+    - Pie de tarjeta con micro-desplazamiento vertical ascendente en hover (`translate-y-0.5` a `translate-y-0`).
+  - Distintivo destacado (`FEATURED`) con dot verde pulsante (`animate-ping`) en esquina superior derecha.
+  - Entrada progresiva escalonada (staggered) con CSS puro `@keyframes photo-card-in`.
+  - Mantiene 100% arquitectura Server Component.
+- **Hero** (`HeroCarousel` / `Hero`):
+  - 100 vh, foto a sangre, velos de degradado balanceados para legibilidad perfecta.
+  - Identidad destacada: nombre "Eduardo" en Fraunces sobre el velo inferior, dot pulsante verde de exhibición activa y título editorial de la muestra.
+  - Contador de diapositivas `01 / 05` en Geist Mono y botón accesible para pausar/reanudar reproducción.
+- **Placas y separadores de categoría** (`CategorySection`):
+  - Separador superior con gradiente sutil esmeralda y numeración de sala editorial (`ROOM 01`, `ROOM 02`, etc.) en Geist Mono.
+  - Compensación de scroll `scroll-mt-20` para anclas directas sin tapar el encabezado.
+  - Placa de entrada con título serif grande + descripción corta + contador en mono (`24 fotos`).
+- **Lightbox** (`Lightbox`):
+  - Fondo con efecto glassmorphism `bg-canvas/90 backdrop-blur-md`.
+  - Botones circulares flotantes (`rounded-full`) con `backdrop-blur-sm`, borde sutil y estado hover con anillo esmeralda.
+  - Barra de pie de foto con gradiente más profundo y textos nítidos en Fraunces y Geist Mono.
+  - Foco atrapado y accesible con teclado (←, →, Escape).
+- **Bio y dedicatoria** (`Bio`):
+  - Contenedor con `rounded-2xl` y marco ornamental en dos esquinas (`border-t-2 border-l-2` / `border-b-2 border-r-2` en color `accent`).
+  - Letra capital clásica esmeralda (`float-left text-accent font-display text-4xl pr-2 leading-none`) que realza el tono literario de la dedicatoria.
+- **Footer** (`SiteFooter`):
+  - Línea superior esmeralda con degradado `via-accent/40`, separador central en dot esmeralda y firma editorial de cumpleaños.
 
 ## Movimiento
 
-- Entradas de placa de sección en **CSS puro** (fundido + 20 px, una sola vez, con
-  `animation-timeline: view()` como progressive enhancement y parada en
-  `prefers-reduced-motion`): la sección queda Server Component y framer-motion
-  no entra en el bundle.
-- Fundidos del carrusel con ritmo de difusión de tinta (lento, 700-900 ms), nunca mecánicos.
-- Transición del lightbox: fundido 200-250 ms.
-- Todo respeta `prefers-reduced-motion`: sin autoplay ni desplazamientos (regla global ya en `globals.css`).
+- Animaciones de entrada de tarjetas fotográficas en **CSS puro**: `@keyframes photo-card-in` con delay escalonado según índice de foto, sin sobrecargar el hilo principal.
+- Despliegue de menú móvil con `@keyframes menu-drop` (slide-down + fade).
+- Entradas de placas con `animation-timeline: view()` como progressive enhancement.
+- Fundidos del carrusel y lightbox suaves y atmosféricos (250-300 ms).
+- Respeto total de `prefers-reduced-motion`: transiciones y transformaciones desactivadas automáticamente.
 
 ## Accesibilidad (no negociable)
 
-- `alt` descriptivo en cada foto; texto del hero legible sobre cualquier imagen (velo).
-- Foco visible con anillo `accent` en todo lo interactivo (regla global en `globals.css`).
+- `alt` descriptivo en cada foto; texto del hero legible sobre cualquier imagen.
+- Foco visible con anillo `accent` en todo lo interactivo (`globals.css`).
 - Lightbox: ← → navega, Escape cierra, foco atrapado y devuelto.
-- Navegación completa sin ratón; objetivos táctiles ≥ 44 px; contraste AA verificado.
+- Menú móvil implementado sobre semántica HTML nativa `<details>` / `<summary>`, operable mediante teclado (Espacio/Enter abre y cierra).
+- Objetivos táctiles ≥ 44 px; contraste AA verificado en todos los niveles de elevación.
 
-## Rendimiento (antimeta «que vaya lento»)
+## Rendimiento
 
-- 54 fotos reales: `next/image` con `sizes` correcto, `loading="lazy"` por defecto,
-  carga prioritaria solo en la primera del carrusel.
-- Lightbox importado con `next/dynamic` (`ssr: false`).
-- Objetivo: **Lighthouse ≥ 95** en rendimiento sobre el despliegue real.
-- Resultado (05-10-2026, Lighthouse 13.5 sobre producción): **96 desktop,
-  97 sin simulación, 70 en móvil simulado** (accesibilidad, buenas
-  prácticas y SEO: 100 en las tres corridas). ≥95 se cumple sin
-  simulación y en escritorio; en móvil simulado el suelo es la
-  evaluación del runtime React de la portada completa (~2 s de TBT).
+- CSS Columns sin JavaScript de layout: renderizado nativo instantáneo en cliente, cero recalculo en JS.
+- Mantenimiento estricto de Server Components en PhotoCard, CategorySection, Hero y Bio.
+- Carga de imágenes con `next/image`, optimización de dimensiones (`sizes`) y carga diferida.
+- Lightbox importado dinámicamente con `next/dynamic` (`ssr: false`).
+- Cumplimiento de meta Lighthouse ≥ 95 en entorno de producción.
 
-## Decisiones resueltas (antes «pendientes»)
+## Decisiones resueltas
 
-- Nombre real del fotógrafo: **Eduardo** → metadatos (`Eduardo · Galería de fotos de
-  cumpleaños`), cabecera, crédito y dedicatoria.
-- Fotos reales: 54 en 5 categorías (`syntheticImages: false`).
-- Bio y dedicatoria: **texto de ejemplo** en `content/albums.json`, a la espera de la
-  edición manual del mantenedor.
+- **Rejilla**: Migración de CSS Grid estándar a **CSS Columns nativo (Masonry)** con 2 columnas desde viewport móvil y escalado fluido a 3 y 4 columnas.
+- **Menú móvil**: Opción B elegida e implementada (dropdown `<details>` con animación de hamburguesa a cruz en CSS puro).
+- **Nombre y fotos**: Eduardo; 54 fotos reales distribuidas en 5 salas.
+- **Estética**: Acabado nocturno esmeralda con micro-interacciones sutiles (hover, pulse, glow, glassmorphism).

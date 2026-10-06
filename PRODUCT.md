@@ -28,22 +28,32 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 
 ## Capabilities and Constraints
 
-- Portada con carrusel de destacados, secciones por categoría con rejilla y lightbox; bio/dedicatoria y footer.
+- Portada con carrusel de destacados (`Hero`), secciones por categoría con rejilla dinámica tipo Pinterest (`GalleryGrid`), lightbox interactivo (`Lightbox`), bio/dedicatoria con marcos ornamentales (`Bio`) y pie de página con identidad (`SiteFooter`).
+- **Diseño v2 mejorado**:
+  - Rejilla Masonry nativa con CSS Columns (`columns-2` en móvil, `md:columns-3` en tablet, `lg:columns-4` en desktop), adaptada al aspect ratio original sin recortes.
+  - Tarjetas `PhotoCard` con `rounded-xl`, hover multi-capa con halo esmeralda, micro-escala, pie animado y distintivo `FEATURED` pulsante.
+  - Navegación móvil con menú hamburguesa dinámico (Opción B) implementado en CSS puro con `<details>`, animación a cruz "X" y panel flotante con `backdrop-blur`.
+  - Lightbox enriquecido con glassmorphism, botones circulares flotantes y controles táctiles/teclado.
+  - Hero con nombre destacado "Eduardo" y estado de sala activa.
+  - Arquitectura limpia: 100% Server Components en grid, tarjetas, bio y hero; cero JS innecesario añadido al cliente.
 - Ruta opcional `/categoria/[slug]` y página 404.
-- Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm; carrusel con `embla-carousel-react`, lightbox con `yet-another-react-lightbox`, animaciones con `framer-motion`.
+- Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm; lightbox con `yet-another-react-lightbox` (sin carrusel: el hero es estático desde 21c8fdb).
 - Contenido sin programación posible vía `albums.json` (ver `docs/Documentación/Guía de uso sin programación.md`).
 - **Fotos reales integradas**: 54 fotografías reales clasificadas en 5 categorías (edu, amigos, retratos, paisaje, urbano).
 - **Nombre**: Eduardo. Bio y dedicatoria: texto de ejemplo en `albums.json`, aprobado por el mantenedor para editar después a mano.
 
 ## Brand Commitments
 
-- Dirección visual ya decidida y documentada por el usuario en `docs/Documentación/Diseño de la galería de fotos.md`: paleta en tonos verdes sobre fondo oscuro, modo *Experience*, serif con carácter en títulos. Se registra aquí como vínculo; sus valores se concretan en `DESIGN.md` durante la fase de diseño.
+- Dirección visual ya decidida y documentada por el usuario en `docs/Documentación/Diseño de la galería de fotos.md` y formalizada en `DESIGN.md`: paleta en tonos verdes sobre fondo oscuro, modo *Experience*, serif con carácter en títulos (Fraunces), y micro-interacciones refinadas con acento esmeralda.
 - Nombre del sitio: «Eduardo · Galería de fotos de cumpleaños» (metadata de `app/layout.tsx`).
 
 ## Evidence on Hand
 
 - Documentación completa en `docs/`: arquitectura, diseño, decisión sin backend, guías de despliegue y de uso, y ficha del proyecto.
-- Sitio completo y desplegado: portada ensamblada (T4), 8 componentes en `components/`, 404 y páginas por categoría; producción en Vercel.
+- Sitio completo, modernizado (v2) y verificado:
+  - TypeScript verificado con 0 errores (`pnpm exec tsc --noEmit`).
+  - Build de producción Next.js 16 completado con éxito (`pnpm build`).
+  - Dev server activo en puerto 3000.
 - **Ausencias que no deben fabricarse**: nada estructural — nombre, 54 fotos reales, bio y dedicatoria ya están. La bio y la dedicatoria son **texto de ejemplo** a la espera de la edición manual del mantenedor.
 
 ## Product Principles

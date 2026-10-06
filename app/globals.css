@@ -1,16 +1,18 @@
 @import "tailwindcss";
 
-/* Tokens de diseño — autoridad: DESIGN.md (no editar sin actualizarlo) */
+/* Tokens de diseño — autoridad: DESIGN.md v2 (no editar sin actualizarlo) */
 @theme {
   /* Paleta: galería nocturna verde (neutros verdes + acento esmeralda) */
   --color-canvas: #0b1f17; /* bg-canvas      · fondo de página */
-  --color-surface: #123126; /* bg-surface   · tarjetas y bandas */
-  --color-elevated: #1a4433; /* bg-elevated  · menú, lightbox, flotantes */
-  --color-line: #1e4a38; /* border-line  · bordes y separadores */
-  --color-ink: #eaf3ee; /* text-ink     · texto principal */
-  --color-muted: #9dbfb1; /* text-muted   · texto secundario */
-  --color-accent: #34d399; /* accent       · enlaces, foco, selección */
-  --color-accent-strong: #10b981; /* accent-strong· hover y énfasis */
+  --color-surface: #123126; /* bg-surface     · tarjetas y bandas */
+  --color-elevated: #1a4433; /* bg-elevated   · menú, lightbox, flotantes */
+  --color-line: #1e4a38; /* border-line    · bordes y separadores */
+  --color-ink: #eaf3ee; /* text-ink       · texto principal */
+  --color-muted: #9dbfb1; /* text-muted    · texto secundario */
+  --color-accent: #34d399; /* accent        · enlaces, foco, selección */
+  --color-accent-strong: #10b981; /* accent-strong · hover y énfasis */
+  /* v2: tokens adicionales */
+  --color-surface-hover: #163b2e; /* surface-hover · hover de superficies */
 }
 
 @theme inline {
@@ -21,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  /* Barra de scroll y controles nativos en tono de la paleta (superficies de navegador) */
+  /* Barra de scroll y controles nativos en tono de la paleta */
   color-scheme: dark;
 }
 
@@ -29,16 +31,19 @@ body {
   background: var(--color-canvas);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  /* Eliminar tap highlight azul en móvil */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Foco visible con anillo de acento (accesibilidad no negociable) */
 :focus-visible {
   outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
-/* Indicación de scroll del hero: deriva suave de 6px, sin rebote
-   (el detector impeccable vetaba `animate-bounce`: easing anticuado) */
+/* ─── Keyframes ─────────────────────────────────────────────────────────── */
+
+/* Scroll hint del hero: deriva suave de 6px */
 @keyframes scroll-hint {
   0%,
   100% {
@@ -49,17 +54,34 @@ body {
   }
 }
 
-/* El visor a pantalla completa oculta cabecera y pie: su texto blanco
-   asoma por detrás del velo (8 % de transmisión) y choca con el título */
+/* Entrada de las PhotoCards: fundido + ascenso suave */
+@keyframes photo-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ─── Lightbox ───────────────────────────────────────────────────────────── */
+
+/* El visor a pantalla completa oculta cabecera y pie (ver globals) */
 body.lightbox-open .site-header,
 body.lightbox-open footer {
   visibility: hidden;
 }
 
+/* ─── Selección de texto ─────────────────────────────────────────────────── */
+
 ::selection {
   background: var(--color-accent);
   color: var(--color-canvas);
 }
+
+/* ─── Reduced-motion ─────────────────────────────────────────────────────── */
 
 /* Sin autoplay ni desplazamientos si el sistema pide reduced-motion */
 @media (prefers-reduced-motion: reduce) {

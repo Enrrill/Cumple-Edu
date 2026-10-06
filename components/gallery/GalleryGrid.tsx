@@ -7,30 +7,39 @@ export interface GalleryGridProps {
 }
 
 /**
- * Columnas fijas cuando el contrato las pide; sin `columns` la rejilla
- * es responsive según DESIGN.md: <640 1 columna, 640-1024 2, >1024 3-4.
- * Los literales viven aquí (no se construyen con concatenación) para que
- * Tailwind los detecte al escanear el código.
+ * Rejilla tipo masonry usando CSS Columns — Server Component seguro, sin JS.
+ * Las fotos fluyen por columnas respetando su aspect ratio nativo (alto y
+ * apaisados se alternan orgánicamente como en Pinterest).
+ *
+ * Sin `columns`: responsive 2→3→4 desde móvil.
+ * Con `columns`: fijado por el padre (p. ej. página de categoría).
+ *
+ * DESIGN.md v2: CSS Columns reemplaza al grid de filas homogéneas para lograr
+ * composición dinámica donde cada foto ocupa exactamente su altura natural.
  */
+
+/** Clases para `columns-N` fijas cuando el padre lo pide explícitamente. */
 const COLUMN_CLASS: Record<NonNullable<GalleryGridProps["columns"]>, string> = {
-  1: "grid-cols-1",
-  2: "grid-cols-2",
-  3: "grid-cols-3",
-  4: "grid-cols-4",
+  1: "columns-1",
+  2: "columns-2",
+  3: "columns-3",
+  4: "columns-4",
 };
 
 export function GalleryGrid({ photos, columns }: GalleryGridProps) {
+  /*
+   * Sin `columns` prop: 2 columnas en móvil, 3 en tablet, 4 en desktop.
+   * `group` sigue siendo necesario: PhotoCard atenúa a sus hermanas con
+   * `group-hover` para enfocarse en la tarjeta activa.
+   */
   const layout = columns
     ? COLUMN_CLASS[columns]
-    : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+    : "columns-2 sm:columns-2 lg:columns-3 xl:columns-4";
 
   return (
-    // `group` es obligatorio: PhotoCard atenúa a sus hermanas con group-hover.
-    // `items-start`: sin estirar, <button> centraba su contenido (UA) y las
-    // fotos apaisadas flotaban en medio de filas de retratos.
-    <div className={`group grid items-start gap-4 md:gap-6 ${layout}`}>
-      {photos.map((photo) => (
-        <PhotoCard key={photo.id} photo={photo} />
+    <div className={`group ${layout} gap-x-3 md:gap-x-5`}>
+      {photos.map((photo, i) => (
+        <PhotoCard key={photo.id} photo={photo} index={i} />
       ))}
     </div>
   );

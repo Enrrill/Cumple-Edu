@@ -67,18 +67,18 @@ Escala tipográfica sugerida: 14 / 16 / 20 / 25 / 32 / 48 / 72 px con `clamp()` 
 
 1. **Hero con carrusel**: ocupa el 100 vh; foto destacada a pantalla completa, nombre del fotógrafo, título del sitio y una indicación sutil de scroll. Autoplay lento (5-6 s), pausable al interactuar.
 2. **Navegación**: barra mínima con el nombre y anclas a las secciones; transparente sobre el hero, con fondo al hacer scroll.
-3. **Secciones por categoría**: cada categoría es una banda con título, descripción corta y su rejilla de fotos (3-4 columnas en escritorio, 2 en tablet, 1 en móvil). Algunas fotos pueden destacarse con un ancho mayor para romper la monotonía.
-4. **Lightbox**: fondo `bg-elevated` con opacidad alta, foto centrada con `object-fit: contain`, título y contador (3 / 12), navegación ← →, cierre con Escape o clic fuera.
-5. **Bio y dedicatoria**: bloque a dos columnas (retrato del fotógrafo + texto breve y dedicatoria de cumpleaños).
-6. **Footer**: crédito, año y enlace discreto.
+3. **Secciones por categoría**: cada categoría es una banda con título, descripción corta, separador de sala numerado y su rejilla dinámica tipo Pinterest (CSS Columns: 4 columnas en escritorio, 3 en tablet, 2 en móvil) que respeta el aspect ratio natural de las fotos sin cortes forzados.
+4. **Lightbox**: fondo `bg-canvas/90` con efecto glassmorphism (`backdrop-blur-md`), controles circulares flotantes, foto centrada con `object-fit: contain`, título y contador en la barra inferior, navegación ← →, cierre con Escape o clic fuera.
+5. **Bio y dedicatoria**: bloque a dos columnas (retrato del fotógrafo + texto breve con letra capital y marco ornamental esmeralda).
+6. **Footer**: crédito, año, separador acento y enlace discreto.
 
 ### Responsive
 
 | Punto de quiebre | Ancho | Comportamiento |
 | --- | --- | --- |
-| Móvil | < 640 px | 1 columna, hero a 85-100 vh, menú en icono |
-| Tablet | 640-1024 px | 2 columnas, secciones con más aire |
-| Escritorio | > 1024 px | 3-4 columnas, hero completo, ancho 1280 px |
+| Móvil | < 768 px | 2 columnas tipo Pinterest, hero completo, menú interactivo animado sin JS (<details>) |
+| Tablet | 768-1024 px | 3 columnas masonry, secciones con ritmo amplio |
+| Escritorio | > 1024 px | 4 columnas masonry, ancho máximo 1280 px |
 
 - El carrusel se arrastra con el dedo en táctil y con flechas/ratón en escritorio.
 - `next/image` entrega el tamaño correcto a cada punto de quiebre vía `sizes`.
