@@ -2,12 +2,13 @@
   "syntheticImages": false,
   "site": {
     "name": "Eduardo",
+    "heroPhotoId": "paisaje-04",
     "bio": "Fotógrafo de cumpleaños todo el año: gente que quiere, luz que se presta y ninguna excusa para no disparar. Aquí está lo mejor de lo que ha pasado delante de mi cámara.",
     "dedication": "Por cada foto que te salió bien y por las veinte que te salieron torcidas: gracias por enseñarnos a mirar. Feliz cumpleaños, Eduardo.",
     "credit": "Eduardo",
     "portrait": {
-      "src": "/images/edu/16.webp",
-      "alt": "Retrato de Eduardo"
+      "src": "/images/edu/28.webp",
+      "alt": "Retrato de Eduardo con traje y corbata en blanco y negro"
     }
   },
   "categories": [
@@ -29,25 +30,15 @@
     {
       "id": "paisaje",
       "title": "Paisaje & Naturaleza",
-      "description": "Mar caribeño, playas de Choroní y naturaleza."
+      "description": "Mar caribeño, montañas de la Colonia Tovar y naturaleza."
     },
     {
       "id": "urbano",
       "title": "Urbano & Rincones",
-      "description": "Calles, arquitectura y detalles cotidianos."
+      "description": "Calles de Caracas, arquitectura, arte y rincones cotidianos."
     }
   ],
   "photos": [
-    {
-      "id": "edu-01",
-      "src": "/images/edu/01.webp",
-      "title": "Gorro invernal",
-      "category": "edu",
-      "featured": false,
-      "alt": "Eduardo con gorro de muñeco de nieve haciendo el gesto de la paz",
-      "width": 607,
-      "height": 1080
-    },
     {
       "id": "edu-02",
       "src": "/images/edu/02.webp",
@@ -187,36 +178,6 @@
       "alt": "Selfie de Eduardo con simpático filtro de tijeras y corazones",
       "width": 581,
       "height": 1032
-    },
-    {
-      "id": "edu-16",
-      "src": "/images/edu/16.webp",
-      "title": "Auditorio",
-      "category": "edu",
-      "featured": true,
-      "alt": "Eduardo elegante con camisa blanca en el auditorio del teatro",
-      "width": 1920,
-      "height": 2560
-    },
-    {
-      "id": "edu-17",
-      "src": "/images/edu/17.webp",
-      "title": "Gorra deportiva",
-      "category": "edu",
-      "featured": false,
-      "alt": "Eduardo con gorra deportiva GAP y expresión desenfadada",
-      "width": 1920,
-      "height": 2560
-    },
-    {
-      "id": "edu-18",
-      "src": "/images/edu/18.webp",
-      "title": "Costas de Aragua",
-      "category": "edu",
-      "featured": false,
-      "alt": "Eduardo de perfil con sombrero de paja y chemise de Corpotur Aragua",
-      "width": 1920,
-      "height": 2560
     },
     {
       "id": "edu-19",
@@ -577,6 +538,836 @@
       "alt": "Escultura clásica de una madre con su hijo en el hall interior del edificio",
       "width": 1920,
       "height": 2560
+    },
+    {
+      "id": "edu-20",
+      "src": "/images/edu/20.webp",
+      "title": "Gorra roja",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo con gorra roja y sudadera azul mirando a la cámara",
+      "width": 718,
+      "height": 803
+    },
+    {
+      "id": "edu-21",
+      "src": "/images/edu/21.webp",
+      "title": "Puchero y visera",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo con gorra roja invertida haciendo un gesto gracioso",
+      "width": 718,
+      "height": 801
+    },
+    {
+      "id": "edu-22",
+      "src": "/images/edu/22.webp",
+      "title": "Navidad en blanco y negro",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo de pie junto al árbol navideño en fotografía monocromática",
+      "width": 626,
+      "height": 891
+    },
+    {
+      "id": "edu-23",
+      "src": "/images/edu/23.webp",
+      "title": "Pausa y café",
+      "category": "edu",
+      "featured": false,
+      "alt": "Primer plano de Eduardo bebiendo en un vaso plástico",
+      "width": 620,
+      "height": 886
+    },
+    {
+      "id": "edu-24",
+      "src": "/images/edu/24.webp",
+      "title": "Camino en el auto",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo sentado en el asiento trasero del vehículo con camiseta blanca",
+      "width": 717,
+      "height": 812
+    },
+    {
+      "id": "edu-25",
+      "src": "/images/edu/25.webp",
+      "title": "Luz en la ruta",
+      "category": "edu",
+      "featured": false,
+      "alt": "Selfie de Eduardo con luz lateral durante un viaje en auto",
+      "width": 718,
+      "height": 819
+    },
+    {
+      "id": "edu-26",
+      "src": "/images/edu/26.webp",
+      "title": "Silencio dorado",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo con el dedo en los labios iluminado por luz cálida de atardecer",
+      "width": 622,
+      "height": 888
+    },
+    {
+      "id": "edu-27",
+      "src": "/images/edu/27.webp",
+      "title": "Encuadre",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo formando un marco fotográfico con sus manos en blanco y negro",
+      "width": 637,
+      "height": 868
+    },
+    {
+      "id": "paisaje-06",
+      "src": "/images/paisaje/06.webp",
+      "title": "Sendero arbolado",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Camino del parque flanqueado por árboles de ramas desnudas bajo cielo claro",
+      "width": 638,
+      "height": 713
+    },
+    {
+      "id": "paisaje-07",
+      "src": "/images/paisaje/07.webp",
+      "title": "Copa verde",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Perspectiva ascendente de las ramas frondosas de un gran árbol",
+      "width": 639,
+      "height": 715
+    },
+    {
+      "id": "amigos-12",
+      "src": "/images/amigos/12.webp",
+      "title": "Sonrisas compartidas",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Eduardo y su amiga posando sonrientes al aire libre",
+      "width": 718,
+      "height": 635
+    },
+    {
+      "id": "paisaje-08",
+      "src": "/images/paisaje/08.webp",
+      "title": "Túnel de ramas",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Paseo sombreado bajo un gran dosel de árboles en el parque",
+      "width": 636,
+      "height": 711
+    },
+    {
+      "id": "paisaje-09",
+      "src": "/images/paisaje/09.webp",
+      "title": "Tarde en el parque",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Extensión de parque con árboles espaciados y suelo de hojas secas",
+      "width": 637,
+      "height": 693
+    },
+    {
+      "id": "urbano-10",
+      "src": "/images/urbano/10.webp",
+      "title": "All Star",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Primer plano de zapatilla Converse blanca sobre suelo de terracota soleado",
+      "width": 623,
+      "height": 718
+    },
+    {
+      "id": "urbano-11",
+      "src": "/images/urbano/11.webp",
+      "title": "Mind Control",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Detalle de tipografía estampada en espalda de camiseta en blanco y negro",
+      "width": 718,
+      "height": 631
+    },
+    {
+      "id": "urbano-12",
+      "src": "/images/urbano/12.webp",
+      "title": "Mensaje en el asfalto",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Hoja con dibujo sobre el pavimento urbano con sombra proyectada",
+      "width": 718,
+      "height": 654
+    },
+    {
+      "id": "paisaje-10",
+      "src": "/images/paisaje/10.webp",
+      "title": "Ramas al crepúsculo",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Intrincada silueta de ramas de árbol recortadas contra el cielo del anochecer",
+      "width": 718,
+      "height": 635
+    },
+    {
+      "id": "urbano-13",
+      "src": "/images/urbano/13.webp",
+      "title": "Retrovisor nocturno",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Destellos de farolas y tráfico reflejados en el retrovisor en la noche",
+      "width": 716,
+      "height": 643
+    },
+    {
+      "id": "amigos-13",
+      "src": "/images/amigos/13.webp",
+      "title": "Paso de clases",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Vista superior casual de compañeros de clase reunidos al salir del aula",
+      "width": 614,
+      "height": 705
+    },
+    {
+      "id": "urbano-14",
+      "src": "/images/urbano/14.webp",
+      "title": "Conejito compañero",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Pequeño peluche de conejo blanco sujeto al cinturón en blanco y negro",
+      "width": 720,
+      "height": 625
+    },
+    {
+      "id": "amigos-14",
+      "src": "/images/amigos/14.webp",
+      "title": "Apoyo y cariño",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Amiga apoyando la cabeza en el hombro de Eduardo con divertida mueca",
+      "width": 718,
+      "height": 639
+    },
+    {
+      "id": "urbano-15",
+      "src": "/images/urbano/15.webp",
+      "title": "Caracas monumental",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Letrero de bienvenida a Caracas con colinas verdes y banderas de fondo",
+      "width": 715,
+      "height": 633
+    },
+    {
+      "id": "urbano-16",
+      "src": "/images/urbano/16.webp",
+      "title": "Torre y palmeras",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Campanario colonial elevándose sobre copas de palmeras y cielo azul",
+      "width": 624,
+      "height": 719
+    },
+    {
+      "id": "urbano-17",
+      "src": "/images/urbano/17.webp",
+      "title": "Fuente de la plaza",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Fuente clásica de agua con chorros en plaza histórica colonial en blanco y negro",
+      "width": 715,
+      "height": 639
+    },
+    {
+      "id": "urbano-18",
+      "src": "/images/urbano/18.webp",
+      "title": "Columnas clásicas",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Majestuosas columnas y esculturas neoclásicas en edificio histórico de Caracas",
+      "width": 635,
+      "height": 720
+    },
+    {
+      "id": "urbano-19",
+      "src": "/images/urbano/19.webp",
+      "title": "Pasaje de paraguas",
+      "category": "urbano",
+      "featured": true,
+      "alt": "Cielo de sombrillas flotantes de colores vibrantes en el Pasaje Linares",
+      "width": 718,
+      "height": 636
+    },
+    {
+      "id": "urbano-20",
+      "src": "/images/urbano/20.webp",
+      "title": "Batido en mano",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Bebida helada de frutas disfrutada en un paseo por la ciudad",
+      "width": 718,
+      "height": 630
+    },
+    {
+      "id": "amigos-15",
+      "src": "/images/amigos/15.webp",
+      "title": "Reflejos en el museo",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Eduardo y sus amigas posando frente al espejo en una visita cultural en B&W",
+      "width": 718,
+      "height": 635
+    },
+    {
+      "id": "edu-28",
+      "src": "/images/edu/28.webp",
+      "title": "Traje y corbata",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo con elegante traje negro y camisa blanca posando en el pasillo",
+      "width": 718,
+      "height": 878
+    },
+    {
+      "id": "edu-29",
+      "src": "/images/edu/29.webp",
+      "title": "Mirada reflexiva",
+      "category": "edu",
+      "featured": false,
+      "alt": "Retrato en blanco y negro de Eduardo de gala con mirada serena hacia un lado",
+      "width": 632,
+      "height": 949
+    },
+    {
+      "id": "edu-30",
+      "src": "/images/edu/30.webp",
+      "title": "Salto de celebración",
+      "category": "edu",
+      "featured": true,
+      "alt": "Eduardo saltando de alegría con traje formal frente a mural decorativo",
+      "width": 719,
+      "height": 870
+    },
+    {
+      "id": "paisaje-11",
+      "src": "/images/paisaje/11.webp",
+      "title": "Ladera de hortensias",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Inmenso manto de hortensias en flor cubriendo la pendiente de la Colonia Tovar",
+      "width": 718,
+      "height": 641
+    },
+    {
+      "id": "paisaje-12",
+      "src": "/images/paisaje/12.webp",
+      "title": "Puente colgante",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Pasarela de madera suspendida sobre la vegetación hacia una cabaña",
+      "width": 718,
+      "height": 632
+    },
+    {
+      "id": "paisaje-13",
+      "src": "/images/paisaje/13.webp",
+      "title": "Valles de la Colonia",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Paisaje montañoso con casas tradicionales de techos rojos entre el verdor",
+      "width": 718,
+      "height": 638
+    },
+    {
+      "id": "urbano-21",
+      "src": "/images/urbano/21.webp",
+      "title": "Café Tovar",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Mural rústico y estantes con productos tradicionales de café artesanal",
+      "width": 714,
+      "height": 611
+    },
+    {
+      "id": "amigos-16",
+      "src": "/images/amigos/16.webp",
+      "title": "Viaje en grupo",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Eduardo y amigas sonrientes junto al autobús de excursión a la Colonia Tovar",
+      "width": 718,
+      "height": 627
+    },
+    {
+      "id": "urbano-22",
+      "src": "/images/urbano/22.webp",
+      "title": "Torre colonial alemana",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Campanario tradicional de entramado de madera de la Colonia Tovar",
+      "width": 607,
+      "height": 641
+    },
+    {
+      "id": "edu-31",
+      "src": "/images/edu/31.webp",
+      "title": "Brazos al valle",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo con los brazos abiertos contemplando las montañas de Aragua",
+      "width": 581,
+      "height": 709
+    },
+    {
+      "id": "paisaje-14",
+      "src": "/images/paisaje/14.webp",
+      "title": "Die Mühle",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Mirador de madera rústica enmarcando la vista hacia el poblado montañoso",
+      "width": 718,
+      "height": 637
+    },
+    {
+      "id": "urbano-23",
+      "src": "/images/urbano/23.webp",
+      "title": "Yo amo Colonia Tovar",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Letrero turístico con corazón rojo sobre la panorámica del pueblo",
+      "width": 717,
+      "height": 641
+    },
+    {
+      "id": "edu-32",
+      "src": "/images/edu/32.webp",
+      "title": "Media sonrisa",
+      "category": "edu",
+      "featured": false,
+      "alt": "Selfie en el espejo de Eduardo con media sonrisa y teléfono blanco en B&W",
+      "width": 718,
+      "height": 631
+    },
+    {
+      "id": "amigos-17",
+      "src": "/images/amigos/17.webp",
+      "title": "Trío de amigos",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Eduardo y dos amigos posando distendidos frente al espejo de la habitación",
+      "width": 711,
+      "height": 621
+    },
+    {
+      "id": "amigos-18",
+      "src": "/images/amigos/18.webp",
+      "title": "Cómplices y gafas",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Eduardo y su amiga con gafas redondas haciendo el gesto de guardar el secreto",
+      "width": 549,
+      "height": 693
+    },
+    {
+      "id": "paisaje-15",
+      "src": "/images/paisaje/15.webp",
+      "title": "Atardecer en la vía",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Cielo crepuscular con tonos rojizos y violetas sobre la silueta de los árboles",
+      "width": 718,
+      "height": 868
+    },
+    {
+      "id": "paisaje-16",
+      "src": "/images/paisaje/16.webp",
+      "title": "Sombra de palmeras",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Playa caribeña con hileras de palmeras cocoteras y aguas tranquilas",
+      "width": 718,
+      "height": 872
+    },
+    {
+      "id": "paisaje-17",
+      "src": "/images/paisaje/17.webp",
+      "title": "Piedras y arena",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Cantos rodados y brotes verdes descansando sobre la arena costera",
+      "width": 717,
+      "height": 865
+    },
+    {
+      "id": "edu-33",
+      "src": "/images/edu/33.webp",
+      "title": "Descanso en casa",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo recostado en el sofá con camiseta blanca y expresión tranquila",
+      "width": 698,
+      "height": 869
+    },
+    {
+      "id": "edu-34",
+      "src": "/images/edu/34.webp",
+      "title": "Compañero Luigi",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo mostrando una figurita de colección de Luigi junto a su mejilla",
+      "width": 718,
+      "height": 872
+    },
+    {
+      "id": "urbano-24",
+      "src": "/images/urbano/24.webp",
+      "title": "David en grafiti",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Mural urbano de estilo pop con la escultura clásica del David intervenida con color",
+      "width": 718,
+      "height": 886
+    },
+    {
+      "id": "urbano-25",
+      "src": "/images/urbano/25.webp",
+      "title": "Letras en la pared",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Diseño tipográfico mural sobre mañanas, café y felicidad en heladería",
+      "width": 716,
+      "height": 861
+    },
+    {
+      "id": "urbano-26",
+      "src": "/images/urbano/26.webp",
+      "title": "Rincón selfie",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Pared de follaje verde con letrero de neón rosa y logo de Flor de la Crema",
+      "width": 718,
+      "height": 852
+    },
+    {
+      "id": "amigos-19",
+      "src": "/images/amigos/19.webp",
+      "title": "Señal de paz",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Eduardo y su compañero haciendo la señal de paz recostados",
+      "width": 718,
+      "height": 872
+    },
+    {
+      "id": "edu-35",
+      "src": "/images/edu/35.webp",
+      "title": "Lentes redondos",
+      "category": "edu",
+      "featured": false,
+      "alt": "Primer plano de Eduardo con lentes redondos y chaqueta oscura en blanco y negro",
+      "width": 718,
+      "height": 883
+    },
+    {
+      "id": "edu-36",
+      "src": "/images/edu/36.webp",
+      "title": "Espejo de cuerpo entero",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo con suéter azul marino sobre camisa blanca frente al espejo",
+      "width": 717,
+      "height": 880
+    },
+    {
+      "id": "edu-37",
+      "src": "/images/edu/37.webp",
+      "title": "Luces de diciembre",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo sonriendo junto a las ramas iluminadas del árbol navideño",
+      "width": 718,
+      "height": 880
+    },
+    {
+      "id": "edu-38",
+      "src": "/images/edu/38.webp",
+      "title": "Chaqueta camel",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo sentado en un café con chaqueta marrón mirando hacia arriba",
+      "width": 656,
+      "height": 866
+    },
+    {
+      "id": "urbano-27",
+      "src": "/images/urbano/27.webp",
+      "title": "En la galería",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Visitante admirando y fotografiando un gran lienzo en sala de arte moderno",
+      "width": 718,
+      "height": 882
+    },
+    {
+      "id": "urbano-28",
+      "src": "/images/urbano/28.webp",
+      "title": "Muro de retratos",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Composición de retratos pictóricos al óleo y dibujos sobre pared blanca de museo",
+      "width": 718,
+      "height": 879
+    },
+    {
+      "id": "urbano-29",
+      "src": "/images/urbano/29.webp",
+      "title": "Aguja gótica",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Cima de iglesia neogótica elevándose con esbeltez y cruz hacia el cielo nublado",
+      "width": 718,
+      "height": 859
+    },
+    {
+      "id": "urbano-30",
+      "src": "/images/urbano/30.webp",
+      "title": "Diana circular",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Instalación artística colgante con figura enmascarada sobre diana tricolor",
+      "width": 632,
+      "height": 942
+    },
+    {
+      "id": "amigos-20",
+      "src": "/images/amigos/20.webp",
+      "title": "Doble cámara",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Eduardo apuntando con cámara compacta y amiga con smartphone ante el espejo",
+      "width": 719,
+      "height": 865
+    },
+    {
+      "id": "retratos-11",
+      "src": "/images/retratos/11.webp",
+      "title": "Ventana de concreto",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Persona solitaria mirando al exterior a través de la ventana de una estructura en B&W",
+      "width": 716,
+      "height": 864
+    },
+    {
+      "id": "paisaje-18",
+      "src": "/images/paisaje/18.webp",
+      "title": "Follaje rojizo",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Hojas translúcidas en tonos rojos y dorados iluminadas por la luz del sol",
+      "width": 718,
+      "height": 876
+    },
+    {
+      "id": "retratos-12",
+      "src": "/images/retratos/12.webp",
+      "title": "Risa de chocolate",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Retrato espontáneo de un niño riéndose con las comisuras manchadas de chocolate",
+      "width": 718,
+      "height": 864
+    },
+    {
+      "id": "edu-39",
+      "src": "/images/edu/39.webp",
+      "title": "Luigi en alto",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo sosteniendo la figura de Luigi con camiseta azul y fondo neutro",
+      "width": 718,
+      "height": 873
+    },
+    {
+      "id": "paisaje-19",
+      "src": "/images/paisaje/19.webp",
+      "title": "Remanso del río",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Agua transparente fluyendo apaciblemente sobre rocas bajo la sombra vegetal",
+      "width": 717,
+      "height": 866
+    },
+    {
+      "id": "urbano-31",
+      "src": "/images/urbano/31.webp",
+      "title": "Lámparas de papel",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Área de mesas con lámparas de papel blanco y enredaderas verdes colgantes",
+      "width": 718,
+      "height": 873
+    },
+    {
+      "id": "edu-40",
+      "src": "/images/edu/40.webp",
+      "title": "Cuadros azules",
+      "category": "edu",
+      "featured": false,
+      "alt": "Toma en plano picado de Eduardo luciendo camisa a cuadros sobre camiseta clara",
+      "width": 718,
+      "height": 876
+    },
+    {
+      "id": "paisaje-20",
+      "src": "/images/paisaje/20.webp",
+      "title": "Camino de araguaneyes",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Vehículo todoterreno avanzando por carretera rural rodeada de árboles en flor",
+      "width": 718,
+      "height": 877
+    },
+    {
+      "id": "paisaje-21",
+      "src": "/images/paisaje/21.webp",
+      "title": "Iguana al sol",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Iguana verde descansando en la rama alta de un árbol florecido de amarillo",
+      "width": 718,
+      "height": 861
+    },
+    {
+      "id": "edu-41",
+      "src": "/images/edu/41.webp",
+      "title": "Retrato en visor",
+      "category": "edu",
+      "featured": false,
+      "alt": "Imagen de Eduardo con corbata capturada a través de la pantalla LCD de la cámara",
+      "width": 718,
+      "height": 819
+    },
+    {
+      "id": "edu-42",
+      "src": "/images/edu/42.webp",
+      "title": "Sombrero playero",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo en la arena con sombrero de paja de ala ancha y gafas oscuras",
+      "width": 719,
+      "height": 855
+    },
+    {
+      "id": "paisaje-22",
+      "src": "/images/paisaje/22.webp",
+      "title": "Flamencos en la laguna",
+      "category": "paisaje",
+      "featured": true,
+      "alt": "Grupo de flamencos rosados en aguas tranquilas con cerros verdes de fondo",
+      "width": 718,
+      "height": 865
+    },
+    {
+      "id": "paisaje-23",
+      "src": "/images/paisaje/23.webp",
+      "title": "Jardín de palmas",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Sendero de parque tropical con palmeras de base pintada de blanco y jardín florido",
+      "width": 718,
+      "height": 862
+    },
+    {
+      "id": "retratos-13",
+      "src": "/images/retratos/13.webp",
+      "title": "Contemplando el valle",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Joven de espaldas con gorra mirando la inmensidad del paisaje desde la baranda",
+      "width": 710,
+      "height": 808
+    },
+    {
+      "id": "urbano-32",
+      "src": "/images/urbano/32.webp",
+      "title": "Geometría y espiral",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Lienzo abstracto de arte moderno con círculos, espirales y colores cálidos",
+      "width": 624,
+      "height": 689
+    },
+    {
+      "id": "urbano-33",
+      "src": "/images/urbano/33.webp",
+      "title": "Basílica gótica",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Fachada majestuosa de templo gótico con detalles arquitectónicos tallados",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "urbano-34",
+      "src": "/images/urbano/34.webp",
+      "title": "Cruz-Diez",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Fachada curvada del Museo de la Estampa y del Diseño Carlos Cruz-Diez",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "paisaje-24",
+      "src": "/images/paisaje/24.webp",
+      "title": "Corriente cristalina",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Piedras del lecho de río acariciadas por aguas transparentes bajo el sol",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "paisaje-25",
+      "src": "/images/paisaje/25.webp",
+      "title": "Brote en la orilla",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Pequeña palma creciendo en la arena junto al mar resplandeciente",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "paisaje-26",
+      "src": "/images/paisaje/26.webp",
+      "title": "Flores silvestres",
+      "category": "paisaje",
+      "featured": false,
+      "alt": "Ramas de flores violetas floreciendo frente a un amplio césped verde",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "amigos-21",
+      "src": "/images/amigos/21.webp",
+      "title": "Risas y señales de paz",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Tres amigas posando alegres en la mesa en retrato en blanco y negro",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "urbano-35",
+      "src": "/images/urbano/35.webp",
+      "title": "Mesa de hockey",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Juego de mesa clásico de hockey sobre hielo con pequeños jugadores en acción",
+      "width": 960,
+      "height": 1280
     }
   ]
 }

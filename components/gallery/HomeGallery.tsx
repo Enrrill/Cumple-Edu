@@ -3,7 +3,6 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import type { Category, Photo } from "@/lib/albums";
-import { HeroCarousel } from "./HeroCarousel";
 import { CategorySection } from "./CategorySection";
 
 /**
@@ -15,19 +14,19 @@ const Lightbox = dynamic(() => import("./Lightbox").then((mod) => mod.Lightbox),
 });
 
 interface HomeGalleryProps {
-  featured: Photo[];
   sections: { category: Category; photos: Photo[] }[];
 }
 
 /**
- * Bloque interactivo de la portada (T4): hero + bandas de categoría + visor.
+ * Bloque interactivo de la portada (T4): bandas de categoría + visor.
+ * El hero vive fuera (`app/page.tsx`, Server Component sin JS).
  * Vive en el lado cliente porque `onOpen` cruza la frontera server→client y
  * el estado del lightbox no puede vivir en un Server Component; `app/page.tsx`
  * sigue siendo servidor y solo le pasa datos serializables por props.
- * Cada colección (destacadas, fotos de una categoría) abre su propio
- * lightbox: la navegación con ← → nunca sale de la colección clicada.
+ * Cada colección (fotos de una categoría) abre su propio lightbox: la
+ * navegación con ← → nunca sale de la colección clicada.
  */
-export function HomeGallery({ featured, sections }: HomeGalleryProps) {
+export function HomeGallery({ sections }: HomeGalleryProps) {
   // Estado del visor: la colección activa + su índice (null = cerrado).
   const [viewer, setViewer] = useState<{ photos: Photo[]; index: number } | null>(
     null,
@@ -42,7 +41,6 @@ export function HomeGallery({ featured, sections }: HomeGalleryProps) {
 
   return (
     <>
-      <HeroCarousel photos={featured} onOpen={openWith(featured)} />
       {sections.map(({ category, photos }) => (
         <CategorySection
           key={category.id}

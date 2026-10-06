@@ -24,6 +24,8 @@ export interface Photo {
 
 export interface SiteInfo {
   name: string;
+  /** Id de la foto fija del hero (una de `photos`). */
+  heroPhotoId: string;
   bio: string;
   dedication: string;
   credit: string;
@@ -47,9 +49,12 @@ export function getCategories(): Category[] {
   return album.categories;
 }
 
-/** Fotos destacadas para el carrusel del hero. */
-export function getFeatured(): Photo[] {
-  return album.photos.filter((photo) => photo.featured);
+/** Foto fija del hero: `site.heroPhotoId`, con reserva en la primera foto. */
+export function getHeroPhoto(): Photo {
+  return (
+    album.photos.find((photo) => photo.id === album.site.heroPhotoId) ??
+    album.photos[0]
+  );
 }
 
 /** Categoría por id, o undefined si no existe. */
