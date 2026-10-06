@@ -96,8 +96,6 @@ export function HeroCarousel({ photos, onOpen }: HeroCarouselProps) {
                   fill
                   sizes="100vw"
                   preload={index === 0}
-                  placeholder={photo.blur ? "blur" : undefined}
-                  blurDataURL={photo.blur}
                   className="object-cover"
                 />
               </button>

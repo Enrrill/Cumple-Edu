@@ -34,7 +34,7 @@ export function PhotoCard({ photo, onOpen, priority }: PhotoCardProps) {
     <button
       type="button"
       onClick={() => onOpen(photo.id)}
-      aria-label={`Ver foto ${photo.title}`}
+      aria-label={`Ver foto ${photo.title} · ${frame}`}
       className="group/card block w-full cursor-pointer text-left transition-opacity motion-safe:transition-opacity group-hover:opacity-60 group-hover:hover:opacity-100 group-hover:focus-visible:opacity-100 hover:opacity-100 focus-visible:opacity-100"
     >
       <div className="border border-line bg-surface transition-shadow motion-safe:transition hover:shadow-md">
@@ -52,8 +52,6 @@ export function PhotoCard({ photo, onOpen, priority }: PhotoCardProps) {
             width={photo.width}
             height={photo.height}
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-            placeholder={photo.blur ? "blur" : undefined}
-            blurDataURL={photo.blur}
             preload={priority}
             loading={priority ? undefined : "lazy"}
             className="block h-auto w-full transition-transform motion-safe:transition-transform motion-safe:duration-300 group-hover/card:scale-[1.02]"

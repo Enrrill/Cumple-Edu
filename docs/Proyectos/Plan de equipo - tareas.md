@@ -98,7 +98,6 @@ export interface Photo {
   alt: string;
   width: number;
   height: number;
-  blur?: string;      // data URI de vista previa desenfocada
 }
 
 export interface SiteInfo {

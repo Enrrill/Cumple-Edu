@@ -20,7 +20,6 @@ export interface Photo {
   alt: string;
   width: number;
   height: number;
-  blur?: string;
 }
 
 export interface SiteInfo {

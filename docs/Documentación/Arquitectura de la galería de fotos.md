@@ -104,8 +104,7 @@ galeria-fotos/
       "featured": true,
       "alt": "Retrato de perfil a contraluz al atardecer",
       "width": 1600,
-      "height": 1067,
-      "blur": "data:image/jpeg;base64,..."
+      "height": 1067
     }
   ]
 }
@@ -119,7 +118,8 @@ Campos de cada foto:
 - `category`: enlace con el `id` de una categoría.
 - `featured`: si es `true`, aparece en el carrusel de portada.
 - `width` y `height`: dimensiones reales; evitan el salto de diseño al cargar.
-- `blur`: vista previa desenfocada mientras se carga la imagen.
+  (Las vistas previas `blur` se retiraron en T5: 76 KB de data-URI duplicados
+  en el HTML; el marco `bg-surface` hace de placeholder.)
 
 ### Flujo de imágenes
 
