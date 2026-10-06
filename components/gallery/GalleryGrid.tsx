@@ -3,7 +3,6 @@ import { PhotoCard } from "./PhotoCard";
 
 export interface GalleryGridProps {
   photos: Photo[];
-  onOpen: (id: string) => void;
   columns?: 1 | 2 | 3 | 4;
 }
 
@@ -20,7 +19,7 @@ const COLUMN_CLASS: Record<NonNullable<GalleryGridProps["columns"]>, string> = {
   4: "grid-cols-4",
 };
 
-export function GalleryGrid({ photos, onOpen, columns }: GalleryGridProps) {
+export function GalleryGrid({ photos, columns }: GalleryGridProps) {
   const layout = columns
     ? COLUMN_CLASS[columns]
     : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
@@ -31,7 +30,7 @@ export function GalleryGrid({ photos, onOpen, columns }: GalleryGridProps) {
     // fotos apaisadas flotaban en medio de filas de retratos.
     <div className={`group grid items-start gap-4 md:gap-6 ${layout}`}>
       {photos.map((photo) => (
-        <PhotoCard key={photo.id} photo={photo} onOpen={onOpen} />
+        <PhotoCard key={photo.id} photo={photo} />
       ))}
     </div>
   );

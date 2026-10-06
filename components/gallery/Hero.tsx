@@ -23,6 +23,10 @@ export function Hero({ photo }: HeroProps) {
         fill
         sizes="100vw"
         priority
+        fetchPriority="high"
+        // q=60: en slow-4G la imagen del LCP pesa ~90 KB en vez de ~136 KB
+        // y la diferencia de nitidez en una banda de 60vh es imperceptible.
+        quality={60}
         className="object-cover object-[50%_55%]"
       />
 

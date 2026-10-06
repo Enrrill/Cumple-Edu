@@ -6,15 +6,16 @@ import {
 } from "@/lib/albums";
 import { Bio } from "@/components/layout/Bio";
 import { Hero } from "@/components/gallery/Hero";
-import { HomeGallery } from "@/components/gallery/HomeGallery";
+import { CategorySection } from "@/components/gallery/CategorySection";
+import { PhotoLightbox } from "@/components/gallery/PhotoLightbox";
 
 /**
  * Portada (T4) — composición «Hoja de contactos» (DESIGN.md):
  * hero a sangre → bandas con rejilla → bio del fotógrafo → colofón.
  * El encabezado y el pie fijos viven en `app/layout.tsx` para que todas las
  * rutas (categoría y 404 incluidas) compartan la navegación.
- * Server Component: solo pasa datos por props; el hero es HTML estático y
- * la interacción (rejillas, lightbox) vive en `HomeGallery` (cliente).
+ * Server Component íntegro: hero, secciones y tarjetas son HTML estático;
+ * el único cliente de la galería es `PhotoLightbox` (visor + delegación).
  */
 export default function Home() {
   const site = getSite();
@@ -30,7 +31,10 @@ export default function Home() {
       {/* h1 único de la portada: el nombre visible vive en el encabezado fijo */}
       <h1 className="sr-only">{`${site.name} · Galería de fotos de cumpleaños`}</h1>
       <Hero photo={hero} />
-      <HomeGallery sections={sections} />
+      {sections.map(({ category, photos }) => (
+        <CategorySection key={category.id} category={category} photos={photos} />
+      ))}
+      <PhotoLightbox />
       <Bio site={site} />
     </main>
   );

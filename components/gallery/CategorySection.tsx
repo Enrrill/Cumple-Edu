@@ -5,7 +5,6 @@ import { GalleryGrid } from "./GalleryGrid";
 export interface CategorySectionProps {
   category: Category;
   photos: Photo[];
-  onOpen: (id: string) => void;
 }
 
 /**
@@ -42,11 +41,15 @@ const SECTION_CSS = `
 }
 `;
 
-export function CategorySection({ category, photos, onOpen }: CategorySectionProps) {
+export function CategorySection({ category, photos }: CategorySectionProps) {
   const count = photos.length;
 
   return (
-    <section id={category.id} aria-labelledby={`${category.id}-title`} className="pt-14 pb-10 md:pt-24 md:pb-16">
+    <section
+      id={category.id}
+      aria-labelledby={`${category.id}-title`}
+      className="pt-14 pb-10 md:pt-24 md:pb-16"
+    >
       <style href="category-section-plate" precedence="low">
         {SECTION_CSS}
       </style>
@@ -74,7 +77,7 @@ export function CategorySection({ category, photos, onOpen }: CategorySectionPro
           </p>
         </header>
 
-        <GalleryGrid photos={photos} onOpen={onOpen} />
+        <GalleryGrid photos={photos} />
       </div>
     </section>
   );

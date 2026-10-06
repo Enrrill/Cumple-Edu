@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getCategories, getCategory, getPhotosByCategory } from "@/lib/albums";
-import { CategoryGallery } from "@/components/gallery/CategoryGallery";
+import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { PhotoLightbox } from "@/components/gallery/PhotoLightbox";
 
 export function generateStaticParams() {
   return getCategories().map((category) => ({ slug: category.id }));
@@ -64,7 +65,8 @@ export default async function CategoryPage({ params }: PageProps<"/categoria/[sl
       </header>
 
       <div className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
-        <CategoryGallery photos={photos} />
+        <GalleryGrid photos={photos} />
+        <PhotoLightbox />
       </div>
     </main>
   );

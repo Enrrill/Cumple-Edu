@@ -9,16 +9,21 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   display: "swap",
+  // Sin preload: las fuentes no deben pelear por ancho de banda en la cola
+  // crítica (doc → CSS → LCP); con `swap` el texto pinta con la de reserva.
+  preload: false,
 });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  preload: false,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  preload: false,
 });
 
 // Título y descripción con el nombre real del fotógrafo (Eduardo).

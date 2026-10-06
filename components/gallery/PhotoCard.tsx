@@ -1,15 +1,15 @@
-"use client";
-
 import Image from "next/image";
 import type { Photo } from "@/lib/albums";
 
 export interface PhotoCardProps {
   photo: Photo;
-  onOpen: (id: string) => void;
   priority?: boolean;
 }
 
 /**
+ * Tarjeta de foto — Server Component (T5): sin JS propio; el clic lo
+ * captura la delegación global de `PhotoLightbox` mediante los atributos
+ * `data-photo-*` (hidratar 133 tarjetas encarecía el TBT de la portada).
  * Prefijo de categoría en dos letras (DESIGN.md pide `RT-04` pero no existe
  * mapa de prefijos): primera letra + primera consonante del id
  * (`retrato` → RT, `paisaje` → PS, `bn` → BN, `urbano` → UR).
@@ -27,13 +27,15 @@ function frameNumber(id: string): string {
   return number.padStart(2, "0");
 }
 
-export function PhotoCard({ photo, onOpen, priority }: PhotoCardProps) {
+export function PhotoCard({ photo, priority }: PhotoCardProps) {
   const frame = `${categoryPrefix(photo.category)}-${frameNumber(photo.id)}`;
 
   return (
     <button
       type="button"
-      onClick={() => onOpen(photo.id)}
+      data-photo-open={photo.id}
+      data-photo-collection={photo.category}
+      data-photo-title={photo.title}
       aria-label={`Ver foto ${photo.title} · ${frame}`}
       className="group/card block w-full cursor-pointer text-left transition-opacity motion-safe:transition-opacity group-hover:opacity-60 group-hover:hover:opacity-100 group-hover:focus-visible:opacity-100 hover:opacity-100 focus-visible:opacity-100"
     >
@@ -54,6 +56,9 @@ export function PhotoCard({ photo, onOpen, priority }: PhotoCardProps) {
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
             preload={priority}
             loading={priority ? undefined : "lazy"}
+            // Prioridad baja: las tarjetas (perezosas) no deben adelantarse
+            // al CSS, las fuentes ni a la imagen del hero en la cola de red.
+            fetchPriority={priority ? "high" : "low"}
             className="block h-auto w-full transition-transform motion-safe:transition-transform motion-safe:duration-300 group-hover/card:scale-[1.02]"
           />
         </div>
