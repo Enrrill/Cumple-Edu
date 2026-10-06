@@ -103,6 +103,11 @@ Reglas:
   carga prioritaria solo en la primera del carrusel.
 - Lightbox importado con `next/dynamic` (`ssr: false`).
 - Objetivo: **Lighthouse ≥ 95** en rendimiento sobre el despliegue real.
+- Resultado (05-10-2026, Lighthouse 13.5 sobre producción): **96 desktop,
+  97 sin simulación, 70 en móvil simulado** (accesibilidad, buenas
+  prácticas y SEO: 100 en las tres corridas). ≥95 se cumple sin
+  simulación y en escritorio; en móvil simulado el suelo es la
+  evaluación del runtime React de la portada completa (~2 s de TBT).
 
 ## Decisiones resueltas (antes «pendientes»)
 

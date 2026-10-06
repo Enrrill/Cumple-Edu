@@ -16,7 +16,7 @@ area: galeria-fotos
 | Campo | Valor |
 | --- | --- |
 | Objetivo | Página-galería como regalo de cumpleaños para un fotógrafo |
-| Estado | En construcción (portada integrada; faltan pasadas finales) |
+| Estado | Entrega lista (T5 cerrado); pendiente la edición manual de bio y dedicatoria |
 | Stack | Next.js + React + TypeScript + Tailwind CSS |
 | Contenido | Fotos estáticas en `public/` + metadatos en `albums.json` |
 | Backend y BD | No procede (ver [Decisión - galería sin backend](../Documentaci%C3%B3n/Decisi%C3%B3n%20-%20galer%C3%ADa%20sin%20backend.md)) |
@@ -34,9 +34,10 @@ area: galeria-fotos
 - [x] Selección de fotos y categorías (54 fotos reales organizadas en 5 categorías temáticas, `syntheticImages: false` en `albums.json`)
 - [x] Componentes: hero con carrusel, secciones, lightbox, bio, footer (C1-C7, PRs #1-#7, fusionados en `main`)
 - [x] Portada ensamblada en `app/page.tsx` con `HomeGallery` (T4, PR #8, verificada en producción)
-- [ ] Pasadas finales: `polish` y `audit`
+- [x] Pasadas finales: `polish` y `audit` (T5: detector impeccable sin hallazgos, lint y build OK, `DESIGN.md` re-verificado contra lo construido)
 - [x] Repositorio en GitHub y despliegue en Vercel (producción: https://cumple-edu-seven.vercel.app)
-- [ ] Verificación en producción y entrega del regalo
+- [x] Verificación en producción: Lighthouse 13.5 → 96 desktop, 97 sin simulación y 70 en móvil simulado (accesibilidad, buenas prácticas y SEO: 100 en las tres corridas); inspección visual en desktop y móvil
+- [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json` y compartir la URL
 
 ## Documentación relacionada
 
@@ -49,3 +50,5 @@ area: galeria-fotos
 ## Notas
 
 - La entrega tiene fecha: el cumpleaños. Priorizar lo esencial (portada, categorías, lightbox) frente a lo opcional (dominio propio, página por categoría).
+- Lighthouse: ≥95 se cumple en escritorio y sin simulación; el móvil simulado queda en 70 porque el suelo es la evaluación del runtime React de la portada completa (~2 s de TBT). Si se exige ≥95 también ahí, la mejora es reducir el JavaScript inicial.
+- Quedan ~150 fotos sueltas en `public/` (WhatsApp/Instagram) sin referenciar en `albums.json`: decidir si se integran o se excluyen del repositorio.
