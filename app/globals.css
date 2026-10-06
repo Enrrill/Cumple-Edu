@@ -3,7 +3,7 @@
 /* Tokens de diseño — autoridad: DESIGN.md (no editar sin actualizarlo) */
 @theme {
   /* Paleta: galería nocturna verde (neutros verdes + acento esmeralda) */
-  --color-base: #0b1f17; /* bg-base      · fondo de página */
+  --color-canvas: #0b1f17; /* bg-canvas      · fondo de página */
   --color-surface: #123126; /* bg-surface   · tarjetas y bandas */
   --color-elevated: #1a4433; /* bg-elevated  · menú, lightbox, flotantes */
   --color-line: #1e4a38; /* border-line  · bordes y separadores */
@@ -21,10 +21,12 @@
 
 html {
   scroll-behavior: smooth;
+  /* Barra de scroll y controles nativos en tono de la paleta (superficies de navegador) */
+  color-scheme: dark;
 }
 
 body {
-  background: var(--color-base);
+  background: var(--color-canvas);
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
@@ -35,9 +37,28 @@ body {
   outline-offset: 2px;
 }
 
+/* Indicación de scroll del hero: deriva suave de 6px, sin rebote
+   (el detector impeccable vetaba `animate-bounce`: easing anticuado) */
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+/* El visor a pantalla completa oculta cabecera y pie: su texto blanco
+   asoma por detrás del velo (8 % de transmisión) y choca con el título */
+body.lightbox-open .site-header,
+body.lightbox-open footer {
+  visibility: hidden;
+}
+
 ::selection {
   background: var(--color-accent);
-  color: var(--color-base);
+  color: var(--color-canvas);
 }
 
 /* Sin autoplay ni desplazamientos si el sistema pide reduced-motion */

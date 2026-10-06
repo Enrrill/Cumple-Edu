@@ -39,7 +39,8 @@ export default async function CategoryPage({ params }: PageProps<"/categoria/[sl
 
   return (
     <main className="flex-1">
-      <header className="mx-auto max-w-7xl px-6 pt-14 pb-8 md:pt-24 md:pb-10">
+      {/* pt-20 mínimo: el encabezado fijo (h-16) no debe pisar el enlace */}
+      <header className="mx-auto max-w-7xl px-6 pt-20 pb-8 md:pt-24 md:pb-10">
         <Link
           href="/"
           className="mb-6 inline-flex h-11 items-center gap-2 text-base text-accent transition-colors hover:text-accent-strong"

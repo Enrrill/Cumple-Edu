@@ -32,7 +32,7 @@ La página es un regalo de cumpleaños para un fotógrafo: el arte debe ser lo p
 
 | Token | Valor inicial | Uso |
 | --- | --- | --- |
-| `bg-base` | `#0B1F17` | Fondo de página (verde bosque muy oscuro) |
+| `bg-canvas` | `#0B1F17` | Fondo de página (verde bosque muy oscuro) |
 | `bg-surface` | `#123126` | Tarjetas y bandas elevadas |
 | `bg-elevated` | `#1A4433` | Menús, lightbox y elementos flotantes |
 | `border-subtle` | `#1E4A38` | Bordes y separadores |
@@ -45,7 +45,7 @@ Reglas de uso:
 
 - El acento esmeralda no supera el 10 % de la superficie visible: guía la mirada, no compite con la foto.
 - Las fotos nunca llevan filtro de color; el verde es territorio de la interfaz.
-- Contraste mínimo AA (4.5:1) para texto, verificado sobre `bg-base` y `bg-surface`.
+- Contraste mínimo AA (4.5:1) para texto, verificado sobre `bg-canvas` y `bg-surface`.
 
 ### Tipografía
 

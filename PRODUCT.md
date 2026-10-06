@@ -33,18 +33,18 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 - Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm; carrusel con `embla-carousel-react`, lightbox con `yet-another-react-lightbox`, animaciones con `framer-motion`.
 - Contenido sin programación posible vía `albums.json` (ver `docs/Documentación/Guía de uso sin programación.md`).
 - **Fotos reales integradas**: 54 fotografías reales clasificadas en 5 categorías (edu, amigos, retratos, paisaje, urbano).
-- **Nombre**: Eduardo. Bio y dedicatoria pendientes de redactar.
+- **Nombre**: Eduardo. Bio y dedicatoria: texto de ejemplo en `albums.json`, aprobado por el mantenedor para editar después a mano.
 
 ## Brand Commitments
 
 - Dirección visual ya decidida y documentada por el usuario en `docs/Documentación/Diseño de la galería de fotos.md`: paleta en tonos verdes sobre fondo oscuro, modo *Experience*, serif con carácter en títulos. Se registra aquí como vínculo; sus valores se concretan en `DESIGN.md` durante la fase de diseño.
-- Nombre del sitio: pendiente (ver arriba).
+- Nombre del sitio: «Eduardo · Galería de fotos de cumpleaños» (metadata de `app/layout.tsx`).
 
 ## Evidence on Hand
 
 - Documentación completa en `docs/`: arquitectura, diseño, decisión sin backend, guías de despliegue y de uso, y ficha del proyecto.
-- Código de andamiaje: `app/` con layout/page/globals por defecto de create-next-app, sin componentes propios todavía.
-- **Ausencias que no deben fabricarse**: bio real ni dedicatoria real (pendientes de redactar). El contenido fotográfico y el nombre ya son reales.
+- Sitio completo y desplegado: portada ensamblada (T4), 8 componentes en `components/`, 404 y páginas por categoría; producción en Vercel.
+- **Ausencias que no deben fabricarse**: nada estructural — nombre, 54 fotos reales, bio y dedicatoria ya están. La bio y la dedicatoria son **texto de ejemplo** a la espera de la edición manual del mantenedor.
 
 ## Product Principles
 

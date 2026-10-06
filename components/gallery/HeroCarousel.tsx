@@ -66,7 +66,7 @@ export function HeroCarousel({ photos, onOpen }: HeroCarouselProps) {
 
   return (
     <section
-      className="relative h-screen min-h-[480px] w-full overflow-hidden bg-base"
+      className="relative h-screen min-h-[480px] w-full overflow-hidden bg-canvas"
       aria-roledescription="carrusel"
       aria-label="Fotos destacadas"
       onKeyDown={handleKeyDown}
@@ -106,9 +106,15 @@ export function HeroCarousel({ photos, onOpen }: HeroCarouselProps) {
         </div>
       </div>
 
+      {/* Velos: el encabezado fijo debe leerse sobre fotos claras (arriba)
+          y el contador/scroll sobre cualquier imagen (abajo). */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-base to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-linear-to-b from-canvas/80 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-linear-to-t from-canvas to-transparent"
       />
 
       <p className="absolute bottom-6 left-6 font-mono text-sm uppercase tracking-wider text-muted">
@@ -119,7 +125,7 @@ export function HeroCarousel({ photos, onOpen }: HeroCarouselProps) {
         aria-hidden="true"
         className="absolute bottom-6 left-1/2 -translate-x-1/2 text-muted"
       >
-        <ChevronDown className="h-6 w-6 motion-safe:animate-bounce" />
+        <ChevronDown className="h-6 w-6 motion-safe:animate-[scroll-hint_2.6s_ease-in-out_infinite]" />
       </div>
 
       {photos.length > 1 && (

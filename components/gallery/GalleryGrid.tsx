@@ -27,7 +27,9 @@ export function GalleryGrid({ photos, onOpen, columns }: GalleryGridProps) {
 
   return (
     // `group` es obligatorio: PhotoCard atenúa a sus hermanas con group-hover.
-    <div className={`group grid gap-4 md:gap-6 ${layout}`}>
+    // `items-start`: sin estirar, <button> centraba su contenido (UA) y las
+    // fotos apaisadas flotaban en medio de filas de retratos.
+    <div className={`group grid items-start gap-4 md:gap-6 ${layout}`}>
       {photos.map((photo) => (
         <PhotoCard key={photo.id} photo={photo} onOpen={onOpen} />
       ))}

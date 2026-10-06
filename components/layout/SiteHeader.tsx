@@ -19,7 +19,7 @@ html {
     background-color: transparent;
   }
   to {
-    background-color: color-mix(in srgb, var(--color-base) 92%, transparent);
+    background-color: color-mix(in srgb, var(--color-canvas) 92%, transparent);
   }
 }
 
@@ -33,8 +33,8 @@ html {
 
 @supports not (animation-timeline: scroll()) {
   .site-header {
-    background-color: var(--color-base);
-    background-color: color-mix(in srgb, var(--color-base) 92%, transparent);
+    background-color: var(--color-canvas);
+    background-color: color-mix(in srgb, var(--color-canvas) 92%, transparent);
   }
 }
 `;
@@ -58,7 +58,7 @@ export function SiteHeader({ name, sections }: SiteHeaderProps) {
               {sections.map((section) => (
                 <li key={section.id}>
                   <a
-                    href={`#${section.id}`}
+                    href={`/#${section.id}`}
                     className="flex h-11 items-center px-3 text-base text-ink transition-colors hover:text-accent"
                   >
                     {section.title}
@@ -83,7 +83,7 @@ export function SiteHeader({ name, sections }: SiteHeaderProps) {
                 {sections.map((section) => (
                   <li key={section.id}>
                     <a
-                      href={`#${section.id}`}
+                      href={`/#${section.id}`}
                       className="flex h-11 items-center px-4 text-base text-ink transition-colors hover:text-accent"
                     >
                       {section.title}

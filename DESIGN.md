@@ -22,7 +22,7 @@ Estrategia de color: **restrained** — neutros verdes + un solo acento.
 
 | Token (`docs/`) | Variable CSS | Utilidad Tailwind | Valor | Uso |
 | --- | --- | --- | --- | --- |
-| `bg-base` | `--color-base` | `bg-base` | `#0B1F17` | Fondo de página |
+| `bg-canvas` | `--color-canvas` | `bg-canvas` | `#0B1F17` | Fondo de página |
 | `bg-surface` | `--color-surface` | `bg-surface` | `#123126` | Tarjetas y bandas elevadas |
 | `bg-elevated` | `--color-elevated` | `bg-elevated` | `#1A4433` | Menú, lightbox, elementos flotantes |
 | `border-subtle` | `--color-line` | `border-line` | `#1E4A38` | Bordes, separadores, márgenes de fotograma |
@@ -35,7 +35,7 @@ Reglas:
 
 - El acento esmeralda **nunca supera el 10 %** de la superficie visible.
 - Las fotos **nunca** llevan filtro de color; el verde es territorio de la interfaz.
-- Contraste AA (4.5:1) sobre `bg-base` y `bg-surface` para todo el texto.
+- Contraste AA (4.5:1) sobre `bg-canvas` y `bg-surface` para todo el texto.
 - Sin degradados gratuitos: campos planos (disciplina donada por el reto Du Bois).
 
 ## Tipografía
@@ -60,22 +60,32 @@ Reglas:
 
 ## Lenguaje de componentes (hoja de contactos)
 
+- **Cabecera fija** (`SiteHeader`) y **pie** (`SiteFooter`): viven en `app/layout.tsx`,
+  acompañan a **todas las rutas** (portada, categoría y 404). Nombre en Fraunces a la
+  izquierda; anclas por categoría a la derecha con `/#sección` (vuelven a la portada y
+  hacen scroll). Transparente sobre el hero, sólida al hacer scroll (0-120 px).
 - **Fotograma** (`PhotoCard`): imagen respetando su aspect ratio nativo, marco fino `border-line`
   como el borde de la tira, número en mono abajo a la izquierda. Hover: elevación sutil +
   zoom 2-3 % + atenuación de los fotogramas hermanos (`opacity` reducida en el grupo).
+  La rejilla usa `items-start`: las tiras se alinean arriba y los apaisados no flotan
+  en medio de filas de retratos.
 - **Selección**: las destacadas llevan una **marca esmeralda** (círculo/llave `accent`) en una
   esquina — es la misma marca que se amplía en el hero. Nunca sobre la cara del sujeto.
 - **Banda de categoría** (`CategorySection`): placa de entrada con título serif grande +
   descripción corta + contador en mono (`24 fotos`), seguida de la rejilla.
-- **Hero** (`HeroCarousel`): 100 vh, foto a sangre, velo de degradado solo donde va el texto,
-  nombre en Fraunces, indicación de scroll sutil, `01 / 05` en mono. Autoplay 5-6 s, pausable.
+- **Hero** (`HeroCarousel`): 100 vh, foto a sangre, velos de degradado solo donde va el texto
+  (cabecera arriba, contador e indicación de scroll abajo), nombre en Fraunces,
+  `01 / 05` en mono. Autoplay 5-6 s, pausable.
 - **Lightbox** (`Lightbox`): fondo `bg-elevated` con opacidad alta, `object-fit: contain`,
   título + contador mono, ← → y Escape, foco atrapado y devuelto al origen.
 - **Bio**: dos columnas (retrato + texto), la dedicatoria en serif; **footer**: colofón discreto.
 
 ## Movimiento
 
-- Entradas de secciones con `framer-motion`: fundido + desplazamiento de 16-24 px, una sola vez.
+- Entradas de placa de sección en **CSS puro** (fundido + 20 px, una sola vez, con
+  `animation-timeline: view()` como progressive enhancement y parada en
+  `prefers-reduced-motion`): la sección queda Server Component y framer-motion
+  no entra en el bundle.
 - Fundidos del carrusel con ritmo de difusión de tinta (lento, 700-900 ms), nunca mecánicos.
 - Transición del lightbox: fundido 200-250 ms.
 - Todo respeta `prefers-reduced-motion`: sin autoplay ni desplazamientos (regla global ya en `globals.css`).
@@ -89,13 +99,15 @@ Reglas:
 
 ## Rendimiento (antimeta «que vaya lento»)
 
-- 100+ fotos reales: `next/image` con `sizes` correcto, `loading="lazy"` por defecto,
-  `priority` solo en las primeras del carrusel.
+- 54 fotos reales: `next/image` con `sizes` correcto, `loading="lazy"` por defecto,
+  carga prioritaria solo en la primera del carrusel.
 - Lightbox importado con `next/dynamic` (`ssr: false`).
 - Objetivo: **Lighthouse ≥ 95** en rendimiento sobre el despliegue real.
 
-## Decisiones pendientes (el constructor NO las inventa)
+## Decisiones resueltas (antes «pendientes»)
 
-- Nombre real del fotógrafo y del sitio → metadatos, cabecera, crédito y dedicatoria.
-- Fotos reales y sus categorías → mientras tanto, contenido sintético etiquetado.
-- Bio y dedicatoria reales → placeholders marcados en `content/albums.json`.
+- Nombre real del fotógrafo: **Eduardo** → metadatos (`Eduardo · Galería de fotos de
+  cumpleaños`), cabecera, crédito y dedicatoria.
+- Fotos reales: 54 en 5 categorías (`syntheticImages: false`).
+- Bio y dedicatoria: **texto de ejemplo** en `content/albums.json`, a la espera de la
+  edición manual del mantenedor.

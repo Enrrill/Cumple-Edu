@@ -1,14 +1,14 @@
 import { getCategories, getFeatured, getPhotosByCategory, getSite } from "@/lib/albums";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Bio } from "@/components/layout/Bio";
 import { HomeGallery } from "@/components/gallery/HomeGallery";
 
 /**
  * Portada (T4) — composición «Hoja de contactos» (DESIGN.md):
- * cabecera fija con anclas por categoría → hero a sangre → bandas con rejilla
- * → bio del fotógrafo → colofón. Server Component: solo pasa datos por props;
- * la interacción (hero, rejillas, lightbox) vive en `HomeGallery` (cliente).
+ * hero a sangre → bandas con rejilla → bio del fotógrafo → colofón.
+ * El encabezado y el pie fijos viven en `app/layout.tsx` para que todas las
+ * rutas (categoría y 404 incluidos) compartan la navegación.
+ * Server Component: solo pasa datos por props; la interacción (hero, rejillas,
+ * lightbox) vive en `HomeGallery` (cliente).
  */
 export default function Home() {
   const site = getSite();
@@ -20,16 +20,11 @@ export default function Home() {
   }));
 
   return (
-    <>
-      <SiteHeader
-        name={site.name}
-        sections={categories.map(({ id, title }) => ({ id, title }))}
-      />
-      <main className="flex-1">
-        <HomeGallery featured={featured} sections={sections} />
-        <Bio site={site} />
-      </main>
-      <SiteFooter credit={site.credit} />
-    </>
+    <main className="flex-1">
+      {/* h1 único de la portada: el nombre visible vive en el encabezado fijo */}
+      <h1 className="sr-only">{`${site.name} · Galería de fotos de cumpleaños`}</h1>
+      <HomeGallery featured={featured} sections={sections} />
+      <Bio site={site} />
+    </main>
   );
 }
