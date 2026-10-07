@@ -28,8 +28,10 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 
 ## Capabilities and Constraints
 
-- Portada con bienvenida visual (`Hero`), secciones por categoría con rejilla dinámica tipo Pinterest (`GalleryGrid`), visor inmersivo con botones minimalistas (`Lightbox`), bio con tarjeta de dedicatoria de cumpleaños (`Bio`) y pie de página con identidad (`SiteFooter`).
-- **Navegación persistente**: FAB flotante (`NavSidebar`) con las secciones y scroll-spy en cualquier punto del scroll, y botón de retorno `←` (`FloatingBackButton`) en las páginas de categoría.
+- Portada con bienvenida visual (`Hero`), secciones por categoría con rejilla dinámica tipo Pinterest (`GalleryGrid`), visor inmersivo con botones minimalistas (`Lightbox`), bio con tarjeta de dedicatoria de cumpleaños (`Bio`), hilo de dedicatorias de las personas (`Dedications` + `DedicationThread`) y pie de página con identidad (`SiteFooter`).
+- **Navegación persistente**: FAB flotante (`NavSidebar`) con las secciones y scroll-spy en cualquier punto del scroll, y botón de retorno `←` (`FloatingBackButton`) en las páginas de categoría y de dedicatorias (único retorno visible; el enlace textual «Volver a la portada» quedó oculto a la vista y visible con foco de teclado).
+- **Entrada a colecciones visible**: cada título de sección termina en `→` (portada y cabecera de dedicatorias) para anunciar que la sección se puede abrir.
+- **Hilo de dedicatorias**: sección tras la bio con los mensajes de las personas (`content/dedications.json`), en columna única tipo red social con avatar o inicial, incluida en el `NavSidebar` con su recuento, y con **página propia `/dedicatorias`** (h1, contador y hilo completo). Sin backend: los mensajes los recoge y pega el mantenedor.
 - **Diseño v3 moderno & festivo**:
   - Rejilla Masonry tipo Pinterest pura: tarjetas **100% fotográficas** con `rounded-2xl`, sin bandas muertas inferiores; hover overlay deslizante con título y badge de fotograma.
   - Foco accesible con anillo redondeado uniforme (`focus-visible:ring-2 rounded-2xl`).
@@ -37,14 +39,14 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
     - ☀️ **Modo Claro (Por Defecto)**: Luminoso, limpio y fresco en tonos salvia y esmeralda (`#F8FAF8`).
     - 🌿 **Modo Esmeralda Moderno**: Identidad botánica revitalizada con fondo verde agua (`#E8F5EE`) y acento esmeralda profundo.
     - 🌙 **Modo Oscuro**: Carbón y grafito elegante para navegación nocturna (`#0F1412`).
-  - Tipografías modernas y juveniles: **Outfit** (títulos dinámicos) + **Plus Jakarta Sans** (lectura nítida) + **Geist Mono** (números de fotograma y contadores).
+  - Tipografías modernas y con carácter: **Syne** (títulos con impacto) + **Plus Jakarta Sans** (lectura nítida) + **Geist Mono** (números de fotograma y contadores).
   - Visor `Lightbox` inmersivo: overlay negro al 88 %, título en píldora inferior, contador arriba a la izquierda y controles de solo icono sin discos.
-  - Hero conceptual de bienvenida (*"Historias & Miradas"*) y categoría renombrada a *"Retratos de Eduardo"*, eliminando cualquier redundancia.
+  - Títulos y descripciones de las 5 colecciones y `title`/`alt` de las 133 fotos redactados para ser descriptivos y cercanos (p. ej. la categoría personal pasa de «Retratos de Eduardo» a *«Eduardo, tal cual»*), y los títulos de página compuestos con la plantilla del `layout`.
   - Dedicatoria de cumpleaños presentada como una tarjeta de regalo afectuosa y moderna.
   - Selector de temas accesible (`ThemeToggle`) en la cabecera, en todos los tamaños de pantalla.
   - `NavSidebar`: bottom-sheet en móvil y **popover anclado al botón** en escritorio (`transform-origin: bottom right`), con scroll-spy y conteo de fotos por sección.
-  - `FloatingBackButton`: retorno `←` persistente en `/categoria/[slug]`, con la misma coordenada y estilo que el FAB de navegación.
-- Ruta opcional `/categoria/[slug]` y página 404.
+  - `FloatingBackButton`: retorno `←` persistente en `/categoria/[slug]` y `/dedicatorias`, con la misma coordenada y estilo que el FAB de navegación.
+- Rutas: portada, `/categoria/[slug]`, `/dedicatorias` y página 404.
 - Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm + Lucide Icons; lightbox con `yet-another-react-lightbox`.
 - Contenido sin programación posible vía `albums.json` (ver `docs/Documentación/Guía de uso sin programación.md`).
 - **Fotos reales integradas**: 133 fotografías reales clasificadas en 5 categorías (edu 38, urbano 35, paisaje 26, amigos 21, retratos 13).
@@ -61,15 +63,16 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 - Sitio completo, modernizado (v3) y verificado en cada iteración:
   - Lint sin errores (`pnpm lint`).
   - TypeScript verificado con 0 errores (`pnpm exec tsc --noEmit`).
-  - Build de producción Next.js 16 completado con éxito (`pnpm build`, 9 rutas).
-- **Ausencias que no deben fabricarse**: nada estructural — nombre, 133 fotos reales, bio y dedicatoria ya están. La bio y la dedicatoria son **texto de ejemplo** a la espera de la edición manual del mantenedor.
+  - Build de producción Next.js 16 completado con éxito (`pnpm build`, 10 páginas estáticas, `/dedicatorias` incluida) con el servidor de desarrollo parado — nunca se compila con `pnpm dev` en marcha, porque pisa `.next/`.
+  - Prueba de humo en el build de producción: portada, `/dedicatorias` y colecciones responden, visor abre y cierra con Escape, retorno flotante y cabecera navegan, sin errores de consola.
+- **Ausencias que no deben fabricarse**: nada estructural — nombre, 133 fotos reales, bio y dedicatoria ya están. La bio, la dedicatoria de `site.dedication` y las entradas del hilo de dedicatorias son **texto de ejemplo** a la espera de la edición manual del mantenedor.
 
 ## Product Principles
 
 1. La fotografía manda: cualquier decisión de interfaz se retira si compite con la foto.
 2. Sin backend mientras no haya datos dinámicos: menos coste y mantenimiento que una base de datos.
 3. La fecha manda: frente a dudas, se entrega lo esencial antes que lo opcional.
-4. Editable sin programar: el contenido se toca en un solo fichero (`albums.json`).
+4. Editable sin programar: el contenido se toca en `content/` (`albums.json` para fotos y textos del sitio, `dedications.json` para las dedicatorias).
 5. Trabajo en paralelo sin conflictos: cada integrante toca su territorio de archivos.
 
 ## Accessibility & Inclusion

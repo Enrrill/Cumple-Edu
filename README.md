@@ -54,26 +54,36 @@ Abre [http://localhost:3000](http://localhost:3000) en el navegador. El código 
 | `pnpm start` | Sirve la compilación de producción |
 | `pnpm lint` | Análisis estático con ESLint |
 
+> ⚠️ **Nunca ejecutes `pnpm build` mientras `pnpm dev` está corriendo.** La compilación
+> sobrescribe la carpeta `.next/` que el servidor de desarrollo está usando y deja las pestañas
+> abiertas sin JavaScript (FAB, visor y enlaces dejan de responder hasta reiniciar). Para
+> compilar: para primero el servidor de desarrollo (`Ctrl+C`), ejecuta `pnpm build` y, si quieres
+> seguir trabajando, vuelve a arrancar `pnpm dev`.
+
 ### Estructura del proyecto
 
 ```text
 Cumple-Edu/
 ├── app/
 │   ├── layout.tsx              # Plantilla base: html, fuentes, metadatos
-│   ├── page.tsx                # Portada (hero, secciones, bio, footer, NavSidebar)
+│   ├── page.tsx                # Portada (hero, secciones, bio, dedicatorias, footer, NavSidebar)
 │   ├── globals.css             # Tokens de diseño (Tailwind 4, @theme, 3 modos)
 │   ├── not-found.tsx           # Página 404
+│   ├── dedicatorias/           # Página propia del hilo de dedicatorias
 │   └── categoria/[slug]/       # Página por categoría (+ FloatingBackButton)
 ├── components/
 │   ├── gallery/                # Hero, CategorySection, GalleryGrid,
 │   │                           # PhotoCard, Lightbox, PhotoLightbox
 │   └── layout/                 # SiteHeader, ThemeToggle, NavSidebar,
-│                               # FloatingBackButton, Bio, SiteFooter
+│                               # FloatingBackButton, Bio, Dedications,
+│                               # DedicationThread, SiteFooter
 ├── lib/
-│   └── albums.ts               # Tipos y helpers de contenido
+│   ├── albums.ts               # Tipos y helpers de contenido
+│   └── dedications.ts          # Tipos y helpers del hilo de dedicatorias
 ├── content/
-│   └── albums.json             # Categorías y metadatos de fotos
-├── public/images/              # Fotos por categoría
+│   ├── albums.json             # Categorías y metadatos de fotos
+│   └── dedications.json        # Dedicatorias de las personas (orden del hilo)
+├── public/images/              # Fotos por categoría (+ dedications/ para avatares)
 ├── docs/                       # Documentación del proyecto
 ├── DESIGN.md                   # Sistema de diseño (autoridad visual)
 └── next.config.ts

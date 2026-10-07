@@ -7,7 +7,7 @@ tags:
   - vercel
 created: 2026-09-29
 area: galeria-fotos
-version: 0.2
+version: 0.3
 ---
 
 # Guía de despliegue en Vercel
@@ -27,6 +27,11 @@ Vercel es la plataforma prevista para alojar la galería: tiene plan gratuito, s
 - Una cuenta en GitHub (gratis) con el repositorio del proyecto.
 - Una cuenta en Vercel (gratis), que se puede crear con la misma cuenta de GitHub.
 - El proyecto compila sin errores en local (`pnpm build`).
+
+> ⚠️ Para compilar en local, **para antes el servidor de desarrollo** (`pnpm dev`): `pnpm build`
+> sobrescribe la carpeta `.next/` que ese servidor está usando y deja las pestañas abiertas sin
+> JavaScript hasta reiniciarlo. Secuencia segura: `Ctrl+C` → `pnpm build` → `pnpm dev` si hace falta
+> seguir desarrollando.
 - Node.js instalado y `pnpm` disponible (`npm install -g pnpm --prefix ~/.local`).
 
 ### Publicación inicial

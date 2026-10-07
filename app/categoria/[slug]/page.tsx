@@ -23,7 +23,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${category.title} · Galería de fotos de cumpleaños`,
+    // El sufijo «· Galería de fotos de cumpleaños» lo añade la plantilla del layout
+    title: category.title,
     description: category.description,
   };
 }
@@ -41,11 +42,14 @@ export default async function CategoryPage({ params }: PageProps<"/categoria/[sl
 
   return (
     <main className="flex-1">
-      {/* pt-20 mínimo: el encabezado fijo (h-16) no debe pisar el enlace */}
+      {/* pt-20 mínimo: el encabezado fijo (h-16) no debe pisar el contenido */}
       <header className="mx-auto max-w-7xl px-4 sm:px-6 pt-20 pb-8 md:pt-24 md:pb-10">
+        {/* Único ← de la página (junto al botón flotante): oculto a la vista
+            para no duplicar retorno, pero visible al recibir foco de teclado
+            y presente para buscadores y lectores de pantalla. */}
         <Link
           href="/"
-          className="mb-6 inline-flex h-11 items-center gap-2 text-base text-accent transition-colors hover:text-accent-strong"
+          className="sr-only mb-6 inline-flex h-11 items-center gap-2 text-base text-accent transition-colors hover:text-accent-strong focus:not-sr-only"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           Volver a la portada
@@ -71,7 +75,7 @@ export default async function CategoryPage({ params }: PageProps<"/categoria/[sl
       </div>
 
       {/* Retorno persistente: mismo sitio, tamaño y estilo que el FAB de la portada.
-          El enlace textual de arriba se mantiene para SEO y semántica. */}
+          Es el único retorno visible de la página. */}
       <FloatingBackButton slug={category.id} />
     </main>
   );

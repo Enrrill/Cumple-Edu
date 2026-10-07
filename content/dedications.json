@@ -1,0 +1,36 @@
+[
+  {
+    "id": "lucia-2026",
+    "author": "Lucía",
+    "relation": "Hermana",
+    "date": "2026-10-02",
+    "text": "Para el que convirtió una simple cámara en forma de familia: gracias por guardarnos en cada foto. Feliz cumpleaños, hermano."
+  },
+  {
+    "id": "carlos-2026",
+    "author": "Carlos",
+    "relation": "Compañero de carrera",
+    "date": "2026-10-03",
+    "text": "Tú siempre llegas primero al sitio y el último en irte, con la cámara en la mano. Que sigas encontrando luz donde nadie la ve."
+  },
+  {
+    "id": "mariana-2026",
+    "author": "Mariana",
+    "relation": "Amiga",
+    "text": "Cada salida contigo termina con cien fotos y una risa que no cabe en el álbum. Te quiero muchísimo, ¡feliz día!"
+  },
+  {
+    "id": "jose-2026",
+    "author": "José",
+    "relation": "Padre",
+    "date": "2026-10-05",
+    "text": "Desde el primer encuadre te vi mirar el mundo distinto. Orgulloso de ti hoy y de todas las fotos que aún faltan por tomar."
+  },
+  {
+    "id": "sofia-2026",
+    "author": "Sofía",
+    "relation": "Vecina y amiga",
+    "date": "2026-10-06",
+    "text": "Gracias por enseñarnos que un cumpleaños no se mide en velas, sino en los recuerdos que quedan guardados. ¡Felicidades!"
+  }
+]

@@ -18,7 +18,7 @@ area: galeria-fotos
 | Objetivo | Página-galería como regalo de cumpleaños para un fotógrafo |
 | Estado | Entrega lista (T5 cerrado); pendiente la edición manual de bio y dedicatoria |
 | Stack | Next.js + React + TypeScript + Tailwind CSS |
-| Contenido | Fotos estáticas en `public/` + metadatos en `albums.json` |
+| Contenido | Fotos estáticas en `public/` + metadatos en `albums.json` + dedicatorias en `dedications.json` |
 | Backend y BD | No procede (ver [Decisión - galería sin backend](../Documentaci%C3%B3n/Decisi%C3%B3n%20-%20galer%C3%ADa%20sin%20backend.md)) |
 | Diseño | Modo *Experience*, 3 modos de color (claro por defecto, esmeralda y oscuro), hero estático + secciones masonry |
 | Despliegue | [Vercel](../Referencias/Vercel.md), plan gratuito |
@@ -40,7 +40,9 @@ area: galeria-fotos
 - [x] Modernización v3: 3 modos de color con `ThemeToggle`, cabecera mínima, `NavSidebar` flotante con scroll-spy, lightbox inmersivo y hero conceptual
 - [x] Navegación persistente: panel anclado al FAB en escritorio (`transform-origin: bottom right`) y `FloatingBackButton` «←» en las páginas de categoría, oculto con el lightbox
 - [x] Documentación sincronizada (`DESIGN.md`, `PRODUCT.md`, `docs/` y el vault de Obsidian) con el estado v3
-- [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json` y compartir la URL
+- [x] Hilo de dedicatorias: sección nueva tras la bio (`content/dedications.json`, `lib/dedications.ts`, `Dedications.tsx`), entrada en el `NavSidebar` con recuento y guía de uso actualizada
+- [x] Segunda tanda de mejoras: flecha `→` en los títulos de sección, retorno único (`FloatingBackButton` + enlace `sr-only`), página propia `/dedicatorias` (hilo completo repetido), tipografía de títulos **Syne** y textos de las 5 colecciones y las 133 fotos reescritos (títulos descriptivos y cercanos, `alt` literal); docs y vault resincronizados
+- [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json`, pegar las dedicatorias reales en `dedications.json` y compartir la URL
 
 ## Documentación relacionada
 

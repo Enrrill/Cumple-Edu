@@ -88,9 +88,18 @@ export function CategorySection({
             >
               <Link
                 href={`/categoria/${category.id}`}
-                className="inline-flex min-h-11 items-center transition-colors hover:text-accent"
+                className="group inline-flex min-h-11 items-center transition-colors hover:text-accent"
               >
                 {category.title}
+                {/* Flecha de entrada a la colección: decorativa a la vista,
+                    con texto equivalente para lectores de pantalla */}
+                <span
+                  aria-hidden="true"
+                  className="ml-2.5 inline-block text-[0.45em] leading-none text-accent/70 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent md:ml-3"
+                >
+                  →
+                </span>
+                <span className="sr-only">Ver la colección</span>
               </Link>
             </h2>
             <p className="font-mono text-xs uppercase tracking-wider text-muted">

@@ -7,14 +7,14 @@ tags:
   - usuario
 created: 2026-09-29
 area: galeria-fotos
-version: 0.2
+version: 0.4
 ---
 
 # Guía de uso sin programación
 
 ## Resumen
 
-Instrucciones para mantener la galería de fotos (añadir fotos, cambiar textos y publicar) sin escribir código, pensadas para alguien sin conocimientos de programación.
+Instrucciones para mantener la galería de fotos (añadir fotos, cambiar textos, recoger dedicatorias y publicar) sin escribir código, pensadas para alguien sin conocimientos de programación.
 
 ## Contexto
 
@@ -29,7 +29,8 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 - **Publicar (deploy)**: hacer que la web real muestre los últimos cambios. Aquí ocurre solo al guardar.
 - **[Vercel](../Referencias/Vercel.md)**: el servicio que muestra la página a los visitantes. Se conecta a GitHub y se actualiza por sí mismo.
 - **`albums.json`**: el inventario de fotos. Una fila por foto con su título, su categoría y su texto alternativo.
-- **Categoría**: una sección de la galería (Edu, Amigos, Retratos, Paisaje, Urbano…).
+- **`dedications.json`**: el inventario de dedicatorias. Un bloque por mensaje con el nombre de quien lo escribe y el texto.
+- **Categoría**: una sección de la galería (Eduardo, Amigos, Gente, Paisaje, Urbano…). Cada una tiene su título, su descripción y sus fotos.
 
 ### Cómo añadir una foto (paso a paso)
 
@@ -70,12 +71,57 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 3. Asignar `"category": "interior"` a cada foto de esa categoría.
 4. Commit: la sección nueva aparece sola en la portada.
 
-### Cómo cambiar un texto o la dedicatoria
+### Cómo añadir una dedicatoria (paso a paso)
+
+1. Recibir el mensaje de la persona y pedirle si quiere que aparezca su nombre (y opcionalmente su foto).
+2. Abrir `content/dedications.json` desde el lápiz de GitHub.
+3. Añadir un bloque nuevo **dentro de los corchetes**, copiando el formato de los existentes y separando con coma:
+
+```json
+{
+  "id": "ana-2026",
+  "author": "Ana",
+  "relation": "Amiga de la infancia",
+  "date": "2026-10-07",
+  "text": "El mensaje tal como lo ha escrito la persona."
+}
+```
+
+- Obligatorios: `id` (único, sin espacios ni acentos), `author` y `text`.
+- Opcionales: `relation` (parentesco o vínculo), `date` (en formato `AAAA-MM-DD`) y `avatar`.
+- **El orden del fichero es el orden del hilo** en la página: lo que se pega primero, se ve primero.
+- Si hay dos comas seguidas o falta una, la web no compila; se revierte desde el historial de GitHub (**Commits → … → Restore file**).
+
+4. Commit con **Commit changes**. La dedicatoria aparece en la sección «Dedicatorias» de la portada y en la página `/dedicatorias` (las dos se actualizan solas con el mismo fichero).
+
+#### Cómo añadir la foto de la persona (avatar)
+
+1. Subir la foto con **Add file → Upload files** dentro de `public/images/dedications/`.
+2. Añadir el campo `avatar` al bloque de la dedicatoria:
+
+```json
+"avatar": {
+  "src": "/images/dedications/ana.webp",
+  "alt": "Ana sonriendo"
+}
+```
+
+3. Sin `avatar`, la tarjeta muestra la inicial de la persona en un círculo esmeralda: también queda bien.
+
+### Cómo cambiar un texto, la bio o la dedicatoria especial
 
 1. Abrir `content/albums.json` desde el lápiz de GitHub.
 2. Títulos y descripciones: bloques `categories` y `photos` del mismo fichero.
 3. Bio, dedicatoria, nombre, crédito y retrato: bloque `site` (`bio`, `dedication`, `name`, `credit`, `portrait.src` y `portrait.alt`); el texto a cambiar está entre comillas.
 4. Commit y listo.
+
+Estilo de los textos (para que la galería mantenga su tono):
+
+- **Título de colección** (`categories`): nombre corto y cercano, en el estilo «Amigos & Recuerdos» o «Eduardo, tal cual».
+- **Descripción de colección**: una frase que cuente qué se va a ver, con aire amable (no un listado de tres palabras).
+- **Título de foto** (`photos.title`): descriptivo y amigable, en español; se muestra bajo la miniatura y en el visor.
+- **Texto alternativo** (`photos.alt`): literal y objetivo («Eduardo con gorro blanco sonriendo a la cámara»); es lo que leen los lectores de pantalla, sin adjetivos ni humor.
+- Cada título de sección termina en una flecha `→` automática: no hay que escribirla a mano.
 
 ### Consejos para las fotos
 
@@ -87,7 +133,7 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 ### Qué no hay que tocar
 
 - Las carpetas `app/`, `components/` y los ficheros de configuración, salvo cambio de texto acordado.
-- La primera línea de `albums.json` y los corchetes y llaves: si se rompe la sintaxis, la web dejará de compilar. Si pasa, se revierte desde el historial de GitHub (**Commits → … → Restore file**).
+- Los corchetes y llaves de `albums.json` y de `dedications.json`: si se rompe la sintaxis, la web dejará de compilar. Si pasa, se revierte desde el historial de GitHub (**Commits → … → Restore file**).
 
 ### Qué hacer si algo falla
 
@@ -95,6 +141,7 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 | --- | --- |
 | La web no se actualiza | Mirar en Vercel si el último despliegue está en verde; si falló, pulsar **Redeploy** |
 | La foto no aparece | Revisar que la ruta del `src` coincide exactamente con la carpeta y el nombre del archivo |
+| La dedicatoria no aparece | Comprobar que el bloque está dentro de los corchetes de `dedications.json` y que `id`, `author` y `text` están escritos igual que en las demás |
 | La página se ve rara | Restaurar el último `albums.json` correcto desde GitHub y volver a probar |
 | Dudas generales | Consultar [Guía de despliegue en Vercel](Gu%C3%ADa%20de%20despliegue%20en%20Vercel.md) o pedir ayuda técnica |
 
