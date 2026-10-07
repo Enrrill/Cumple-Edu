@@ -17,8 +17,10 @@ export interface FloatingBackButtonProps {
  *   `next/link` (el ocultado con el lightbox es CSS puro).
  * - Si se pasa `slug`, vuelve a la portada anclada a la sección de esa
  *   categoría (`/#<slug>`); sin `slug`, a la raíz.
- * - El enlace textual «Volver a la portada» del encabezado se mantiene por
- *   SEO y semántica; este botón es el acceso persistente durante el scroll.
+ * - Es el **único retorno visible** de la página: el enlace textual
+ *   «Volver a la portada» del encabezado quedó `sr-only` (visible al
+ *   recibir foco) para no duplicar el «←», manteniendo el valor de SEO
+ *   y semántica del enlace.
  */
 export function FloatingBackButton({ slug }: FloatingBackButtonProps) {
   return (

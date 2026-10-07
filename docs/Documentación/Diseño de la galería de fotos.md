@@ -7,7 +7,7 @@ tags:
   - ux
 created: 2026-09-29
 area: galeria-fotos
-version: 0.2
+version: 0.4
 ---
 
 # Diseño de la galería de fotos
@@ -54,11 +54,13 @@ Reglas de uso:
 
 | Uso | Tipografía | Tratamiento |
 | --- | --- | --- |
-| Títulos, hero y placas de sala | **Outfit** (geométrica, `font-display`) | Tamaño grande, peso 600, interletraje ajustado |
+| Títulos, hero, placas de sala y nombre del sitio | **Syne** (geométrica expresiva, `font-display`) | Tamaño grande, peso 500-600, interletraje ajustado; su forma ancha da presencia a los titulares |
 | Texto, interfaz y navegación | **Plus Jakarta Sans** (`font-sans`) | Cuerpo 15-18 px, interlínea holgada |
 | Datos, contadores y números de fotograma | **Geist Mono** (`font-mono`) | Versalitas simuladas (`uppercase tracking-wider`), 11-13 px |
 
 Escala tipográfica sugerida: 14 / 16 / 20 / 25 / 32 / 48 / 72 px con `clamp()` para fluido entre móvil y escritorio.
+
+> La fuente de títulos evolucionó Fraunces → Outfit → **Syne**: se buscaba más impacto visual sin perder elegancia, y se cambió *solo* la de títulos para no alterar legibilidad ni contraste del cuerpo. Variables en `app/layout.tsx` (`--font-syne`, `--font-sans`, `--font-mono`).
 
 ### Espaciado y layout
 
@@ -70,11 +72,13 @@ Escala tipográfica sugerida: 14 / 16 / 20 / 25 / 32 / 48 / 72 px con `clamp()` 
 
 1. **Hero**: banda de 60 vh con una foto a pantalla completa (imagen LCP, sin carrusel ni autoplay), velos de degradado arriba y abajo, título conceptual *«Historias & Miradas»* con badge *«Edición Especial · Cumpleaños»* y subtítulo de regalo; indicación de scroll con punto pulsante.
 2. **Navegación**: cabecera fija mínima con el nombre enlazable y el selector de los 3 modos de color; transparente sobre el hero, con fondo y borde al hacer scroll. Las secciones se abren desde el FAB flotante (`NavSidebar`), no desde la cabecera.
-3. **Secciones por categoría**: cada categoría es una banda con título, descripción corta, separador de sala numerado y su rejilla dinámica tipo Pinterest (CSS Columns: 2 columnas hasta 1024 px, 3 en desktop y 4 desde 1280 px) que respeta el aspect ratio natural de las fotos sin cortes forzados.
+3. **Secciones por categoría**: cada categoría es una banda con título enlazado que termina en **flecha `→`** (señal de que la sección es entrable, con texto equivalente para lectores de pantalla), descripción corta, separador de sala numerado y su rejilla dinámica tipo Pinterest (CSS Columns: 2 columnas hasta 1024 px, 3 en desktop y 4 desde 1280 px) que respeta el aspect ratio natural de las fotos sin cortes forzados.
 4. **Lightbox**: overlay negro al 88 %, foto centrada con `object-fit: contain`, título en píldora flotante inferior con `backdrop-blur`, contador en la esquina superior izquierda, controles de solo icono, navegación ← → y cierre con Escape o clic en el fondo.
 5. **Bio y dedicatoria**: bloque a dos columnas (retrato con marco ornamental esmeralda + tarjeta de dedicatoria de cumpleaños con badge festivo).
-6. **Footer**: crédito y año separados por un punto esmeralda, sobre una línea con degradado.
-7. **Retorno persistente**: en cada página de categoría, botón `←` fijo en la esquina inferior derecha (misma coordenada y estilo que el FAB de navegación) que vuelve a la portada anclada a esa sección.
+6. **Hilo de dedicatorias**: columna única centrada (máx. 672 px) con la cabecera de sala (separador numerado, título en Syne con `→` que enlaza a su página y contador «N dedicatorias») y una tarjeta por mensaje: avatar o inicial en círculo esmeralda, autor, meta en versalitas mono (vínculo · fecha) y el texto en bloque de cita. Un conector vertical fino une los mensajes para que se lea como un hilo de red social.
+7. **Página de dedicatorias** (`/dedicatorias`): mismo hilo completo bajo una cabecera con `h1`, contador y descripción, replicando la estructura de las páginas de colección; retorno flotante en la esquina de siempre.
+8. **Footer**: crédito y año separados por un punto esmeralda, sobre una línea con degradado.
+9. **Retorno persistente**: en las páginas de categoría y de dedicatorias, botón `←` fijo en la esquina inferior derecha (misma coordenada y estilo que el FAB de navegación) que vuelve a la portada anclada a esa sección. Es el **único retorno visible**: el enlace textual «Volver a la portada» de la cabecera quedó `sr-only` y solo aparece al recibir foco de teclado.
 
 ### Responsive
 
@@ -85,11 +89,13 @@ Escala tipográfica sugerida: 14 / 16 / 20 / 25 / 32 / 48 / 72 px con `clamp()` 
 | Desktop amplio | ≥ 1280 px | 4 columnas masonry, ancho máximo 1280 px |
 
 - El mismo FAB de la esquina inferior derecha sirve en todos los tamaños: abre un bottom-sheet desde abajo en móvil y un popover anclado encima del botón en escritorio.
+- El hilo de dedicatorias es de una sola columna en todos los tamaños: en móvil ocupa el ancho con margen de 16 px y en desktop queda centrado, sin llegar al ancho máximo de 1280 px.
 - `next/image` entrega el tamaño correcto a cada punto de quiebre vía `sizes`.
 
 ### Animación y microinteracciones
 
 - Entrada de tarjetas con CSS puro (`photo-card-in`: fundido + ascenso con retardo escalonado por índice), sin JavaScript en el hilo principal.
+- Entrada de cada mensaje del hilo de dedicatorias (`dedication-in`): fundido + ascenso de 16 px, disparado al entrar en el viewport con `animation-timeline: view()` y degradado a animación temporal simple en navegadores sin esa función.
 - Despliegue del panel de secciones: slide-up en móvil y escala 0.92 → 1 con origen en la esquina inferior derecha en escritorio (200 ms).
 - Hover de miniatura: elevación sutil, zoom del 3 % y velo con título y número de fotograma.
 - Transición de lightbox: fundido de 260 ms.
@@ -101,7 +107,10 @@ Escala tipográfica sugerida: 14 / 16 / 20 / 25 / 32 / 48 / 72 px con `clamp()` 
 - Foco visible con anillo `accent` en todos los elementos interactivos.
 - Lightbox: foco atrapado, ← → para navegar, Escape para cerrar, foco devuelto al elemento de origen.
 - `NavSidebar`: disparador con `aria-expanded`, panel como `role="dialog"`, cierre con Escape y retorno del foco al disparador; los botones flotantes se ocultan mientras el lightbox está abierto.
-- Navegación completa sin ratón; objetivos táctiles ≥ 44 px (los FAB miden 48 px).
+- Navegación completa sin ratón; objetivos táctiles ≥ 44 px (los FAB miden 48 px y el enlace de cada título de sección mantiene un área de 66 px de alto).
+- Las flechas `→` de los títulos son decorativas (`aria-hidden`): el mismo enlace contiene el texto equivalente («Ver la colección» / «Ver todas las dedicatorias») para lectores de pantalla.
+- El enlace «Volver a la portada» es `sr-only focus:not-sr-only`: no duplica visualmente el `←` flotante, pero se revela al tabular y se mantiene para buscadores y lectores de pantalla.
+- El hilo de dedicatorias es una lista ordenada (`ol`) con semántica de cita (`blockquote`) por mensaje; la inicial decorativa lleva `aria-hidden` y la sección se titula con `aria-labelledby`.
 
 ### Flujo de trabajo de diseño
 
@@ -119,8 +128,11 @@ Se usa la skill *impeccable* en este orden:
 | Modo *Experience* | Modo *Persuade* | El sitio no vende: exhibe |
 | Sistema de 3 modos de color (claro por defecto) | Fondo oscuro único | El regalo se lee igual de día que de noche sin perder la identidad esmeralda |
 | Hero estático + secciones masonry | Carrusel de destacados con autoplay | Menos JavaScript, LCP más rápido y sin movimiento no solicitado |
-| Sans geométrica (Outfit) en títulos | Serif clásica | Regalo moderno y cálido, no catálogo de museo |
+| **Syne** en títulos (antes Fraunces y Outfit) | Serif clásica o sans neutra | Regalo moderno y con carácter de galería: impacto visual sin perder calidez ni legibilidad en el cuerpo |
 | Navegación en FAB flotante (`NavSidebar`) | Cabecera con menú de secciones | Acceso persistente al hacer scroll y misma ubicación en móvil y escritorio |
+| Dedicatorias como hilo en columna única (estilo red social) | Rejilla de tarjetas o muro de firmas | Los mensajes se leen en orden y con aire; en rejilla el texto se convierte en bloque que compite con la foto |
+| Flecha `→` visible en los títulos de sección | Indicador solo al pasar el cursor | La entrada a la colección se anuncia de un vistazo y también en móvil, donde no hay hover |
+| Un solo retorno visible (`FloatingBackButton`) + enlace `sr-only` | Enlace «← Volver a la portada» visible | El texto duplicaba el botón flotante; se conserva el valor de SEO y de teclado sin repetir en pantalla |
 
 ## Referencias
 

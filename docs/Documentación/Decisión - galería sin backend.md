@@ -7,7 +7,7 @@ tags:
   - decision
 created: 2026-09-29
 area: galeria-fotos
-version: 0.1
+version: 0.2
 ---
 
 # Decisión - galería sin backend
@@ -56,6 +56,7 @@ Adoptar la opción A: **sitio estático sin backend ni base de datos**. El conte
 - No hay costes recurrentes más allá del plan gratuito.
 - Los metadatos no se pueden editar desde la propia web.
 - El orden, los títulos y las categorías se controlan manualmente.
+- Las dedicatorias siguen la misma regla: los mensajes los recoge el mantenedor por fuera y se pegan en `content/dedications.json`. No hay formulario ni escritura desde la web, así que la decisión sigue vigente.
 
 ## Condiciones de reversión
 

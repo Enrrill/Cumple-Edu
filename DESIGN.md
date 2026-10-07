@@ -60,15 +60,17 @@ Inmersivo, elegante y de bajo brillo para exploración nocturna:
 
 ## Tipografía Moderna
 
-Se reemplazó la tipografía antigua (Fraunces) por fuentes geométricas, limpias y llenas de energía contemporánea:
+Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **impacto con elegancia**: carácter de galería de arte contemporánea sin perder calidez:
 
 | Uso | Fuente | Utilidad | Tratamiento |
 | --- | --- | --- | --- |
-| Títulos, hero, placas de sala | **Outfit** (geométrica moderna) | `font-display` | Tamaño grande, peso 600, fresco y juvenil |
+| Títulos, hero, placas de sala, nombre del sitio | **Syne** (geométrica expresiva) | `font-display` | Tamaño grande, peso 500-600, interletraje ajustado; su forma ancha da presencia a los titulares |
 | Texto, interfaz, navegación, dedicatoria | **Plus Jakarta Sans** | `font-sans` | Cuerpo 15-18 px, máxima legibilidad |
 | Números de fotograma, contador del lightbox, prefijos | **Geist Mono** | `font-mono` | Versalitas simuladas (`uppercase tracking-wider`), 11-13 px |
 
-- Motivo del cambio: El sitio es un **regalo de cumpleaños**, no un catálogo de museo antiguo. Outfit y Plus Jakarta Sans ofrecen un tono contemporáneo, cálido, vivo y profesional sin ser solemne.
+- Motivo del cambio: El sitio es un **regalo de cumpleaños**, no un catálogo de museo antiguo; Plus Jakarta Sans mantiene el tono cálido y legible mientras Syne aporta el gesto gráfico.
+- Historia: Fraunces → Outfit (fuentes geométricas) → **Syne** (más contundente, manteniendo el cuerpo intacto para no tocar legibilidad ni contraste).
+- La variable CSS es `--font-syne` (declara `--font-display` en `@theme inline` de `app/globals.css`).
 
 ## Espaciado y layout
 
@@ -92,14 +94,19 @@ Se reemplazó la tipografía antigua (Fraunces) por fuentes geométricas, limpia
 - **Selector de tema** (`ThemeToggle`):
   - Tres botones (Sol / Hoja / Luna) en píldora con `aria-pressed` y `role="group"`; escribe `data-theme` en `<html>` y persiste en `localStorage["edu-theme"]`.
 - **Navegación flotante** (`NavSidebar`):
-  - FAB de 48 px en `bottom-6 right-5` que abre el listado de secciones con scroll-spy, numeración editorial y conteo de fotos.
+  - FAB de 48 px en `bottom-6 right-5` que abre el listado de secciones con scroll-spy, numeración editorial y conteo por sección (fotos por sala, dedicatorias en su sección).
   - **Escritorio (lg+)**: popover anclado contextualmente justo encima del botón (`bottom-20 right-5`, `w-72`, `rounded-2xl`) con `transform-origin: bottom right`: escala 0.92 → 1, desplazamiento de 8 px y fundido (200 ms de entrada, 160 ms de salida).
   - **Móvil**: bottom-sheet a ancho completo con backdrop, grip decorativo y slide-up de 220 ms (la fórmula táctil no cambia).
   - Se oculta con el lightbox (`body-lightbox-open:invisible`) y durante el cierre queda `inert` (no interactivo) pese a seguir visible durante el fundido.
 - **Retorno persistente** (`FloatingBackButton`):
-  - En `/categoria/[slug]`: botón `←` con la misma coordenada, tamaño y paleta que el FAB de `NavSidebar`, visible en cualquier profundidad de scroll.
+  - En `/categoria/[slug]` y `/dedicatorias`: botón `←` con la misma coordenada, tamaño y paleta que el FAB de `NavSidebar`, visible en cualquier profundidad de scroll.
   - Devuelve a la portada anclada a la sección de esa categoría (`/#<slug>`); sin `slug`, a la raíz.
-  - Server Component sin JS propio (solo `next/link`); el enlace textual «Volver a la portada» del encabezado se mantiene para SEO.
+  - Server Component sin JS propio (solo `next/link`); es el **único retorno visible** de la página.
+- **Enlace de retorno accesible** (en el encabezado de `/categoria/[slug]`):
+  - «Volver a la portada» con `sr-only focus:not-sr-only`: invisible a la vista (evita duplicar el `←`), pero se revela al recibir foco de teclado y sigue existiendo para buscadores y lectores de pantalla.
+- **Placas de sala** (`CategorySection`):
+  - Título enlazado a su colección con **flecha `→`** al final (`span aria-hidden`, `text-[0.45em]`, `text-accent/70` → acento pleno, desplazamiento de 4 px en hover) que anuncia de un vistazo que la sección es entrable.
+  - El enlace lleva además el texto oculto «Ver la colección» para lectores de pantalla y mantiene un área táctil ≥ 44 px.
 - **Fotograma** (`PhotoCard`):
   - 100% foto tipo Pinterest con `rounded-2xl` sin bordes ni bloques vacíos inferiores.
   - Anillo de selección/foco que sigue exactamente la curvatura redondeada (`focus-visible:ring-2 rounded-2xl`).
@@ -115,6 +122,15 @@ Se reemplazó la tipografía antigua (Fraunces) por fuentes geométricas, limpia
   - Elimina cualquier redundancia con el álbum de retratos.
 - **Bio y dedicatoria** (`Bio`):
   - Dedicatoria rediseñada como **Tarjeta de Felicitación** con badge festivo `🎂 Dedicatoria Especial`, tipografía fluida y firma con cariño (sin letra capital medieval).
+- **Hilo de dedicatorias** (`Dedications` en portada + `app/dedicatorias`):
+  - Cabecera con el mismo ritmo editorial que las salas: separador con número en mono, título en Syne con **flecha `→`** que enlaza a la página propia `/dedicatorias` y contador `N dedicatorias`.
+  - La portada muestra el hilo completo y la página nueva lo repite, el mismo patrón que las colecciones entre portada y `/categoria/[slug]`.
+  - El hilo vive en `DedicationThread` (lista + CSS de entrada), compartido por ambas vistas: columna única (`max-w-2xl`, 672 px) de tarjetas `rounded-2xl` sobre `bg-surface/70` con `border-line/70` y `backdrop-blur`, el mismo lenguaje que la tarjeta de `Bio`.
+  - Cabecera de página `/dedicatorias`: `h1` en Syne, contador en mono y descripción; retorno con `FloatingBackButton` (sin `slug`). Si no hay dedicatorias, la página devuelve 404 y la sección desaparece de la portada y del `NavSidebar`.
+  - Avatar opcional con `next/image`; sin él, inicial de la persona en círculo `bg-accent/15` + `text-accent`.
+  - Autor en Syne, meta (vínculo · fecha) en Geist Mono versalitas y mensaje en `<blockquote>` con `text-ink`.
+  - Conector vertical de 1 px (`bg-line/60 → line/20`) entre mensajes y numeración editorial de cada uno en la esquina superior derecha.
+  - Entrada por tarjeta con `dedication-in` (fundido + 16 px) usando `animation-timeline: view()` como las placas de sala.
 - **Footer** (`SiteFooter`):
   - Línea superior esmeralda con degradado `via-accent/40`, separador central en dot esmeralda y firma editorial de cumpleaños.
 
@@ -131,6 +147,8 @@ Se reemplazó la tipografía antigua (Fraunces) por fuentes geométricas, limpia
 
 - `alt` descriptivo en cada foto; texto del hero legible sobre cualquier imagen.
 - Foco visible con anillo `accent` en todo lo interactivo (`globals.css`).
+- Flechas `→` de las placas: `aria-hidden` + texto equivalente («Ver la colección» / «Ver todas las dedicatorias») en el mismo enlace.
+- Enlace de retorno `sr-only focus:not-sr-only`: invisible a la vista, visible con foco de teclado.
 - Lightbox: ← → navega, Escape cierra, foco atrapado y devuelto.
 - `NavSidebar`: disparador `<button>` con `aria-expanded`/`aria-controls`, panel con `role="dialog"` y `aria-modal`, foco inicial en el cierre, Escape para cerrar y foco devuelto al disparador; durante el fundido de salida el panel queda `inert`.
 - Botones flotantes (navegación y retorno): 48×48 px y `aria-label` (más `title` en el de retorno); se ocultan con el lightbox para no pisar el visor.
@@ -139,7 +157,7 @@ Se reemplazó la tipografía antigua (Fraunces) por fuentes geométricas, limpia
 ## Rendimiento
 
 - CSS Columns sin JavaScript de layout: renderizado nativo instantáneo en cliente, cero recalculo en JS.
-- Server Components por defecto: `PhotoCard`, `GalleryGrid`, `CategorySection`, `Hero`, `Bio`, `SiteHeader`, `SiteFooter` y `FloatingBackButton` no añaden JS al cliente.
+- Server Components por defecto: `PhotoCard`, `GalleryGrid`, `CategorySection`, `Hero`, `Bio`, `Dedications`, `DedicationThread`, `SiteHeader`, `SiteFooter` y `FloatingBackButton` no añaden JS al cliente.
 - Client Components mínimos: `NavSidebar` (scroll-spy y estado del panel), `ThemeToggle` (tema en `localStorage`) y `PhotoLightbox` (delegación de clics).
 - Carga de imágenes con `next/image`, `sizes` afinado a las columnas reales, `loading="lazy"` y `fetchpriority` alto en el hero (q=60) / bajo en las tarjetas.
 - Lightbox: `next/dynamic` con `ssr: false` y montaje solo tras el primer clic, así el chunk de YARL queda fuera de la hidratación de la portada.
@@ -152,3 +170,7 @@ Se reemplazó la tipografía antigua (Fraunces) por fuentes geométricas, limpia
 - **Temas**: sistema de **3 modos de color** (claro por defecto, esmeralda y oscuro) con `data-theme` + `localStorage`, en lugar de un único fondo oscuro.
 - **Nombre y fotos**: Eduardo; **133 fotos reales** en 5 salas (edu 38, urbano 35, paisaje 26, amigos 21, retratos 13).
 - **Estética**: acabado esmeralda con micro-interacciones sutiles (hover, pulse, glow, glassmorphism) sobre las tres paletas.
+- **Tipografía**: de Outfit a **Syne** para títulos (más impacto con la misma elegancia), manteniendo Plus Jakarta Sans y Geist Mono intactas.
+- **Entrada a colecciones**: flecha `→` al final del título de cada placa, tanto en portada como en la cabecera de dedicatorias, para que se vea de un vistazo que la sección es entrable.
+- **Retorno único**: se retiró el enlace textual «← Volver a la portada» visible de las colecciones (redundante con `FloatingBackButton`) y se conservó como `sr-only focus:not-sr-only`.
+- **Dedicatorias con página propia**: `/dedicatorias` con `h1`, contador y hilo completo; la portada mantiene su sección (hilo completo) con el título enlazando a la página, igual que las colecciones.

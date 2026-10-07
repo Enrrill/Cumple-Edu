@@ -14,28 +14,28 @@
   "categories": [
     {
       "id": "edu",
-      "title": "Retratos de Eduardo",
-      "description": "Retratos, estilo y momentos personales."
+      "title": "Eduardo, tal cual",
+      "description": "Autorretratos, gestos y ratos tranquilos: Eduardo frente a su propia cámara."
     },
     {
       "id": "amigos",
       "title": "Amigos & Recuerdos",
-      "description": "Risas, salidas y recuerdos compartidos."
+      "description": "Risas ajenas, planes improvisados y esas fotos que salen mejor cuando hay más gente en el encuadre."
     },
     {
       "id": "retratos",
-      "title": "Retratos",
-      "description": "Personas, miradas y expresiones."
+      "title": "Gente & Miradas",
+      "description": "Personas, miradas y expresiones: rostros que se quedan quietos un segundo y luego vuelven a su ritmo."
     },
     {
       "id": "paisaje",
       "title": "Paisaje & Naturaleza",
-      "description": "Mar caribeño, montañas de la Colonia Tovar y naturaleza."
+      "description": "El mar Caribeño, la Colonia Tovar y todo lo verde que invita a respirar hondo."
     },
     {
       "id": "urbano",
       "title": "Urbano & Rincones",
-      "description": "Calles de Caracas, arquitectura, arte y rincones cotidianos."
+      "description": "Calles de Caracas, fachadas con historia, arte en las paredes y rincones que uno pasa sin mirar."
     }
   ],
   "photos": [
@@ -62,7 +62,7 @@
     {
       "id": "edu-04",
       "src": "/images/edu/04.webp",
-      "title": "Reflejo en el espejo",
+      "title": "Autorretrato con teléfono",
       "category": "edu",
       "featured": false,
       "alt": "Eduardo frente al espejo con camisa a cuadros y teléfono en mano",
@@ -72,7 +72,7 @@
     {
       "id": "edu-05",
       "src": "/images/edu/05.webp",
-      "title": "Sonrisa espontánea",
+      "title": "Sonrisa sin filtro",
       "category": "edu",
       "featured": false,
       "alt": "Eduardo sonriendo de manera espontánea con camiseta blanca",
@@ -102,7 +102,7 @@
     {
       "id": "edu-08",
       "src": "/images/edu/08.webp",
-      "title": "Estilo en negro",
+      "title": "Espejo y camisa oscura",
       "category": "edu",
       "featured": false,
       "alt": "Selfie de Eduardo frente al espejo vestido con camisa oscura",
@@ -122,7 +122,7 @@
     {
       "id": "edu-10",
       "src": "/images/edu/10.webp",
-      "title": "Gesto divertido",
+      "title": "Cinta roja y mueca",
       "category": "edu",
       "featured": false,
       "alt": "Eduardo con una cinta roja al cuello en una expresión alegre y divertida",
@@ -132,7 +132,7 @@
     {
       "id": "edu-11",
       "src": "/images/edu/11.webp",
-      "title": "Navidad",
+      "title": "Suéter de Navidad",
       "category": "edu",
       "featured": false,
       "alt": "Eduardo con suéter a rayas frente a las luces del árbol navideño",
@@ -142,7 +142,7 @@
     {
       "id": "edu-12",
       "src": "/images/edu/12.webp",
-      "title": "Juego en la cocina",
+      "title": "Bromas en la cocina",
       "category": "edu",
       "featured": false,
       "alt": "Eduardo bromeando con utensilio de madera en la cocina",
@@ -172,7 +172,7 @@
     {
       "id": "edu-15",
       "src": "/images/edu/15.webp",
-      "title": "Filtro lúdico",
+      "title": "Filtro de corazones",
       "category": "edu",
       "featured": false,
       "alt": "Selfie de Eduardo con simpático filtro de tijeras y corazones",
@@ -212,7 +212,7 @@
     {
       "id": "amigos-03",
       "src": "/images/amigos/03.webp",
-      "title": "En las escaleras mecánicas",
+      "title": "Risas en la escalera",
       "category": "amigos",
       "featured": false,
       "alt": "Eduardo y su amigo compartiendo risas en el centro comercial",
@@ -272,7 +272,7 @@
     {
       "id": "amigos-09",
       "src": "/images/amigos/09.webp",
-      "title": "En el sofá",
+      "title": "Tarde de sofá",
       "category": "amigos",
       "featured": false,
       "alt": "Eduardo y su amigo relajándose en el sofá con gorras deportivas",
@@ -315,7 +315,7 @@
       "title": "Bandana roja",
       "category": "retratos",
       "featured": false,
-      "alt": "Retrato de una chica con bandana roja y chemise de Corpotur Aragua",
+      "alt": "Retrato de una chica con bandana roja y camisa de Corpotur Aragua",
       "width": 1920,
       "height": 2560
     },
@@ -332,7 +332,7 @@
     {
       "id": "retratos-04",
       "src": "/images/retratos/04.webp",
-      "title": "Expresión en vino",
+      "title": "Gesto vinotinto",
       "category": "retratos",
       "featured": false,
       "alt": "Retrato de una chica con vestido vinotinto haciendo un gesto divertido",
@@ -372,17 +372,17 @@
     {
       "id": "retratos-08",
       "src": "/images/retratos/08.webp",
-      "title": "Almuerzo y camiseta",
+      "title": "Pausa para almorzar",
       "category": "retratos",
       "featured": false,
-      "alt": "Retrato casual de un chico con camiseta Ben at Work junto a su plato",
+      "alt": "Retrato casual de un chico con camiseta con la frase «Ben at Work» junto a su plato",
       "width": 1920,
       "height": 2560
     },
     {
       "id": "retratos-09",
       "src": "/images/retratos/09.webp",
-      "title": "Claroscuro",
+      "title": "Luz y sombra",
       "category": "retratos",
       "featured": true,
       "alt": "Retrato artístico en blanco y negro con iluminación tenue y mirada penetrante",
@@ -392,7 +392,7 @@
     {
       "id": "retratos-10",
       "src": "/images/retratos/10.webp",
-      "title": "Detalles y denim",
+      "title": "Meclilla y llavero",
       "category": "retratos",
       "featured": false,
       "alt": "Chica de espaldas con chaqueta de mezclilla y divertido llavero en la mochila",
@@ -402,7 +402,7 @@
     {
       "id": "paisaje-01",
       "src": "/images/paisaje/01.webp",
-      "title": "Crescent Moon",
+      "title": "Luna creciente",
       "category": "paisaje",
       "featured": false,
       "alt": "Silueta de la copa de un árbol contra el cielo crepuscular y la luna creciente",
@@ -492,7 +492,7 @@
     {
       "id": "urbano-05",
       "src": "/images/urbano/05.webp",
-      "title": "Colección Mario",
+      "title": "Peluches de Mario",
       "category": "urbano",
       "featured": false,
       "alt": "Estantería vertical repleta de peluches coloridos del universo de Super Mario",
@@ -552,7 +552,7 @@
     {
       "id": "edu-21",
       "src": "/images/edu/21.webp",
-      "title": "Puchero y visera",
+      "title": "Visera al revés",
       "category": "edu",
       "featured": false,
       "alt": "Eduardo con gorra roja invertida haciendo un gesto gracioso",
@@ -612,7 +612,7 @@
     {
       "id": "edu-27",
       "src": "/images/edu/27.webp",
-      "title": "Encuadre",
+      "title": "Marco con las manos",
       "category": "edu",
       "featured": false,
       "alt": "Eduardo formando un marco fotográfico con sus manos en blanco y negro",
@@ -672,7 +672,7 @@
     {
       "id": "urbano-10",
       "src": "/images/urbano/10.webp",
-      "title": "All Star",
+      "title": "Converse al sol",
       "category": "urbano",
       "featured": false,
       "alt": "Primer plano de zapatilla Converse blanca sobre suelo de terracota soleado",
@@ -682,7 +682,7 @@
     {
       "id": "urbano-11",
       "src": "/images/urbano/11.webp",
-      "title": "Mind Control",
+      "title": "Mensaje en la espalda",
       "category": "urbano",
       "featured": false,
       "alt": "Detalle de tipografía estampada en espalda de camiseta en blanco y negro",
@@ -692,7 +692,7 @@
     {
       "id": "urbano-12",
       "src": "/images/urbano/12.webp",
-      "title": "Mensaje en el asfalto",
+      "title": "Dibujo sobre el asfalto",
       "category": "urbano",
       "featured": false,
       "alt": "Hoja con dibujo sobre el pavimento urbano con sombra proyectada",
@@ -722,7 +722,7 @@
     {
       "id": "amigos-13",
       "src": "/images/amigos/13.webp",
-      "title": "Paso de clases",
+      "title": "Al salir de clase",
       "category": "amigos",
       "featured": false,
       "alt": "Vista superior casual de compañeros de clase reunidos al salir del aula",
@@ -802,7 +802,7 @@
     {
       "id": "urbano-20",
       "src": "/images/urbano/20.webp",
-      "title": "Batido en mano",
+      "title": "Batido de frutas",
       "category": "urbano",
       "featured": false,
       "alt": "Bebida helada de frutas disfrutada en un paseo por la ciudad",
@@ -815,7 +815,7 @@
       "title": "Reflejos en el museo",
       "category": "amigos",
       "featured": false,
-      "alt": "Eduardo y sus amigas posando frente al espejo en una visita cultural en B&W",
+      "alt": "Eduardo y sus amigas posando frente al espejo en una visita cultural, en blanco y negro",
       "width": 718,
       "height": 635
     },
@@ -892,7 +892,7 @@
     {
       "id": "amigos-16",
       "src": "/images/amigos/16.webp",
-      "title": "Viaje en grupo",
+      "title": "Rumbo a la Colonia Tovar",
       "category": "amigos",
       "featured": false,
       "alt": "Eduardo y amigas sonrientes junto al autobús de excursión a la Colonia Tovar",
@@ -922,7 +922,7 @@
     {
       "id": "paisaje-14",
       "src": "/images/paisaje/14.webp",
-      "title": "Die Mühle",
+      "title": "Mirador de madera",
       "category": "paisaje",
       "featured": false,
       "alt": "Mirador de madera rústica enmarcando la vista hacia el poblado montañoso",
@@ -945,7 +945,7 @@
       "title": "Media sonrisa",
       "category": "edu",
       "featured": false,
-      "alt": "Selfie en el espejo de Eduardo con media sonrisa y teléfono blanco en B&W",
+      "alt": "Autorretrato en el espejo de Eduardo con media sonrisa y teléfono blanco, en blanco y negro",
       "width": 718,
       "height": 631
     },
@@ -1102,7 +1102,7 @@
     {
       "id": "urbano-27",
       "src": "/images/urbano/27.webp",
-      "title": "En la galería",
+      "title": "Fotografiando la galería",
       "category": "urbano",
       "featured": false,
       "alt": "Visitante admirando y fotografiando un gran lienzo en sala de arte moderno",
@@ -1132,7 +1132,7 @@
     {
       "id": "urbano-30",
       "src": "/images/urbano/30.webp",
-      "title": "Diana circular",
+      "title": "Figura y diana",
       "category": "urbano",
       "featured": false,
       "alt": "Instalación artística colgante con figura enmascarada sobre diana tricolor",
@@ -1152,10 +1152,10 @@
     {
       "id": "retratos-11",
       "src": "/images/retratos/11.webp",
-      "title": "Ventana de concreto",
+      "title": "Mirada hacia fuera",
       "category": "retratos",
       "featured": false,
-      "alt": "Persona solitaria mirando al exterior a través de la ventana de una estructura en B&W",
+      "alt": "Persona solitaria mirando al exterior por la ventana de una estructura, en blanco y negro",
       "width": 716,
       "height": 864
     },
@@ -1212,7 +1212,7 @@
     {
       "id": "edu-40",
       "src": "/images/edu/40.webp",
-      "title": "Cuadros azules",
+      "title": "Camisa a cuadros",
       "category": "edu",
       "featured": false,
       "alt": "Toma en plano picado de Eduardo luciendo camisa a cuadros sobre camiseta clara",
@@ -1352,7 +1352,7 @@
     {
       "id": "amigos-21",
       "src": "/images/amigos/21.webp",
-      "title": "Risas y señales de paz",
+      "title": "Tres amigas y muchas risas",
       "category": "amigos",
       "featured": false,
       "alt": "Tres amigas posando alegres en la mesa en retrato en blanco y negro",

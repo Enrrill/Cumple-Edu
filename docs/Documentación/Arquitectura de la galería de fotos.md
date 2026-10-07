@@ -8,7 +8,7 @@ tags:
   - nextjs
 created: 2026-09-29
 area: galeria-fotos
-version: 0.2
+version: 0.4
 ---
 
 # Arquitectura de la galería de fotos
@@ -32,8 +32,8 @@ La galería es una aplicación Next.js que se compila a HTML estático. No hay s
 Flujo de datos:
 
 1. Las fotos se colocan en `public/images/<categoría>/`.
-2. Los metadatos se escriben en `content/albums.json`.
-3. Al compilar, Next.js lee el JSON y genera el HTML de cada sección.
+2. Los metadatos se escriben en `content/albums.json` y las dedicatorias en `content/dedications.json`.
+3. Al compilar, Next.js lee los JSON y genera el HTML de cada sección.
 4. `next/image` optimiza y sirve las imágenes (formato moderno y redimensionado bajo demanda).
 
 ### Stack técnico
@@ -59,6 +59,8 @@ Cumple-Edu/
 │   ├── layout.tsx          # Plantilla base: html, fuentes, metadatos y tema inicial
 │   ├── page.tsx            # Portada
 │   ├── globals.css         # Tokens (3 modos de color), estilos y keyframes globales
+│   ├── dedicatorias/
+│   │   └── page.tsx        # Página propia del hilo de dedicatorias (SSG)
 │   └── categoria/
 │       └── [slug]/page.tsx # Página por categoría (SSG)
 ├── components/
@@ -75,16 +77,23 @@ Cumple-Edu/
 │       ├── NavSidebar.tsx       # FAB + panel de secciones (scroll-spy)
 │       ├── FloatingBackButton.tsx # Retorno «←» persistente en categorías
 │       ├── Bio.tsx              # Retrato y tarjeta de dedicatoria
+│       ├── Dedications.tsx      # Sección de dedicatorias en la portada
+│       ├── DedicationThread.tsx # Lista del hilo (compartida con /dedicatorias)
 │       └── SiteFooter.tsx       # Pie de página
+├── lib/
+│   ├── albums.ts            # Tipos y helpers de la galería
+│   └── dedications.ts       # Tipos y helpers del hilo de dedicatorias
 ├── content/
-│   └── albums.json         # Categorías, metadatos de fotos y datos del sitio
+│   ├── albums.json          # Categorías, metadatos de fotos y datos del sitio
+│   └── dedications.json     # Mensajes de las personas, en orden de aparición
 ├── public/
 │   └── images/
 │       ├── edu/
 │       ├── amigos/
 │       ├── retratos/
 │       ├── paisaje/
-│       └── urbano/
+│       ├── urbano/
+│       └── dedications/     # Avatares opcionales de las dedicatorias
 ├── docs/                   # Documentación del proyecto (espejo del vault)
 ├── next.config.ts          # Configuración de Next.js e imágenes
 ├── tsconfig.json
@@ -93,7 +102,7 @@ Cumple-Edu/
 
 ### Modelo de datos
 
-`content/albums.json` concentra todo el contenido:
+`content/albums.json` concentra el contenido de la galería:
 
 ```json
 {
@@ -109,8 +118,8 @@ Cumple-Edu/
   "categories": [
     {
       "id": "retratos",
-      "title": "Retratos",
-      "description": "Personas, gestos y luz."
+      "title": "Gente & Miradas",
+      "description": "Personas, miradas y expresiones: rostros que se quedan quietos un segundo y luego vuelven a su ritmo."
     }
   ],
   "photos": [
@@ -145,6 +154,33 @@ Campos de cada foto:
   (Las vistas previas `blur` se retiraron en T5: 76 KB de data-URI duplicados
   en el HTML; el marco `bg-surface` hace de placeholder.)
 
+### Hilo de dedicatorias (`content/dedications.json`)
+
+Fichero aparte de `albums.json`: las dedicatorias crecen con el tiempo y se editan con el mismo flujo que las fotos. Es un array de bloques; **el orden del fichero es el orden del hilo** en la página.
+
+```json
+[
+  {
+    "id": "lucia-2026",
+    "author": "Lucía",
+    "relation": "Hermana",
+    "date": "2026-10-02",
+    "text": "Para el que convirtió una simple cámara en forma de familia…"
+  }
+]
+```
+
+Campos de cada dedicatoria:
+
+- `id`: obligatorio, único y sin espacios ni acentos (por ejemplo, `nombre-2026`).
+- `author`: obligatorio; nombre de la persona que escribe.
+- `text`: obligatorio; el mensaje, puede ocupar varias líneas.
+- `relation`: opcional; vínculo con el homenajeado («Hermana», «Compañero de carrera»…).
+- `date`: opcional, en formato `AAAA-MM-DD`; se muestra junto al vínculo, en versalitas mono, como «02 oct 2026».
+- `avatar`: opcional `{ src, alt }`. Sin avatar se pinta la inicial de la persona en un círculo esmeralda.
+
+El tipo `Dedication` y el helper `getDedications()` viven en `lib/dedications.ts`, con el mismo patrón que `lib/albums.ts`: el componente recibe las dedicatorias por props y no importa el JSON. Si el array está vacío, `app/page.tsx` omite la sección y su entrada en el `NavSidebar`, y `app/dedicatorias/page.tsx` responde 404. El hilo se pinta con `DedicationThread`, que comparten la portada (`Dedications`) y la página propia (`/dedicatorias`).
+
 ### Flujo de imágenes
 
 1. El fotógrafo entrega las fotos en JPEG o PNG, con la resolución de entrega (no la original de cámara).
@@ -157,8 +193,9 @@ Campos de cada foto:
 
 | Ruta | Contenido |
 | --- | --- |
-| `/` | Portada: hero, secciones por categoría, bio, footer y `NavSidebar` |
+| `/` | Portada: hero, secciones por categoría, bio, hilo de dedicatorias, footer y `NavSidebar` |
 | `/categoria/[slug]` | Página dedicada a una sola categoría, con `FloatingBackButton` |
+| `/dedicatorias` | Página propia del hilo de dedicatorias (`h1`, contador y mensaje completo), con `FloatingBackButton`; devuelve 404 si no hay mensajes |
 | 404 | Página de "no encontrada" con enlace a la portada (`app/not-found.tsx`) |
 
 | Componente | Responsabilidad |
@@ -167,13 +204,15 @@ Campos de cada foto:
 | `SiteHeader` | Cabecera fija mínima: nombre y selector de tema |
 | `ThemeToggle` | Selector de los 3 modos de color (persistencia en `localStorage`) |
 | `NavSidebar` | FAB flotante + panel de secciones con scroll-spy (bottom-sheet en móvil, popover anclado en escritorio) |
-| `FloatingBackButton` | Botón «←» persistente para volver a la portada desde una categoría |
-| `CategorySection` | Título de la categoría, separador numerado, descripción y rejilla |
+| `FloatingBackButton` | Botón «←» persistente para volver a la portada desde una categoría o `/dedicatorias` |
+| `CategorySection` | Título de la categoría con flecha `→` de entrada, separador numerado, descripción y rejilla |
 | `GalleryGrid` | Rejilla masonry responsive (CSS Columns) |
 | `PhotoCard` | Fotograma con hover, distintivo de destacada y apertura del lightbox |
 | `PhotoLightbox` | Único punto cliente de las galerías: delega el clic y monta el visor bajo demanda |
 | `Lightbox` | Visor a pantalla completo con ← →, contador y píldora de título |
 | `Bio` | Presentación breve y tarjeta de dedicatoria de cumpleaños |
+| `Dedications` | Cabecera de la sección de dedicatorias en la portada: separador numerado, título con `→` enlazando a `/dedicatorias` y contador |
+| `DedicationThread` | Lista del hilo (tarjetas con avatar o inicial y conector entre mensajes), compartida entre la portada y `/dedicatorias` |
 | `SiteFooter` | Crédito y año |
 
 ### Renderizado y rendimiento
@@ -191,13 +230,17 @@ Campos de cada foto:
 - Contraste AA verificado en los tres modos de color.
 - Lightbox operable con teclado (←, →, Escape) con foco atrapado dentro.
 - `NavSidebar` con `aria-expanded`, `role="dialog"` y cierre con Escape; botones flotantes con `aria-label`, 48×48 px y ocultos mientras el lightbox está abierto.
+- El enlace «Volver a la portada» del encabezado de categoría es `sr-only focus:not-sr-only`: invisible a la vista (no duplica el `←` flotante) y revelado al recibir foco de teclado.
+- Las flechas `→` de los títulos son `aria-hidden` y llevan dentro el texto equivalente («Ver la colección» / «Ver todas las dedicatorias») para lectores de pantalla.
+- El hilo de dedicatorias usa semántica de lista (`ol`) y de cita (`blockquote`), con `aria-labelledby` en la sección y la inicial decorativa marcada con `aria-hidden`.
 - Animaciones desactivadas si el sistema marca `prefers-reduced-motion`.
 
 ### Cómo funciona, explicado sin programar
 
 - **Repositorio**: una carpeta compartida donde viven las fotos, el texto y la configuración. GitHub es el lugar donde se guarda.
 - **Next.js**: el "taller" que convierte esas fotos y textos en páginas web terminadas cada vez que se publica un cambio.
-- **`albums.json`**: un inventario con una fila por foto. Es el único fichero que hay que tocar para añadir o quitar contenido.
+- **`albums.json`**: un inventario con una fila por foto. Es el fichero que hay que tocar para añadir o quitar fotos y textos del sitio.
+- **`dedications.json`**: el inventario de mensajes. Un bloque por dedicatoria; se pega el mensaje nuevo y ya aparece en la página.
 - **[Vercel](../Referencias/Vercel.md)**: el "escaparate" donde se muestra la página. Se conecta al repositorio y actualiza la web automáticamente al haber un cambio.
 - **Optimización de imágenes**: la página no sirve la foto original, sino una versión ajustada a cada pantalla, para que cargue rápido sin perder calidad visible.
 
@@ -207,9 +250,14 @@ Campos de cada foto:
 | --- | --- | --- |
 | Sitio estático sin BD ni backend | FastAPI + Postgres + ORM | No hay datos dinámicos; menos coste y mantenimiento |
 | Metadatos en `albums.json` | Base de datos o Markdown | Fácil de leer, editar y validar con TypeScript |
+| Dedicatorias en `content/dedications.json` (fichero propio) | Añadirlas a `albums.json` | Ciclos de vida distintos: las fotos están cerradas y las dedicatorias crecen; además evita editar un fichero de 1.300 líneas |
+| Sitio estático también para las dedicatorias | Formulario con backend (Vercel Functions + BD) | Los mensajes los recoge y pega el mantenedor; no hay datos que escribir en tiempo real (ver [Decisión - galería sin backend](Decisi%C3%B3n%20-%20galer%C3%ADa%20sin%20backend.md)) |
 | Imágenes en `public/` | S3 o Cloudinary desde el inicio | Cero configuración y coste; la migración posterior es trivial |
 | Hero estático a 60 vh | Carrusel de destacados con autoplay | Menos JavaScript, LCP más rápido y cero movimiento no solicitado |
 | Navegación en FAB flotante (`NavSidebar`) y retorno flotante en categorías | Cabecera con menú de secciones | La navegación vive siempre en la misma esquina y no desaparece al hacer scroll |
+| Retorno visible único: `FloatingBackButton` + enlace textual `sr-only` | Dos enlaces «←» visibles en la cabecera | El enlace textual duplicaba el retorno; se conserva oculto a la vista y visible con foco de teclado (SEO y teclado intactos) |
+| Página propia `/dedicatorias` que repite el hilo de la portada | Solo un ancla `#dedicatorias` | Sigue el mismo patrón portada ↔ colección: `h1`, contador y URL propios para las dedicatorias |
+| Flecha `→` en los títulos de sección | Indicador solo al hacer hover | La entrada a la colección se ve de un vistazo y funciona sin JavaScript |
 | 3 modos de color con `data-theme` + `localStorage` | Tema único oscuro | El regalo se lee igual de día que de noche, sin perder la identidad esmeralda |
 | Animaciones en CSS puro | `framer-motion` | No hidratar componentes de servidor por puras animaciones |
 | Tailwind CSS | CSS modules | Consistencia visual rápida mediante tokens |
