@@ -1368,6 +1368,336 @@
       "alt": "Juego de mesa clásico de hockey sobre hielo con pequeños jugadores en acción",
       "width": 960,
       "height": 1280
+    },
+    {
+      "id": "edu-43",
+      "src": "/images/edu/43.webp",
+      "title": "Envuelto en serpentina",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo envuelto en serpentina con gorro de Papá Noel, dando el pulgar arriba junto a un mural de nombres",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "edu-44",
+      "src": "/images/edu/44.webp",
+      "title": "Ruta en coche",
+      "category": "edu",
+      "featured": false,
+      "alt": "Autorretrato de Eduardo en el asiento del conductor con gafas de sol y cinturón puesto",
+      "width": 1152,
+      "height": 864
+    },
+    {
+      "id": "edu-45",
+      "src": "/images/edu/45.webp",
+      "title": "Camisa blanca",
+      "category": "edu",
+      "featured": false,
+      "alt": "Autorretrato de Eduardo en el espejo con camisa blanca y bolsos de colores a un lado",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "edu-46",
+      "src": "/images/edu/46.webp",
+      "title": "Espejo del baño",
+      "category": "edu",
+      "featured": false,
+      "alt": "Autorretrato de Eduardo en el espejo con camisa celeste abierta sobre camiseta blanca",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "edu-47",
+      "src": "/images/edu/47.webp",
+      "title": "Paz y credencial",
+      "category": "edu",
+      "featured": false,
+      "alt": "Autorretrato de Eduardo con camiseta negra y cordón de credencial, haciendo el gesto de paz",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "edu-48",
+      "src": "/images/edu/48.webp",
+      "title": "Espejo con estampa",
+      "category": "edu",
+      "featured": false,
+      "alt": "Autorretrato de Eduardo en el espejo con camiseta azul estampada y móvil verde",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "amigos-22",
+      "src": "/images/amigos/22.webp",
+      "title": "Atrapado contra la puerta",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Tres amigos jugando delante de una puerta blanca, uno con camisa roja contra el marco",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "amigos-23",
+      "src": "/images/amigos/23.webp",
+      "title": "Sofá y gestos",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Dos amigos sentados en un sofá: uno de verde riendo y el otro de rojo haciendo un gesto con las manos",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "amigos-24",
+      "src": "/images/amigos/24.webp",
+      "title": "Compañía en el centro",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Cinco amigos sonriendo juntos en una terraza de centro comercial",
+      "width": 2304,
+      "height": 1728
+    },
+    {
+      "id": "amigos-25",
+      "src": "/images/amigos/25.webp",
+      "title": "Mirador con mochilas",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Dos amigos con camisetas de tirantes y mochilas, riendo en un mirador sobre el valle",
+      "width": 1152,
+      "height": 864
+    },
+    {
+      "id": "amigos-26",
+      "src": "/images/amigos/26.webp",
+      "title": "La foto de la foto",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Persona de espaldas con mochilas grabando con el móvil el paisaje desde el mirador",
+      "width": 2304,
+      "height": 1728
+    },
+    {
+      "id": "amigos-27",
+      "src": "/images/amigos/27.webp",
+      "title": "Abrazo en la ladera",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Dos amigos abrazados con las montañas y el pueblo al fondo",
+      "width": 572,
+      "height": 1020
+    },
+    {
+      "id": "amigos-28",
+      "src": "/images/amigos/28.webp",
+      "title": "Selfie de pasillo",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Selfie de un chico con camisa celeste en la calle, con dos amigas detrás saludando",
+      "width": 2304,
+      "height": 1728
+    },
+    {
+      "id": "amigos-29",
+      "src": "/images/amigos/29.webp",
+      "title": "En el espejo curvo",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Tres amigos retratándose en un espejo curvo con marco de madera rojiza",
+      "width": 810,
+      "height": 1080
+    },
+    {
+      "id": "amigos-30",
+      "src": "/images/amigos/30.webp",
+      "title": "Terraza con ruido",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Selfie en una terraza con dos amigas de fondo ante una bocina y una rueda decorativa",
+      "width": 2064,
+      "height": 1548
+    },
+    {
+      "id": "amigos-31",
+      "src": "/images/amigos/31.webp",
+      "title": "Compañero de compras",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Selfie de dos amigos con gafas en el pasillo de un centro comercial",
+      "width": 2304,
+      "height": 1728
+    },
+    {
+      "id": "amigos-32",
+      "src": "/images/amigos/32.webp",
+      "title": "Bajo el techo verde",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Foto entre amigos en un patio techado, con un chico de naranja haciendo gestos",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "amigos-33",
+      "src": "/images/amigos/33.webp",
+      "title": "Delanteros",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Amiga y amigo con gafas en el asiento del coche, haciendo gestos a la cámara",
+      "width": 1280,
+      "height": 960
+    },
+    {
+      "id": "amigos-34",
+      "src": "/images/amigos/34.webp",
+      "title": "Ascensor con botellas",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Gente apretada en un ascensor con botellas de agua, uno al fondo grabando con el móvil",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "amigos-35",
+      "src": "/images/amigos/35.webp",
+      "title": "Mesa de restaurant",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Amiga con rizos y gafas junto a un amigo con gorra, abrazados en un restaurante",
+      "width": 1280,
+      "height": 716
+    },
+    {
+      "id": "retratos-14",
+      "src": "/images/retratos/14.webp",
+      "title": "Ajustándose las gafas",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico de jersey rojo recostado en el sofá, ajustándose las gafas y sonriendo",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "retratos-15",
+      "src": "/images/retratos/15.webp",
+      "title": "Al borde del abismo",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico de camisa blanca posando de espaldas en un mirador con montañas y cielo nublado",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "retratos-16",
+      "src": "/images/retratos/16.webp",
+      "title": "Mano en la cabeza",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico con gafas y camisa verde posando sonriente frente a una pared blanca",
+      "width": 1152,
+      "height": 864
+    },
+    {
+      "id": "retratos-17",
+      "src": "/images/retratos/17.webp",
+      "title": "Señalándose",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico con collar señalándose a sí mismo con el pulgar, retrato con flash en la oscuridad",
+      "width": 1152,
+      "height": 864
+    },
+    {
+      "id": "retratos-18",
+      "src": "/images/retratos/18.webp",
+      "title": "Entre estantes",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico de camisa a cuadros posando frente a una estantería llena de botellas en una tienda",
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "id": "retratos-19",
+      "src": "/images/retratos/19.webp",
+      "title": "Cansancio de fiesta",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico con gafas acostado en un sofá, mirando a cámara desde el reposacabezas",
+      "width": 960,
+      "height": 1280
+    },
+    {
+      "id": "retratos-20",
+      "src": "/images/retratos/20.webp",
+      "title": "Luz de cámara",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico de camiseta oscura señalándose con la mano en una habitación a media luz",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "retratos-21",
+      "src": "/images/retratos/21.webp",
+      "title": "Mano en el cuello",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Primer plano de un chico con la mano en el cuello, mirando a cámara con luz de ventana",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "retratos-22",
+      "src": "/images/retratos/22.webp",
+      "title": "Revolcado",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Primer plano de un chico tumbado con camiseta blanca estampada haciendo un gesto con la mano",
+      "width": 2304,
+      "height": 1728
+    },
+    {
+      "id": "retratos-23",
+      "src": "/images/retratos/23.webp",
+      "title": "Flor en la boca",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Primer plano de un chico con una florcita blanca en la boca sobre camiseta estampada",
+      "width": 2064,
+      "height": 1548
+    },
+    {
+      "id": "retratos-24",
+      "src": "/images/retratos/24.webp",
+      "title": "Pasillo tranquilo",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Chico de perfil con camiseta gris estampada, de pie en un pasillo con escalera al fondo",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "retratos-25",
+      "src": "/images/retratos/25.webp",
+      "title": "Pared gris",
+      "category": "retratos",
+      "featured": false,
+      "alt": "Retrato con flash de un chico de pelo rizado contra una pared gris, junto a un cabecero de madera",
+      "width": 2064,
+      "height": 1548
+    },
+    {
+      "id": "urbano-36",
+      "src": "/images/urbano/36.webp",
+      "title": "Paseo nocturno",
+      "category": "urbano",
+      "featured": false,
+      "alt": "Dos personas de espaldas caminando por una avenida arbolada iluminada de noche",
+      "width": 720,
+      "height": 1280
     }
   ]
 }

@@ -31,7 +31,7 @@ area: galeria-fotos
 - [x] Andamiaje del proyecto (`create-next-app` + dependencias)
 - [x] Reparto de tareas entre integrantes ([Plan de equipo - tareas](Plan%20de%20equipo%20-%20tareas.md))
 - [x] Contexto de diseño: `impeccable context` → `init` → `shape` (ver [PRODUCT.md](../../PRODUCT.md) y [DESIGN.md](../../DESIGN.md), en la raíz del repo)
-- [x] Selección de fotos y categorías (133 fotos reales organizadas en 5 categorías temáticas, `syntheticImages: false` en `albums.json`)
+- [x] Selección de fotos y categorías (166 fotos reales organizadas en 5 categorías temáticas, `syntheticImages: false` en `albums.json`)
 - [x] Componentes: hero, secciones, lightbox, bio, footer (C1-C7, PRs #1-#7, fusionados en `main`)
 - [x] Portada ensamblada en `app/page.tsx` con la galería completa (T4, PR #8, verificada en producción)
 - [x] Pasadas finales: `polish` y `audit` (T5: detector impeccable sin hallazgos, lint y build OK, `DESIGN.md` re-verificado contra lo construido)
@@ -41,7 +41,8 @@ area: galeria-fotos
 - [x] Navegación persistente: panel anclado al FAB en escritorio (`transform-origin: bottom right`) y `FloatingBackButton` «←» en las páginas de categoría, oculto con el lightbox
 - [x] Documentación sincronizada (`DESIGN.md`, `PRODUCT.md`, `docs/` y el vault de Obsidian) con el estado v3
 - [x] Hilo de dedicatorias: sección nueva tras la bio (`content/dedications.json`, `lib/dedications.ts`, `Dedications.tsx`), entrada en el `NavSidebar` con recuento y guía de uso actualizada
-- [x] Segunda tanda de mejoras: flecha `→` en los títulos de sección, retorno único (`FloatingBackButton` + enlace `sr-only`), página propia `/dedicatorias` (hilo completo repetido), tipografía de títulos **Syne** y textos de las 5 colecciones y las 133 fotos reescritos (títulos descriptivos y cercanos, `alt` literal); docs y vault resincronizados
+- [x] Segunda tanda de mejoras: flecha `→` en los títulos de sección, retorno único (`FloatingBackButton` + enlace `sr-only`), página propia `/dedicatorias` (hilo completo repetido), tipografía de títulos **Syne** y textos de las 5 colecciones y las 166 fotos reescritos (títulos descriptivos y cercanos, `alt` literal); docs y vault resincronizados
+- [x] Tercera tanda de fotos: 33 imágenes que estaban sueltas en `public/images/` clasificadas y numeradas (edu 43-48, amigos 22-35, retratos 14-25, urbano 36) con sus entradas en `albums.json`; sin duplicadas (RMSE sobre miniaturas frente a las 133 publicadas) y dos giradas 90° corregidas antes de entrar; recuentos actualizados en docs y vault
 - [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json`, pegar las dedicatorias reales en `dedications.json` y compartir la URL
 
 ## Documentación relacionada
@@ -56,4 +57,4 @@ area: galeria-fotos
 
 - La entrega tiene fecha: el cumpleaños. Priorizar lo esencial (portada, categorías, lightbox) frente a lo opcional (dominio propio, página por categoría).
 - Lighthouse: ≥95 se cumple en escritorio y sin simulación; el móvil simulado queda en 70 porque el suelo es la evaluación del runtime React de la portada completa (~2 s de TBT). Si se exige ≥95 también ahí, la mejora es reducir el JavaScript inicial.
-- Quedan ~150 fotos sueltas en `public/` (WhatsApp/Instagram) sin referenciar en `albums.json`: decidir si se integran o se excluyen del repositorio.
+- Ya no quedan fotos sueltas en `public/images/`: las 33 que había se integraron todas en `albums.json` (166 fotos) en la tercera tanda; la raíz solo contiene las 5 carpetas de categoría.
