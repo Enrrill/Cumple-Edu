@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Galería de fotos de cumpleaños de Eduardo">
+  <title>Galería de fotos de cumpleaños de Eduardo</title>
+  <rect width="64" height="64" rx="14" fill="#11261f"/>
+  <g>
+    <circle cx="32.0" cy="32.0" r="26.0" fill="#059669"/>
+    <g stroke="#11261f" stroke-width="2.4" fill="none">
+            <path d="M22.47 37.50L-3.24 22.65"/>
+      <path d="M22.47 26.50L22.47 -3.19"/>
+      <path d="M32.00 21.00L57.71 6.15"/>
+      <path d="M41.53 26.50L67.24 41.35"/>
+      <path d="M41.53 37.50L41.53 67.19"/>
+      <path d="M32.00 43.00L6.29 57.85"/>
+    </g>
+    <path d="M32.00 43.00 L22.47 37.50 L22.47 26.50 L32.00 21.00 L41.53 26.50 L41.53 37.50Z" fill="#f8faf8"/>
+  </g>
+</svg>

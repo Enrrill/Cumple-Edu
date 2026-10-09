@@ -57,6 +57,9 @@ Flujo de datos:
 Cumple-Edu/
 ├── app/
 │   ├── layout.tsx          # Plantilla base: html, fuentes, metadatos y tema inicial
+│   ├── icon.svg            # Favicon: diafragma de cámara esmeralda (SVG)
+│   ├── favicon.ico         # Favicon de respaldo (16/32/48 px)
+│   ├── apple-icon.png      # Icono de inicio en iOS (180 px)
 │   ├── page.tsx            # Portada
 │   ├── globals.css         # Tokens (3 modos de color), estilos y keyframes globales
 │   ├── dedicatorias/
@@ -76,7 +79,7 @@ Cumple-Edu/
 │       ├── ThemeToggle.tsx      # Selector de los 3 modos de color
 │       ├── NavSidebar.tsx       # FAB + panel de secciones (scroll-spy)
 │       ├── FloatingBackButton.tsx # Retorno «←» persistente en categorías
-│       ├── Bio.tsx              # Retrato y tarjeta de dedicatoria
+│       ├── Bio.tsx              # Retrato y dedicatoria editorial
 │       ├── Dedications.tsx      # Sección de dedicatorias en la portada
 │       ├── DedicationThread.tsx # Lista del hilo (compartida con /dedicatorias)
 │       └── SiteFooter.tsx       # Pie de página
@@ -210,7 +213,7 @@ El tipo `Dedication` y el helper `getDedications()` viven en `lib/dedications.ts
 | `PhotoCard` | Fotograma con hover, distintivo de destacada y apertura del lightbox |
 | `PhotoLightbox` | Único punto cliente de las galerías: delega el clic y monta el visor bajo demanda |
 | `Lightbox` | Visor a pantalla completo con ← →, contador y pie con velo degradado y título con sombra |
-| `Bio` | Presentación breve y tarjeta de dedicatoria de cumpleaños |
+| `Bio` | Presentación breve y dedicatoria editorial sin caja |
 | `Dedications` | Cabecera de la sección de dedicatorias en la portada: separador numerado, título con `→` enlazando a `/dedicatorias` y contador |
 | `DedicationThread` | Lista del hilo (tarjetas con avatar o inicial y conector entre mensajes), compartida entre la portada y `/dedicatorias` |
 | `SiteFooter` | Crédito y año |

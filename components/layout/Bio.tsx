@@ -6,11 +6,14 @@ export interface BioProps {
 }
 
 /**
- * Sección bio del fotógrafo — v2:
+ * Sección bio del fotógrafo — v3:
  * - Retrato con `rounded-2xl` y marco de esquina esmeralda (acento de marca)
  * - Las dos líneas decorativas de la esquina superior derecha replican la
  *   "marca de selección" del sistema de diseño (DESIGN.md)
- * - La dedicatoria con letra capital en accent y tipografía Fraunces
+ * - La dedicatoria como **bloque editorial sin caja**: filete superior,
+ *   etiqueta mono versalitas en `accent-strong`, cita a tamaño display en
+ *   Syne con comilla de apertura en esmeralda y firma alineada a la derecha.
+ *   Sin emojis: la identidad va por tipografía y filetes, como el resto.
  * - Animación de entrada igual que las placas de categoría (CSS puro)
  */
 export function Bio({ site }: BioProps) {
@@ -61,26 +64,39 @@ export function Bio({ site }: BioProps) {
           </h2>
           <p className="mt-6 text-base leading-7 text-muted">{site.bio}</p>
 
-          {/* Tarjeta de Dedicatoria de Cumpleaños */}
-          <div className="mt-8 relative overflow-hidden rounded-2xl border border-line/70 bg-surface/70 p-6 md:p-8 shadow-sm backdrop-blur-xs">
-            {/* Cabecera de la nota */}
-            <div className="flex items-center gap-2 mb-4">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold text-accent">
-                <span>🎂</span> Dedicatoria Especial
-              </span>
+          {/* Dedicatoria — bloque editorial sin caja */}
+          <div className="mt-10 border-t border-line pt-6">
+            {/* Etiqueta mono versalitas + filete que se desvanece */}
+            <div className="flex items-center gap-3">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-accent-strong">
+                Dedicatoria especial
+              </p>
+              <span
+                aria-hidden="true"
+                className="h-px flex-1 bg-linear-to-r from-line to-transparent"
+              />
             </div>
 
-            {/* Texto de la dedicatoria limpio y moderno */}
-            <blockquote className="font-sans text-lg md:text-xl font-medium leading-relaxed text-ink italic">
-              “{site.dedication}”
+            {/* Cita a tamaño display, con la comilla de apertura en esmeralda */}
+            <blockquote className="mt-5">
+              <p className="font-display text-[21px] font-medium leading-snug tracking-tight text-ink md:text-[26px]">
+                <span aria-hidden="true" className="text-accent">
+                  “
+                </span>
+                {site.dedication}
+                <span aria-hidden="true">”</span>
+              </p>
             </blockquote>
 
-            {/* Pie de la dedicatoria */}
-            <div className="mt-5 flex items-center justify-between border-t border-line/40 pt-4">
+            {/* Firma alineada a la derecha, con filete corto de entrada */}
+            <div className="mt-6 flex items-center justify-end gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-12 bg-linear-to-l from-line to-transparent"
+              />
               <span className="font-mono text-xs uppercase tracking-wider text-muted">
-                Con cariño · Feliz Cumpleaños
+                Con cariño
               </span>
-              <span className="text-sm">✨</span>
             </div>
           </div>
         </div>

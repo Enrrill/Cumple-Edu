@@ -121,11 +121,11 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
   - Título conceptual festivo: *"Historias & Miradas"*, subtítulo de regalo y badge *"Edición Especial · Cumpleaños"* en chip verde sólido (`accent-strong` con texto `canvas`: contraste 5,3:1 en claro, 4,9:1 en esmeralda y 9,8:1 en oscuro, legible sobre la foto en los tres modos).
   - Elimina cualquier redundancia con el álbum de retratos.
 - **Bio y dedicatoria** (`Bio`):
-  - Dedicatoria rediseñada como **Tarjeta de Felicitación** con badge festivo `🎂 Dedicatoria Especial`, tipografía fluida y firma con cariño (sin letra capital medieval).
+  - Dedicatoria como **bloque editorial sin caja** (v3): filete superior, etiqueta mono versalitas «Dedicatoria especial» en `accent-strong`, cita a tamaño display en Syne con la comilla de apertura en esmeralda y firma «Con cariño» alineada a la derecha; sin emojis y sin tarjeta.
 - **Hilo de dedicatorias** (`Dedications` en portada + `app/dedicatorias`):
   - Cabecera con el mismo ritmo editorial que las salas: separador con número en mono, título en Syne con **flecha `→`** que enlaza a la página propia `/dedicatorias` y contador `N dedicatorias`.
   - La portada muestra el hilo completo y la página nueva lo repite, el mismo patrón que las colecciones entre portada y `/categoria/[slug]`.
-  - El hilo vive en `DedicationThread` (lista + CSS de entrada), compartido por ambas vistas: columna única (`max-w-2xl`, 672 px) de tarjetas `rounded-2xl` sobre `bg-surface/70` con `border-line/70` y `backdrop-blur`, el mismo lenguaje que la tarjeta de `Bio`.
+  - El hilo vive en `DedicationThread` (lista + CSS de entrada), compartido por ambas vistas: columna única (`max-w-2xl`, 672 px) de tarjetas `rounded-2xl` sobre `bg-surface/70` con `border-line/70` y `backdrop-blur`, el mismo lenguaje de superficie del resto del sitio.
   - Cabecera de página `/dedicatorias`: `h1` en Syne, contador en mono y descripción; retorno con `FloatingBackButton` (sin `slug`). Si no hay dedicatorias, la página devuelve 404 y la sección desaparece de la portada y del `NavSidebar`.
   - Avatar opcional con `next/image`; sin él, inicial de la persona en círculo `bg-accent/15` + `text-accent`.
   - Autor en Syne, meta (vínculo · fecha) en Geist Mono versalitas y mensaje en `<blockquote>` con `text-ink`.
@@ -174,3 +174,4 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
 - **Entrada a colecciones**: flecha `→` al final del título de cada placa, tanto en portada como en la cabecera de dedicatorias, para que se vea de un vistazo que la sección es entrable.
 - **Retorno único**: se retiró el enlace textual «← Volver a la portada» visible de las colecciones (redundante con `FloatingBackButton`) y se conservó como `sr-only focus:not-sr-only`.
 - **Dedicatorias con página propia**: `/dedicatorias` con `h1`, contador y hilo completo; la portada mantiene su sección (hilo completo) con el título enlazando a la página, igual que las colecciones.
+- **Favicon**: del triángulo genérico de Next.js a un **diafragma de 6 aspas** en esmeralda sobre tinta (`app/icon.svg` + `app/favicon.ico` de respaldo + `app/apple-icon.png`), legible a 16 px con la identidad de la galería en la pestaña.
