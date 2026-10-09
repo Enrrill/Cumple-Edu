@@ -1697,6 +1697,86 @@
       "alt": "Dos personas de espaldas caminando por una avenida arbolada iluminada de noche, con la ciudad apagándose a su alrededor",
       "width": 720,
       "height": 1280
+    },
+    {
+      "id": "amigos-36",
+      "src": "/images/amigos/36.webp",
+      "title": "Mesa para dos",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Selfie en un restaurante: una chica sonríe con el mentón en la mano mientras un chico asoma medio rostro, entre mesas y sillas de madera",
+      "width": 2560,
+      "height": 1920
+    },
+    {
+      "id": "amigos-37",
+      "src": "/images/amigos/37.webp",
+      "title": "Espejo de juguetería",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Selfie al espejo de una pareja en una tienda de juguetes: ella hace la señal de paz y él sostiene el teléfono ante una pared de cajas coleccionables",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "amigos-38",
+      "src": "/images/amigos/38.webp",
+      "title": "Ojo clavado",
+      "category": "amigos",
+      "featured": false,
+      "alt": "Selfie de una pareja contra una pared rugosa: los dos guiñan un ojo, ella apoya la mejilla en la mano con una sudadera azul",
+      "width": 2064,
+      "height": 1548
+    },
+    {
+      "id": "edu-49",
+      "src": "/images/edu/49.webp",
+      "title": "Barba de Papá Noel",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo en uniforme UNEEL con un muñeco de Papá Noel colgando justo delante de su cara, como barba improvisada",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "id": "edu-50",
+      "src": "/images/edu/50.webp",
+      "title": "Dos jefes",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo mira hacia arriba con dos peluches caras de enfadado apoyados en el pelo, uno a cada lado de la cabeza",
+      "width": 1152,
+      "height": 864
+    },
+    {
+      "id": "edu-51",
+      "src": "/images/edu/51.webp",
+      "title": "Enfoque valiente",
+      "category": "edu",
+      "featured": false,
+      "alt": "Primer plano de una cara totalmente desenfocada: ojos, nariz y boca difuminados en un borrón cálido",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "edu-52",
+      "src": "/images/edu/52.webp",
+      "title": "Ensayo general",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo se fotografía al espejo con una cámara compacta plateada, jerséi de rayas blancas y negras, delante de una puerta de madera",
+      "width": 1920,
+      "height": 2560
+    },
+    {
+      "id": "edu-53",
+      "src": "/images/edu/53.webp",
+      "title": "A la antigua",
+      "category": "edu",
+      "featured": false,
+      "alt": "Eduardo apunta con una cámara analógica negra a la altura del ojo, camisa blanca y una tira de personajes al cuello, en una calle arbolada",
+      "width": 1920,
+      "height": 2560
     }
   ]
 }

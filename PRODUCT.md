@@ -41,7 +41,7 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
     - 🌙 **Modo Oscuro**: Carbón y grafito elegante para navegación nocturna (`#0F1412`).
   - Tipografías modernas y con carácter: **Syne** (títulos con impacto) + **Plus Jakarta Sans** (lectura nítida) + **Geist Mono** (números de fotograma y contadores).
   - Visor `Lightbox` inmersivo: overlay negro al 88 %, título en texto suelto con doble sombra sobre velo degradado inferior, contador arriba a la izquierda y controles de solo icono sin discos.
-  - Títulos y descripciones de las 5 colecciones y `title`/`alt` de las 166 fotos redactados con tono cercano y humor —título corto con guiño y `alt` que sigue describiendo la foto con exactitud por accesibilidad— (p. ej. la categoría personal pasa de «Retratos de Eduardo» a *«Eduardo, tal cual»*), y los títulos de página compuestos con la plantilla del `layout`.
+  - Títulos y descripciones de las 5 colecciones y `title`/`alt` de las 174 fotos redactados con tono cercano y humor —título corto con guiño y `alt` que sigue describiendo la foto con exactitud por accesibilidad— (p. ej. la categoría personal pasa de «Retratos de Eduardo» a *«Eduardo, tal cual»*), y los títulos de página compuestos con la plantilla del `layout`.
   - Dedicatoria de cumpleaños como **bloque editorial sin caja** (filete superior, etiqueta mono, cita en Syne y firma a la derecha), sin emojis ni tarjeta.
   - Identidad de pestaña: **favicon de diafragma de cámara** en esmeralda (`app/icon.svg` con `app/favicon.ico` de respaldo y `app/apple-icon.png` de 180 px), en sustitución del triángulo genérico de Next.js.
   - Selector de temas accesible (`ThemeToggle`) en la cabecera, en todos los tamaños de pantalla.
@@ -50,7 +50,7 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
 - Rutas: portada, `/categoria/[slug]`, `/dedicatorias` y página 404.
 - Stack fijado: Next.js 16 + React 19 + TypeScript + Tailwind CSS 4 + pnpm + Lucide Icons; lightbox con `yet-another-react-lightbox`.
 - Contenido sin programación posible vía `albums.json` (ver `docs/Documentación/Guía de uso sin programación.md`).
-- **Fotos reales integradas**: 166 fotografías reales clasificadas en 5 categorías (edu 44, urbano 36, amigos 35, retratos 25, paisaje 26).
+- **Fotos reales integradas**: 174 fotografías reales clasificadas en 5 categorías (edu 49, urbano 36, amigos 38, retratos 25, paisaje 26).
 - **Nombre**: Eduardo.
 
 ## Brand Commitments
@@ -66,7 +66,7 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
   - TypeScript verificado con 0 errores (`pnpm exec tsc --noEmit`).
   - Build de producción Next.js 16 completado con éxito (`pnpm build`, 10 páginas estáticas, `/dedicatorias` incluida) con el servidor de desarrollo parado — nunca se compila con `pnpm dev` en marcha, porque pisa `.next/`.
   - Prueba de humo en el build de producción: portada, `/dedicatorias` y colecciones responden, visor abre y cierra con Escape, retorno flotante y cabecera navegan, sin errores de consola.
-- **Ausencias que no deben fabricarse**: nada estructural — nombre, 166 fotos reales, bio y dedicatoria ya están. La bio, la dedicatoria de `site.dedication` y las entradas del hilo de dedicatorias son **texto de ejemplo** a la espera de la edición manual del mantenedor.
+- **Ausencias que no deben fabricarse**: nada estructural — nombre, 174 fotos reales, bio y dedicatoria ya están. La bio, la dedicatoria de `site.dedication` y las entradas del hilo de dedicatorias son **texto de ejemplo** a la espera de la edición manual del mantenedor.
 
 ## Product Principles
 

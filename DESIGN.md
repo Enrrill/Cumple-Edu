@@ -168,7 +168,7 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
 - **Rejilla**: Migración de CSS Grid estándar a **CSS Columns nativo (Masonry)** con 2 columnas desde móvil y escalado a 3 (lg) y 4 (xl).
 - **Navegación**: del menú en cabecera a **FAB + `NavSidebar`** (bottom-sheet en móvil, popover anclado al botón en escritorio) y **`FloatingBackButton`** en las páginas de categoría: la navegación y el retorno viven siempre en la misma esquina y no desaparecen al hacer scroll.
 - **Temas**: sistema de **3 modos de color** (esmeralda por defecto, claro y oscuro) con `data-theme` + `sessionStorage` (arranca siempre en esmeralda; la elección dura la sesión), en lugar de un único fondo oscuro.
-- **Nombre y fotos**: Eduardo; **166 fotos reales** en 5 salas (edu 44, urbano 36, amigos 35, retratos 25, paisaje 26).
+- **Nombre y fotos**: Eduardo; **174 fotos reales** en 5 salas (edu 49, urbano 36, amigos 38, retratos 25, paisaje 26).
 - **Estética**: acabado esmeralda con micro-interacciones sutiles (hover, pulse, glow, glassmorphism) sobre las tres paletas.
 - **Tipografía**: de Outfit a **Syne** para títulos (más impacto con la misma elegancia), manteniendo Plus Jakarta Sans y Geist Mono intactas.
 - **Entrada a colecciones**: flecha `→` al final del título de cada placa, tanto en portada como en la cabecera de dedicatorias, para que se vea de un vistazo que la sección es entrable.

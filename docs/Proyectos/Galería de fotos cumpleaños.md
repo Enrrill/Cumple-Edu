@@ -48,6 +48,7 @@ area: galeria-fotos
 - [x] Limpieza previa a la entrega: fuera la prop `sections` sin usar del header, `Album` e `isSyntheticContent()` de `lib/albums.ts`, el flag `syntheticImages` del JSON, los 5 SVGs de plantilla de `public/` y la dependencia `framer-motion`; el nombre del header ahora **vuelve al inicio** (scroll suave en portada, `auto` con `prefers-reduced-motion`, navegación normal desde el resto de rutas); docs y vault resincronizados
 - [x] Tema por defecto cambiado a **Esmeralda**: `data-theme` en el layout, script anti-flash de `<head>` y snapshots de `ThemeToggle` (sin elección guardada se abre en verde; la elección previa del visitante se respeta); docs y vault resincronizados
 - [x] Arranque **siempre en Esmeralda**: la elección de modo pasa de `localStorage` a `sessionStorage` (dura la sesión; el script anti-flash purga la clave antigua), así ninguna sesión hereda un modo distinto del verde por defecto; docs y vault resincronizados
+- [x] Cuarta tanda de fotos: 8 imágenes sueltas en `public/images/` (exportadas de WhatsApp) clasificadas y numeradas (edu 49-53, amigos 36-38) con sus entradas en `albums.json` (títulos con guiño y `alt` exactos sin emojis, `featured: false`); recuentos actualizados a 174 fotos en docs y vault
 - [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json`, pegar las dedicatorias reales en `dedications.json` y compartir la URL
 
 ## Documentación relacionada
@@ -62,4 +63,4 @@ area: galeria-fotos
 
 - La entrega tiene fecha: el cumpleaños. Priorizar lo esencial (portada, categorías, lightbox) frente a lo opcional (dominio propio, página por categoría).
 - Lighthouse: ≥95 se cumple en escritorio y sin simulación; el móvil simulado queda en 70 porque el suelo es la evaluación del runtime React de la portada completa (~2 s de TBT). Si se exige ≥95 también ahí, la mejora es reducir el JavaScript inicial.
-- Ya no quedan fotos sueltas en `public/images/`: las 33 que había se integraron todas en `albums.json` (166 fotos) en la tercera tanda; la raíz solo contiene las 5 carpetas de categoría.
+- Ya no quedan fotos sueltas en `public/images/`: las 33 de la tercera tanda y las 8 de la cuarta se integraron todas en `albums.json` (174 fotos); la raíz solo contiene las 5 carpetas de categoría.
