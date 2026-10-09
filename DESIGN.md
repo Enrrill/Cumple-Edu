@@ -114,11 +114,11 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
   - Distintivo destacado (`FEATURED`) con pulso luminoso en esquina superior derecha.
 - **Visor** (`Lightbox`):
   - Overlay negro al 88 % sobre la página; controles de solo icono sin discos, marcos ni fondos.
-  - Título en píldora flotante inferior centrada con `backdrop-blur`, legible sobre cualquier foto.
+  - Título en texto suelto centrado sobre un velo degradado inferior, con doble sombra de texto (sin píldora, sin borde), legible sobre cualquier foto.
   - Contador en la esquina superior izquierda, en Geist Mono y con sombra de lectura.
   - Navegación ← →, Escape y clic en el fondo; fundido de 260 ms.
 - **Hero** (`Hero`):
-  - Título conceptual festivo: *"Historias & Miradas"*, subtítulo de regalo y badge *"Edición Especial · Cumpleaños"*.
+  - Título conceptual festivo: *"Historias & Miradas"*, subtítulo de regalo y badge *"Edición Especial · Cumpleaños"* en chip verde sólido (`accent-strong` con texto `canvas`: contraste 5,3:1 en claro, 4,9:1 en esmeralda y 9,8:1 en oscuro, legible sobre la foto en los tres modos).
   - Elimina cualquier redundancia con el álbum de retratos.
 - **Bio y dedicatoria** (`Bio`):
   - Dedicatoria rediseñada como **Tarjeta de Felicitación** con badge festivo `🎂 Dedicatoria Especial`, tipografía fluida y firma con cariño (sin letra capital medieval).

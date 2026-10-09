@@ -43,6 +43,7 @@ area: galeria-fotos
 - [x] Hilo de dedicatorias: sección nueva tras la bio (`content/dedications.json`, `lib/dedications.ts`, `Dedications.tsx`), entrada en el `NavSidebar` con recuento y guía de uso actualizada
 - [x] Segunda tanda de mejoras: flecha `→` en los títulos de sección, retorno único (`FloatingBackButton` + enlace `sr-only`), página propia `/dedicatorias` (hilo completo repetido), tipografía de títulos **Syne** y textos de las 5 colecciones y las 166 fotos reescritos (títulos descriptivos y cercanos, `alt` literal); docs y vault resincronizados
 - [x] Tercera tanda de fotos: 33 imágenes que estaban sueltas en `public/images/` clasificadas y numeradas (edu 43-48, amigos 22-35, retratos 14-25, urbano 36) con sus entradas en `albums.json`; sin duplicadas (RMSE sobre miniaturas frente a las 133 publicadas) y dos giradas 90° corregidas antes de entrar; recuentos actualizados en docs y vault
+- [x] Tercera tanda de textos y visor: pie del visor sin píldora (velo degradado + doble sombra de texto), badge «Edición Especial · Cumpleaños» en chip verde sólido legible en los 3 modos de color y `title`/`alt` de las 166 fotos reescritos con tono cercano y humor (`alt` sigue exacto por accesibilidad); guía de uso y docs actualizadas; docs y vault resincronizados
 - [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json`, pegar las dedicatorias reales en `dedications.json` y compartir la URL
 
 ## Documentación relacionada

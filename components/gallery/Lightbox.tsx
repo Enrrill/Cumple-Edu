@@ -20,7 +20,8 @@ export interface LightboxProps {
  * Lightbox v4 — Visor Inmersivo Flotante:
  * - Botones de solo icono sin marcos, contornos ni fondos circulares.
  * - Overlay negro oscuro semitransparente con desenfoque de fondo para sensación de foto flotando.
- * - Título de la imagen en píldora flotante inferior no invasiva.
+ * - Título de la imagen en texto suelto sobre un velo degradado inferior: sin
+ *   píldora, sin borde y con doble sombra de texto para que respire en cualquier foto.
  * - Sin botones adicionales de zoom en la barra superior.
  * - Touch swipe natural e inmersivo en móviles.
  */
@@ -117,12 +118,10 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
         slideFooter: ({ slide }) => {
           if (!slide.title) return null;
           return (
-            <div className="pointer-events-none absolute inset-x-0 bottom-6 z-20 flex justify-center px-4">
-              <div className="rounded-full bg-black/60 px-4 py-1.5 backdrop-blur-md border border-white/15 shadow-xl text-center max-w-[85vw]">
-                <p className="font-sans text-xs md:text-sm font-medium text-white/95 truncate">
-                  {typeof slide.title === "string" ? slide.title : ""}
-                </p>
-              </div>
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 bg-linear-to-t from-black/70 via-black/25 to-transparent px-6 pt-24 pb-7 text-center">
+              <p className="mx-auto max-w-[85vw] font-sans text-sm font-medium text-white line-clamp-2 [text-shadow:0_1px_2px_rgba(0,0,0,0.9),0_6px_16px_rgba(0,0,0,0.75)] md:text-base">
+                {typeof slide.title === "string" ? slide.title : ""}
+              </p>
             </div>
           );
         },

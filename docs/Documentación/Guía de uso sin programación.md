@@ -119,8 +119,8 @@ Estilo de los textos (para que la galería mantenga su tono):
 
 - **Título de colección** (`categories`): nombre corto y cercano, en el estilo «Amigos & Recuerdos» o «Eduardo, tal cual».
 - **Descripción de colección**: una frase que cuente qué se va a ver, con aire amable (no un listado de tres palabras).
-- **Título de foto** (`photos.title`): descriptivo y amigable, en español; se muestra bajo la miniatura y en el visor.
-- **Texto alternativo** (`photos.alt`): literal y objetivo («Eduardo con gorro blanco sonriendo a la cámara»); es lo que leen los lectores de pantalla, sin adjetivos ni humor.
+- **Título de foto** (`photos.title`): corto y con humor (de 2 a 5 palabras, un guiño sin perder la pista de qué muestra la foto), en español; se muestra bajo la miniatura y en el visor.
+- **Texto alternativo** (`photos.alt`): describe la foto con exactitud —persona, gesto y lugar— pero con el tono cercano y con humor del sitio (p. ej. «Eduardo con gorro blanco sonriendo a la cámara con esa cara de "yo no he sido"»); es lo que leen los lectores de pantalla: sin emojis y sin texto que no tenga que ver con la imagen.
 - Cada título de sección termina en una flecha `→` automática: no hay que escribirla a mano.
 
 ### Consejos para las fotos

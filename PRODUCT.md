@@ -40,8 +40,8 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
     - 🌿 **Modo Esmeralda Moderno**: Identidad botánica revitalizada con fondo verde agua (`#E8F5EE`) y acento esmeralda profundo.
     - 🌙 **Modo Oscuro**: Carbón y grafito elegante para navegación nocturna (`#0F1412`).
   - Tipografías modernas y con carácter: **Syne** (títulos con impacto) + **Plus Jakarta Sans** (lectura nítida) + **Geist Mono** (números de fotograma y contadores).
-  - Visor `Lightbox` inmersivo: overlay negro al 88 %, título en píldora inferior, contador arriba a la izquierda y controles de solo icono sin discos.
-  - Títulos y descripciones de las 5 colecciones y `title`/`alt` de las 166 fotos redactados para ser descriptivos y cercanos (p. ej. la categoría personal pasa de «Retratos de Eduardo» a *«Eduardo, tal cual»*), y los títulos de página compuestos con la plantilla del `layout`.
+  - Visor `Lightbox` inmersivo: overlay negro al 88 %, título en texto suelto con doble sombra sobre velo degradado inferior, contador arriba a la izquierda y controles de solo icono sin discos.
+  - Títulos y descripciones de las 5 colecciones y `title`/`alt` de las 166 fotos redactados con tono cercano y humor —título corto con guiño y `alt` que sigue describiendo la foto con exactitud por accesibilidad— (p. ej. la categoría personal pasa de «Retratos de Eduardo» a *«Eduardo, tal cual»*), y los títulos de página compuestos con la plantilla del `layout`.
   - Dedicatoria de cumpleaños presentada como una tarjeta de regalo afectuosa y moderna.
   - Selector de temas accesible (`ThemeToggle`) en la cabecera, en todos los tamaños de pantalla.
   - `NavSidebar`: bottom-sheet en móvil y **popover anclado al botón** en escritorio (`transform-origin: bottom right`), con scroll-spy y conteo de fotos por sección.

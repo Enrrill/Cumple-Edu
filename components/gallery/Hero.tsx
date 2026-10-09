@@ -43,7 +43,12 @@ export function Hero({ photo, name }: HeroProps) {
 
       {/* Título conceptual: aquí vive el h1 único de la portada */}
       <div className="absolute bottom-16 left-0 right-0 z-10 px-6 md:px-12">
-        <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-2">
+        {/*
+          Chip sólido (`accent-strong` + texto `canvas`): legible sobre la
+          foto en los 3 modos (5,3:1 claro · 4,9:1 esmeralda · 9,8:1 oscuro).
+          El verde `accent` suelto se perdía sobre el velo translúcido.
+        */}
+        <p className="mb-3 inline-block rounded-full bg-accent-strong px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.25em] text-canvas">
           Edición Especial · Cumpleaños
         </p>
         <h1 className="font-display text-4xl font-semibold tracking-tight text-ink md:text-6xl">

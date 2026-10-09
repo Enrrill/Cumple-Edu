@@ -209,7 +209,7 @@ El tipo `Dedication` y el helper `getDedications()` viven en `lib/dedications.ts
 | `GalleryGrid` | Rejilla masonry responsive (CSS Columns) |
 | `PhotoCard` | Fotograma con hover, distintivo de destacada y apertura del lightbox |
 | `PhotoLightbox` | Único punto cliente de las galerías: delega el clic y monta el visor bajo demanda |
-| `Lightbox` | Visor a pantalla completo con ← →, contador y píldora de título |
+| `Lightbox` | Visor a pantalla completo con ← →, contador y pie con velo degradado y título con sombra |
 | `Bio` | Presentación breve y tarjeta de dedicatoria de cumpleaños |
 | `Dedications` | Cabecera de la sección de dedicatorias en la portada: separador numerado, título con `→` enlazando a `/dedicatorias` y contador |
 | `DedicationThread` | Lista del hilo (tarjetas con avatar o inicial y conector entre mensajes), compartida entre la portada y `/dedicatorias` |
