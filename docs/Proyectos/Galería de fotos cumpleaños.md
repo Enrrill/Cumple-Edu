@@ -47,6 +47,7 @@ area: galeria-fotos
 - [x] Cuarta tanda de identidad: favicon nuevo de **diafragma de 6 aspas** en esmeralda (`app/icon.svg` + `app/favicon.ico` regenerado + `app/apple-icon.png`), dedicatoria de la bio rediseñada como **bloque editorial sin caja** (sin emojis: filete, etiqueta mono, cita en Syne y firma) y texto de `site.dedication` actualizado; docs y vault resincronizados
 - [x] Limpieza previa a la entrega: fuera la prop `sections` sin usar del header, `Album` e `isSyntheticContent()` de `lib/albums.ts`, el flag `syntheticImages` del JSON, los 5 SVGs de plantilla de `public/` y la dependencia `framer-motion`; el nombre del header ahora **vuelve al inicio** (scroll suave en portada, `auto` con `prefers-reduced-motion`, navegación normal desde el resto de rutas); docs y vault resincronizados
 - [x] Tema por defecto cambiado a **Esmeralda**: `data-theme` en el layout, script anti-flash de `<head>` y snapshots de `ThemeToggle` (sin elección guardada se abre en verde; la elección previa del visitante se respeta); docs y vault resincronizados
+- [x] Arranque **siempre en Esmeralda**: la elección de modo pasa de `localStorage` a `sessionStorage` (dura la sesión; el script anti-flash purga la clave antigua), así ninguna sesión hereda un modo distinto del verde por defecto; docs y vault resincronizados
 - [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json`, pegar las dedicatorias reales en `dedications.json` y compartir la URL
 
 ## Documentación relacionada

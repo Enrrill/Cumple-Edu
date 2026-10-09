@@ -26,7 +26,7 @@ La página es un regalo de cumpleaños para un fotógrafo: el arte debe ser lo p
 
 - **Mood**: galería de arte serena, con acentos verdes que evocan naturaleza y calma.
 - **Principio**: la interfaz se retira para que la foto mande; el verde es firma de identidad, no como ruido.
-- **Modos de color**: el sitio ofrece tres atmósferas seleccionables desde la cabecera —**esmeralda (por defecto)**, **claro** y **oscuro**— con persistencia en el navegador.
+- **Modos de color**: el sitio ofrece tres atmósferas seleccionables desde la cabecera —**esmeralda (por defecto)**, **claro** y **oscuro**— con persistencia durante la sesión (cada sesión arranca en esmeralda).
 - Los valores definitivos se confirman y documentan en `DESIGN.md` (autoridad visual) y se implementan en `app/globals.css`.
 
 ### Paleta de colores (modo oscuro, valor histórico)

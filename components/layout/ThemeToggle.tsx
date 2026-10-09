@@ -12,7 +12,7 @@ function subscribe(callback: () => void) {
 
 function getSnapshot(): Theme {
   if (typeof window === "undefined") return "emerald";
-  const saved = localStorage.getItem("edu-theme") as Theme | null;
+  const saved = sessionStorage.getItem("edu-theme") as Theme | null;
   return saved || "emerald";
 }
 
@@ -20,13 +20,22 @@ function getServerSnapshot(): Theme {
   return "emerald";
 }
 
+/**
+ * Selector de los 3 modos de color.
+ *
+ * Cada sesión arranca en Esmeralda: la elección del visitante se guarda en
+ * `sessionStorage["edu-theme"]` (dura lo que la pestaña, no se hereda entre
+ * sesiones) y el script anti-flash de `<head>` la aplica antes del primer
+ * pintado. Los restos de la clave antigua en `localStorage` los purga ese
+ * script al cargar.
+ */
 export function ThemeToggle({ className = "" }: { className?: string }) {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const changeTheme = (newTheme: Theme) => {
     document.documentElement.setAttribute("data-theme", newTheme);
     try {
-      localStorage.setItem("edu-theme", newTheme);
+      sessionStorage.setItem("edu-theme", newTheme);
       window.dispatchEvent(new Event("storage"));
     } catch {}
   };

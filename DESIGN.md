@@ -18,7 +18,7 @@
 
 ## Paleta y Sistema de 3 Modos
 
-Estrategia de color: **modern restrained** — 3 modos de color seleccionables por el usuario desde `ThemeToggle` (cabecera, cualquier tamaño), con persistencia en `localStorage` (`edu-theme`) y lectura previa por script inline en `<head>` para evitar el flash del tema incorrecto.
+Estrategia de color: **modern restrained** — 3 modos de color seleccionables por el usuario desde `ThemeToggle` (cabecera, cualquier tamaño), con persistencia durante la sesión (`sessionStorage["edu-theme"]`; cada sesión arranca en Esmeralda) y lectura previa por script inline en `<head>` para evitar el flash del tema incorrecto.
 
 ### 1. Modo Claro
 Luminoso, limpio, cálido y festivo (enfoque de regalo de cumpleaños moderno):
@@ -92,7 +92,7 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
   - Glassmorphism: `backdrop-blur` permanente si el navegador lo soporta y fondo/borde que se solidifican al hacer scroll (`animation-timeline: scroll()`, con fondo sólido de reserva sin ese soporte).
   - Línea esmeralda fantasma en el borde inferior (`::after`, degradado `rgb(52 211 153 / 0.22)`).
 - **Selector de tema** (`ThemeToggle`):
-  - Tres botones (Sol / Hoja / Luna) en píldora con `aria-pressed` y `role="group"`; escribe `data-theme` en `<html>` y persiste en `localStorage["edu-theme"]`.
+  - Tres botones (Sol / Hoja / Luna) en píldora con `aria-pressed` y `role="group"`; escribe `data-theme` en `<html>` y persiste en `sessionStorage["edu-theme"]` (dura la sesión).
 - **Navegación flotante** (`NavSidebar`):
   - FAB de 48 px en `bottom-6 right-5` que abre el listado de secciones con scroll-spy, numeración editorial y conteo por sección (fotos por sala, dedicatorias en su sección).
   - **Escritorio (lg+)**: popover anclado contextualmente justo encima del botón (`bottom-20 right-5`, `w-72`, `rounded-2xl`) con `transform-origin: bottom right`: escala 0.92 → 1, desplazamiento de 8 px y fundido (200 ms de entrada, 160 ms de salida).
@@ -158,7 +158,7 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
 
 - CSS Columns sin JavaScript de layout: renderizado nativo instantáneo en cliente, cero recalculo en JS.
 - Server Components por defecto: `PhotoCard`, `GalleryGrid`, `CategorySection`, `Hero`, `Bio`, `Dedications`, `DedicationThread`, `SiteHeader`, `SiteFooter` y `FloatingBackButton` no añaden JS al cliente.
-- Client Components mínimos: `NavSidebar` (scroll-spy y estado del panel), `ThemeToggle` (tema en `localStorage`) y `PhotoLightbox` (delegación de clics).
+- Client Components mínimos: `NavSidebar` (scroll-spy y estado del panel), `ThemeToggle` (tema por sesión en `sessionStorage`) y `PhotoLightbox` (delegación de clics).
 - Carga de imágenes con `next/image`, `sizes` afinado a las columnas reales, `loading="lazy"` y `fetchpriority` alto en el hero (q=60) / bajo en las tarjetas.
 - Lightbox: `next/dynamic` con `ssr: false` y montaje solo tras el primer clic, así el chunk de YARL queda fuera de la hidratación de la portada.
 - Cumplimiento de meta Lighthouse ≥ 95 en entorno de producción.
@@ -167,7 +167,7 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
 
 - **Rejilla**: Migración de CSS Grid estándar a **CSS Columns nativo (Masonry)** con 2 columnas desde móvil y escalado a 3 (lg) y 4 (xl).
 - **Navegación**: del menú en cabecera a **FAB + `NavSidebar`** (bottom-sheet en móvil, popover anclado al botón en escritorio) y **`FloatingBackButton`** en las páginas de categoría: la navegación y el retorno viven siempre en la misma esquina y no desaparecen al hacer scroll.
-- **Temas**: sistema de **3 modos de color** (esmeralda por defecto, claro y oscuro) con `data-theme` + `localStorage`, en lugar de un único fondo oscuro.
+- **Temas**: sistema de **3 modos de color** (esmeralda por defecto, claro y oscuro) con `data-theme` + `sessionStorage` (arranca siempre en esmeralda; la elección dura la sesión), en lugar de un único fondo oscuro.
 - **Nombre y fotos**: Eduardo; **166 fotos reales** en 5 salas (edu 44, urbano 36, amigos 35, retratos 25, paisaje 26).
 - **Estética**: acabado esmeralda con micro-interacciones sutiles (hover, pulse, glow, glassmorphism) sobre las tres paletas.
 - **Tipografía**: de Outfit a **Syne** para títulos (más impacto con la misma elegancia), manteniendo Plus Jakarta Sans y Geist Mono intactas.

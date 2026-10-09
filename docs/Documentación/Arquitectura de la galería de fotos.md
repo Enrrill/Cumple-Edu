@@ -205,7 +205,7 @@ El tipo `Dedication` y el helper `getDedications()` viven en `lib/dedications.ts
 | --- | --- |
 | `Hero` | Foto fija a sangre (60 vh) con título conceptual; imagen LCP |
 | `SiteHeader` | Cabecera fija mínima: nombre y selector de tema |
-| `ThemeToggle` | Selector de los 3 modos de color (persistencia en `localStorage`) |
+| `ThemeToggle` | Selector de los 3 modos de color (persistencia por sesión en `sessionStorage`) |
 | `NavSidebar` | FAB flotante + panel de secciones con scroll-spy (bottom-sheet en móvil, popover anclado en escritorio) |
 | `FloatingBackButton` | Botón «←» persistente para volver a la portada desde una categoría o `/dedicatorias` |
 | `CategorySection` | Título de la categoría con flecha `→` de entrada, separador numerado, descripción y rejilla |
@@ -261,7 +261,7 @@ El tipo `Dedication` y el helper `getDedications()` viven en `lib/dedications.ts
 | Retorno visible único: `FloatingBackButton` + enlace textual `sr-only` | Dos enlaces «←» visibles en la cabecera | El enlace textual duplicaba el retorno; se conserva oculto a la vista y visible con foco de teclado (SEO y teclado intactos) |
 | Página propia `/dedicatorias` que repite el hilo de la portada | Solo un ancla `#dedicatorias` | Sigue el mismo patrón portada ↔ colección: `h1`, contador y URL propios para las dedicatorias |
 | Flecha `→` en los títulos de sección | Indicador solo al hacer hover | La entrada a la colección se ve de un vistazo y funciona sin JavaScript |
-| 3 modos de color con `data-theme` + `localStorage` | Tema único oscuro | El regalo se lee igual de día que de noche, sin perder la identidad esmeralda |
+| 3 modos de color con `data-theme` + `sessionStorage` | Tema único oscuro | El regalo se lee igual de día que de noche, sin perder la identidad esmeralda |
 | Animaciones en CSS puro | `framer-motion` | No hidratar componentes de servidor por puras animaciones |
 | Tailwind CSS | CSS modules | Consistencia visual rápida mediante tokens |
 | pnpm | npm | Instalaciones más rápidas y menor uso de disco; Vercel lo detecta por el lockfile |
