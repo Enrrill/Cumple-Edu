@@ -36,8 +36,8 @@ Una página-galería personal, estática y sin backend, construida como regalo: 
   - Rejilla Masonry tipo Pinterest pura: tarjetas **100% fotográficas** con `rounded-2xl`, sin bandas muertas inferiores; hover overlay deslizante con título y badge de fotograma.
   - Foco accesible con anillo redondeado uniforme (`focus-visible:ring-2 rounded-2xl`).
   - **Sistema de 3 Modos de Color** (selector `ThemeToggle` en la cabecera, persistido en `localStorage`):
-    - ☀️ **Modo Claro (Por Defecto)**: Luminoso, limpio y fresco en tonos salvia y esmeralda (`#F8FAF8`).
-    - 🌿 **Modo Esmeralda Moderno**: Identidad botánica revitalizada con fondo verde agua (`#E8F5EE`) y acento esmeralda profundo.
+    - ☀️ **Modo Claro**: Luminoso, limpio y fresco en tonos salvia y esmeralda (`#F8FAF8`).
+    - 🌿 **Modo Esmeralda Moderno (Por Defecto)**: Identidad botánica revitalizada con fondo verde agua (`#E8F5EE`) y acento esmeralda profundo.
     - 🌙 **Modo Oscuro**: Carbón y grafito elegante para navegación nocturna (`#0F1412`).
   - Tipografías modernas y con carácter: **Syne** (títulos con impacto) + **Plus Jakarta Sans** (lectura nítida) + **Geist Mono** (números de fotograma y contadores).
   - Visor `Lightbox` inmersivo: overlay negro al 88 %, título en texto suelto con doble sombra sobre velo degradado inferior, contador arriba a la izquierda y controles de solo icono sin discos.

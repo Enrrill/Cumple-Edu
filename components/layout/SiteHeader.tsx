@@ -1,14 +1,20 @@
+"use client";
+
+import type { MouseEvent as ReactMouseEvent } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
 
 export interface SiteHeaderProps {
   name: string;
-  sections?: { id: string; title: string }[];
 }
 
 /**
- * Cabecera fija minimalista — v3:
+ * Cabecera fija minimalista — v4:
  * - Solo nombre y selector de temas (el acceso a secciones ahora es vía NavSidebar flotante)
+ * - El nombre vuelve al inicio: en portada hace scroll suave al tope (con
+ *   `behavior: auto` si hay `prefers-reduced-motion`); desde otra ruta el
+ *   `Link` navega a `/` y Next hace su scroll-to-top habitual
  * - Glassmorphism: backdrop-blur al hacer scroll
  * - Línea de acento decorativa en la parte inferior
  */
@@ -77,6 +83,19 @@ html {
 `;
 
 export function SiteHeader({ name }: SiteHeaderProps) {
+  const pathname = usePathname();
+
+  /**
+   * En la portada, `Link` a la misma ruta no hace scroll: aquí subimos al
+   * inicio a mano. En el resto de rutas se navega a `/` con normalidad.
+   */
+  function handleNameClick(event: ReactMouseEvent<HTMLAnchorElement>) {
+    if (pathname !== "/") return;
+    event.preventDefault();
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+  }
+
   return (
     <header className="site-header fixed inset-x-0 top-0 z-40 h-16">
       <style href="site-header-scroll" precedence="high">
@@ -87,6 +106,7 @@ export function SiteHeader({ name }: SiteHeaderProps) {
         {/* Nombre / logo enlazable */}
         <Link
           href="/"
+          onClick={handleNameClick}
           className="font-display text-xl font-medium tracking-tight text-ink transition-colors hover:text-accent"
         >
           {name}

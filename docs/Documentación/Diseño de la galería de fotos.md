@@ -26,7 +26,7 @@ La página es un regalo de cumpleaños para un fotógrafo: el arte debe ser lo p
 
 - **Mood**: galería de arte serena, con acentos verdes que evocan naturaleza y calma.
 - **Principio**: la interfaz se retira para que la foto mande; el verde es firma de identidad, no como ruido.
-- **Modos de color**: el sitio ofrece tres atmósferas seleccionables desde la cabecera —**claro (por defecto)**, **esmeralda** y **oscuro**— con persistencia en el navegador.
+- **Modos de color**: el sitio ofrece tres atmósferas seleccionables desde la cabecera —**esmeralda (por defecto)**, **claro** y **oscuro**— con persistencia en el navegador.
 - Los valores definitivos se confirman y documentan en `DESIGN.md` (autoridad visual) y se implementan en `app/globals.css`.
 
 ### Paleta de colores (modo oscuro, valor histórico)
@@ -126,7 +126,7 @@ Se usa la skill *impeccable* en este orden:
 | Decisión | Alternativa descartada | Motivo |
 | --- | --- | --- |
 | Modo *Experience* | Modo *Persuade* | El sitio no vende: exhibe |
-| Sistema de 3 modos de color (claro por defecto) | Fondo oscuro único | El regalo se lee igual de día que de noche sin perder la identidad esmeralda |
+| Sistema de 3 modos de color (esmeralda por defecto) | Fondo oscuro único | El regalo se lee igual de día que de noche sin perder la identidad esmeralda |
 | Hero estático + secciones masonry | Carrusel de destacados con autoplay | Menos JavaScript, LCP más rápido y sin movimiento no solicitado |
 | **Syne** en títulos (antes Fraunces y Outfit) | Serif clásica o sans neutra | Regalo moderno y con carácter de galería: impacto visual sin perder calidez ni legibilidad en el cuerpo |
 | Navegación en FAB flotante (`NavSidebar`) | Cabecera con menú de secciones | Acceso persistente al hacer scroll y misma ubicación en móvil y escritorio |

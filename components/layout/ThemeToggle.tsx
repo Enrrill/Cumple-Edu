@@ -11,13 +11,13 @@ function subscribe(callback: () => void) {
 }
 
 function getSnapshot(): Theme {
-  if (typeof window === "undefined") return "light";
+  if (typeof window === "undefined") return "emerald";
   const saved = localStorage.getItem("edu-theme") as Theme | null;
-  return saved || "light";
+  return saved || "emerald";
 }
 
 function getServerSnapshot(): Theme {
-  return "light";
+  return "emerald";
 }
 
 export function ThemeToggle({ className = "" }: { className?: string }) {

@@ -25,7 +25,8 @@
 
 /* ─── Variables de Color por Modo ───────────────────────────────────────── */
 
-/* Modo Claro por defecto: luminoso, limpio, cálido y festivo */
+/* Base = Modo Claro: valores de respaldo si la página no trae `data-theme`.
+   El modo por defecto del sitio es Esmeralda (lo fija `app/layout.tsx`) */
 :root,
 html[data-theme="light"] {
   --color-canvas: #f8faf8;

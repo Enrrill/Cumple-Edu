@@ -32,13 +32,6 @@ export interface SiteInfo {
   portrait: { src: string; alt: string };
 }
 
-export interface Album {
-  syntheticImages?: boolean;
-  site: SiteInfo;
-  categories: Category[];
-  photos: Photo[];
-}
-
 /** Información del sitio: nombre, bio, dedicatoria, crédito y retrato. */
 export function getSite(): SiteInfo {
   return album.site;
@@ -65,9 +58,4 @@ export function getCategory(id: string): Category | undefined {
 /** Fotos de una categoría, en orden. */
 export function getPhotosByCategory(id: string): Photo[] {
   return album.photos.filter((photo) => photo.category === id);
-}
-
-/** true mientras el contenido sea sintético (muestra de desarrollo). */
-export function isSyntheticContent(): boolean {
-  return album.syntheticImages === true;
 }

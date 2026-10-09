@@ -10,7 +10,7 @@
 ## Dirección (bloqueada)
 
 - **Modo**: *Experience* — la fotografía ocupa el primer viewport; la interfaz se retira.
-- **Mundo**: galería de arte serena en tonos verdes; acento esmeralda como firma, no como ruido. La atmósfera la elige el visitante entre los tres modos de color (claro por defecto, esmeralda y oscuro).
+- **Mundo**: galería de arte serena en tonos verdes; acento esmeralda como firma, no como ruido. La atmósfera la elige el visitante entre los tres modos de color (esmeralda por defecto, claro y oscuro).
 - **Composición**: **Hoja de contactos** — la página es la hoja de contactos del fotógrafo:
   fotogramas numerados, tiras por categoría y marcas de selección esmeralda en las destacadas.
 - **Momento focal**: el velo del hero con el título conceptual *«Historias & Miradas»*, y el punto esmeralda pulsante sobre las fotos destacadas.
@@ -20,7 +20,7 @@
 
 Estrategia de color: **modern restrained** — 3 modos de color seleccionables por el usuario desde `ThemeToggle` (cabecera, cualquier tamaño), con persistencia en `localStorage` (`edu-theme`) y lectura previa por script inline en `<head>` para evitar el flash del tema incorrecto.
 
-### 1. Modo Claro (Por Defecto)
+### 1. Modo Claro
 Luminoso, limpio, cálido y festivo (enfoque de regalo de cumpleaños moderno):
 - `bg-canvas`: `#F8FAF8` (fondo marfil/salvia claro muy suave)
 - `bg-surface`: `#FFFFFF` (tarjetas y superficies blancas puras)
@@ -32,7 +32,7 @@ Luminoso, limpio, cálido y festivo (enfoque de regalo de cumpleaños moderno):
 - `accent`: `#059669` (esmeralda fresco)
 - `accent-strong`: `#047857`
 
-### 2. Modo Esmeralda (Verde Moderno)
+### 2. Modo Esmeralda (Verde Moderno · Por Defecto)
 Identidad de galería botánica revitalizada con mayor luminosidad y contraste (fondo verde agua, superficies blancas):
 - `bg-canvas`: `#E8F5EE`
 - `bg-surface`: `#FFFFFF`
@@ -167,7 +167,7 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
 
 - **Rejilla**: Migración de CSS Grid estándar a **CSS Columns nativo (Masonry)** con 2 columnas desde móvil y escalado a 3 (lg) y 4 (xl).
 - **Navegación**: del menú en cabecera a **FAB + `NavSidebar`** (bottom-sheet en móvil, popover anclado al botón en escritorio) y **`FloatingBackButton`** en las páginas de categoría: la navegación y el retorno viven siempre en la misma esquina y no desaparecen al hacer scroll.
-- **Temas**: sistema de **3 modos de color** (claro por defecto, esmeralda y oscuro) con `data-theme` + `localStorage`, en lugar de un único fondo oscuro.
+- **Temas**: sistema de **3 modos de color** (esmeralda por defecto, claro y oscuro) con `data-theme` + `localStorage`, en lugar de un único fondo oscuro.
 - **Nombre y fotos**: Eduardo; **166 fotos reales** en 5 salas (edu 44, urbano 36, amigos 35, retratos 25, paisaje 26).
 - **Estética**: acabado esmeralda con micro-interacciones sutiles (hover, pulse, glow, glassmorphism) sobre las tres paletas.
 - **Tipografía**: de Outfit a **Syne** para títulos (más impacto con la misma elegancia), manteniendo Plus Jakarta Sans y Geist Mono intactas.

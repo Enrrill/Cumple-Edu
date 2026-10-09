@@ -20,7 +20,7 @@ area: galeria-fotos
 | Stack | Next.js + React + TypeScript + Tailwind CSS |
 | Contenido | Fotos estáticas en `public/` + metadatos en `albums.json` + dedicatorias en `dedications.json` |
 | Backend y BD | No procede (ver [Decisión - galería sin backend](../Documentaci%C3%B3n/Decisi%C3%B3n%20-%20galer%C3%ADa%20sin%20backend.md)) |
-| Diseño | Modo *Experience*, 3 modos de color (claro por defecto, esmeralda y oscuro), hero estático + secciones masonry |
+| Diseño | Modo *Experience*, 3 modos de color (esmeralda por defecto, claro y oscuro), hero estático + secciones masonry |
 | Despliegue | [Vercel](../Referencias/Vercel.md), plan gratuito |
 | Repositorio | [Enrrill/Cumple-Edu](https://github.com/Enrrill/Cumple-Edu) (público: la colaboración en Vercel es gratis en plan Hobby) |
 
@@ -45,6 +45,8 @@ area: galeria-fotos
 - [x] Tercera tanda de fotos: 33 imágenes que estaban sueltas en `public/images/` clasificadas y numeradas (edu 43-48, amigos 22-35, retratos 14-25, urbano 36) con sus entradas en `albums.json`; sin duplicadas (RMSE sobre miniaturas frente a las 133 publicadas) y dos giradas 90° corregidas antes de entrar; recuentos actualizados en docs y vault
 - [x] Tercera tanda de textos y visor: pie del visor sin píldora (velo degradado + doble sombra de texto), badge «Edición Especial · Cumpleaños» en chip verde sólido legible en los 3 modos de color y `title`/`alt` de las 166 fotos reescritos con tono cercano y humor (`alt` sigue exacto por accesibilidad); guía de uso y docs actualizadas; docs y vault resincronizados
 - [x] Cuarta tanda de identidad: favicon nuevo de **diafragma de 6 aspas** en esmeralda (`app/icon.svg` + `app/favicon.ico` regenerado + `app/apple-icon.png`), dedicatoria de la bio rediseñada como **bloque editorial sin caja** (sin emojis: filete, etiqueta mono, cita en Syne y firma) y texto de `site.dedication` actualizado; docs y vault resincronizados
+- [x] Limpieza previa a la entrega: fuera la prop `sections` sin usar del header, `Album` e `isSyntheticContent()` de `lib/albums.ts`, el flag `syntheticImages` del JSON, los 5 SVGs de plantilla de `public/` y la dependencia `framer-motion`; el nombre del header ahora **vuelve al inicio** (scroll suave en portada, `auto` con `prefers-reduced-motion`, navegación normal desde el resto de rutas); docs y vault resincronizados
+- [x] Tema por defecto cambiado a **Esmeralda**: `data-theme` en el layout, script anti-flash de `<head>` y snapshots de `ThemeToggle` (sin elección guardada se abre en verde; la elección previa del visitante se respeta); docs y vault resincronizados
 - [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json`, pegar las dedicatorias reales en `dedications.json` y compartir la URL
 
 ## Documentación relacionada

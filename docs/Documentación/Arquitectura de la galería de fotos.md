@@ -49,7 +49,7 @@ Flujo de datos:
 | Iconos | `lucide-react` | Iconos ligeros y consistentes |
 | Animaciones | CSS puro (`@keyframes` + utilidades Tailwind) | Entradas, transiciones y despliegues sin JavaScript |
 
-> `framer-motion` sigue instalada en `package.json` sin usarla en ningún componente: se mantiene así por decisión del mantenedor. El carrusel (`embla-carousel-react`) sí se eliminó del proyecto cuando el hero pasó a ser estático.
+> `framer-motion` se eliminó de `package.json` en la limpieza previa a la entrega: todas las animaciones son CSS puro. El carrusel (`embla-carousel-react`) ya se había ido antes, cuando el hero pasó a ser estático.
 
 ### Estructura del proyecto
 
