@@ -1,36 +1,59 @@
 [
   {
-    "id": "lucia-2026",
-    "author": "Lucía",
-    "relation": "Hermana",
-    "date": "2026-10-02",
-    "text": "Para el que convirtió una simple cámara en forma de familia: gracias por guardarnos en cada foto. Feliz cumpleaños, hermano."
+    "id": "enrrill-2026",
+    "author": "Enrrill",
+    "relation": "Individuo",
+    "text": [
+      "Primero las buenas noticias, ya son 3 años de racha!!! ¡EN BUEN HORA! 🎉🎉🎉. Quién diría que fueran tantos. A ser sincero, yo no soy tan original ni tengo tan buenas ideas para bañarte en buenos deseos, pero sí sé una cosa: eres una muy buena persona y aún mejor amigo. La verdad no tengo la más mínima idea de qué carajos te prepara el futuro y mucho menos de cómo lo afrontarás, pero si algo te sirve de ayuda, con el poco tiempo que llevamos de conocidos ya te habrán pasado muchas cosas, habrás pasado por mucho estrés, quizás alguna vez estuviste triste (más que alguna 🧐), pero mírate, aquí estás. Quizás no te hayas dado cuenta, pero si echas un ojito atrás, te darás cuenta de que no eres el mismo de antes; ahora eres un Edward un poco más maduro que ha logrado un par de metas, un poquitito (muy poquito) más inteligente y bastante más capaz. Yo me rehúso a desearte fuerza o resiliencia porque de verdad a estas alturas son cualidades que ya posees; hay que reforzarlas, pero las tienes. Lo único que sí desearía para ti es un poco de paz mental y mucha plata, del resto ya veremos el año que viene cómo mejoras.",
+      "FELIZ CUMPLEAÑOS, PRÍNCIPE."
+    ]
   },
   {
-    "id": "carlos-2026",
-    "author": "Carlos",
-    "relation": "Compañero de carrera",
-    "date": "2026-10-03",
-    "text": "Tú siempre llegas primero al sitio y el último en irte, con la cámara en la mano. Que sigas encontrando luz donde nadie la ve."
+    "id": "valeria-2026",
+    "author": "Valeria",
+    "relation": "Amiga y Confidente",
+    "text": "Mi mayor confidente y hermano del alma. espero que seas feliz y vivas cada instante de tu vida. que los mejores momentos predominen en tus memorias por toda la eternidad, al igual que una fotografía, de esas que solo tu sabes darle un toque mágico. por todo gracias... y a pesar de que es tu cumpleaños, el regalo hoy lo obtengo yo porque formas parte de mi vida un año más"
   },
   {
-    "id": "mariana-2026",
-    "author": "Mariana",
+    "id": "gabo-2026",
+    "author": "Gabo",
+    "relation": "Amigo",
+    "text": [
+      "Eduu, feliz cumpleañoteess, espero logres cumplir todas tus metas por la cual estás trabajando sumamente duro, obtengas la calma que TANTO te mereces, tengas éxito en todo lo que te propongas, estés lleno de oportunidades y abundancia, siempre te sientas amado con las personas especiales y allegadas en tu vida, ganes todos tus 50/50 y sean muchisisisimos años más de vida, salud, bienestar y buenos momentos <3.",
+      "Eres una de las personas más resilientes, dulces, reales y amables que he conocido y por eso te admiro mucho, de verdad aprecio mucho mucho nuestra amistad y espero que dure bastante, se te quiere y aprecia amigue 🫂🫂"
+    ]
+  },
+  {
+    "id": "gaby-2026",
+    "author": "Gaby",
+    "relation": "Amiga del Alma",
+    "text": [
+      "Eres de las personitas más especiales para mí, podría decir incluso con quién tengo el vínculo más fuerte. La cantidad de cariño y aprecio que te tengo no se puede medir. Sé que ya no nos vemos todos los días y cuando estamos solos todo se siente tranquilo, pero no es porque tú presencia me aburra, quizás son los años juntos que nos permiten momentos así. Me alegro de tenerte siempre a mi lado, literalmente haz estado en todos mis malos y buenos momentos, tanto así que siento que estamos sincronizados cuando nos pasan cosas importantes. No me imagino una vida sin tí, solo pensarlo me dan ganas de llorar, no quiero estar sin tí. Te amo muchísimo, Eduardo y me alegro de todo lo que haz logrado a través años, todo ha sido solo por tú convicción y esfuerzo. Estoy orgullosa de lo fuerte e independiente que eres a pesar de todas las cosas por las que haz pasado. Recuerda que siempre podrás tener un lugar conmigo e incluso eres bienvenido en mi casa, con mi familia.",
+      "No olvides lo increíble personita que eres y lo mucho que te queremos todos los que te rodeamos.",
+      "Felíz cumpleaños, mi Edu.",
+      "Que sean muchísisisimos más a tu lado <3"
+    ]
+  },
+  {
+    "id": "stephany-2026",
+    "author": "Stephany",
     "relation": "Amiga",
-    "text": "Cada salida contigo termina con cien fotos y una risa que no cabe en el álbum. Te quiero muchísimo, ¡feliz día!"
+    "image": {
+      "src": "/images/dedications/stephany.webp",
+      "alt": "Flyer de cumpleaños de Stephany para Eduardo: un collage de fotos de ambos sobre fondo verde con la felicitación «Happy Birthday» y el mensaje «Te quiero mucho, Eduardo».",
+      "width": 904,
+      "height": 1280
+    }
   },
   {
-    "id": "jose-2026",
-    "author": "José",
-    "relation": "Padre",
-    "date": "2026-10-05",
-    "text": "Desde el primer encuadre te vi mirar el mundo distinto. Orgulloso de ti hoy y de todas las fotos que aún faltan por tomar."
-  },
-  {
-    "id": "sofia-2026",
-    "author": "Sofía",
-    "relation": "Vecina y amiga",
-    "date": "2026-10-06",
-    "text": "Gracias por enseñarnos que un cumpleaños no se mide en velas, sino en los recuerdos que quedan guardados. ¡Felicidades!"
+    "id": "xhiara-2026",
+    "author": "Xhiara",
+    "relation": "Amiga",
+    "image": {
+      "src": "/images/dedications/xhiara.webp",
+      "alt": "Flyer de cumpleaños de Xhiara para Eduardo: fotos tipo polaroid de ambos con los rótulos «Feliz cum», «Amigue» y «TKM Loviu», y un mensaje de amistad sobre un degradado turquesa.",
+      "width": 914,
+      "height": 1280
+    }
   }
 ]

@@ -70,6 +70,12 @@ export function DedicationThread({ dedications }: DedicationThreadProps) {
           const meta = [dedication.relation, dedication.date && formatDate(dedication.date)]
             .filter(Boolean)
             .join(" · ");
+          // Un string = un párrafo; un array = varios párrafos con su ritmo
+          const paragraphs = dedication.text
+            ? typeof dedication.text === "string"
+              ? [dedication.text]
+              : dedication.text
+            : [];
 
           return (
             <li key={dedication.id}>
@@ -121,9 +127,26 @@ export function DedicationThread({ dedications }: DedicationThreadProps) {
                   </span>
                 </header>
 
-                <blockquote className="mt-4 text-[15px] leading-7 text-ink md:text-base">
-                  <p>{dedication.text}</p>
-                </blockquote>
+                {paragraphs.length > 0 && (
+                  <blockquote className="mt-4 space-y-3 text-[15px] leading-7 text-ink md:text-base">
+                    {paragraphs.map((paragraph, paragraphIndex) => (
+                      <p key={paragraphIndex}>{paragraph}</p>
+                    ))}
+                  </blockquote>
+                )}
+
+                {/* Imagen adjunta (flyer): a ancho de lectura, centrada y sin estirarse */}
+                {dedication.image && (
+                  <figure className="mt-4 flex justify-center">
+                    <Image
+                      src={dedication.image.src}
+                      alt={dedication.image.alt}
+                      width={dedication.image.width}
+                      height={dedication.image.height}
+                      className="h-auto w-full max-w-80 rounded-xl border border-line/60"
+                    />
+                  </figure>
+                )}
               </article>
             </li>
           );

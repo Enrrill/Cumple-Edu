@@ -88,7 +88,16 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 ```
 
 - Obligatorios: `id` (único, sin espacios ni acentos), `author` y `text`.
-- Opcionales: `relation` (parentesco o vínculo), `date` (en formato `AAAA-MM-DD`) y `avatar`.
+- `text` admite dos formas: una cadena («"El mensaje."») para un párrafo, o una lista de cadenas (una por párrafo) cuando el mensaje tiene varios párrafos:
+
+```json
+"text": [
+  "Primer párrafo del mensaje.",
+  "Segundo párrafo del mensaje."
+]
+```
+
+- Opcionales: `relation` (parentesco o vínculo), `date` (en formato `AAAA-MM-DD`), `avatar` e `image` (flyer o collage que acompañe al mensaje).
 - **El orden del fichero es el orden del hilo** en la página: lo que se pega primero, se ve primero.
 - Si hay dos comas seguidas o falta una, la web no compila; se revierte desde el historial de GitHub (**Commits → … → Restore file**).
 
@@ -107,6 +116,22 @@ Este sitio no tiene panel de administración: el contenido vive en un repositori
 ```
 
 3. Sin `avatar`, la tarjeta muestra la inicial de la persona en un círculo esmeralda: también queda bien.
+
+#### Cómo añadir un flyer a la dedicatoria (imagen adjunta)
+
+1. Convertir la imagen a `.webp` (por ejemplo con `magick entrada.jpg -quality 85 salida.webp`) y subirla con **Add file → Upload files** dentro de `public/images/dedications/`.
+2. Añadir el campo `image` al bloque de la dedicatoria, con el ancho y el alto originales en píxeles (evita saltos al cargar):
+
+```json
+"image": {
+  "src": "/images/dedications/ana.webp",
+  "alt": "Flyer de cumpleaños de Ana para Eduardo con fotos de ambos",
+  "width": 904,
+  "height": 1280
+}
+```
+
+3. El `alt` describe el flyer para los lectores de pantalla (quién lo envía, de qué va). La imagen se pinta debajo del mensaje, del mismo ancho que la columna de lectura.
 
 ### Cómo cambiar un texto, la bio o la dedicatoria especial
 

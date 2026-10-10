@@ -15,12 +15,20 @@ export interface Dedication {
   author: string;
   /** Vínculo con el homenajeado: «Hermana», «Compañero de carrera»… */
   relation?: string;
-  /** Mensaje. Puede ocupar varias líneas. */
-  text: string;
+  /**
+   * Mensaje. Una cadena = un párrafo; un array = un párrafo por elemento
+   * (así los saltos de línea reales no se colapsan al renderizar).
+   */
+  text?: string | string[];
   /** Fecha opcional en formato `AAAA-MM-DD`. */
   date?: string;
   /** Avatar opcional. Si falta, se pinta la inicial de la persona. */
   avatar?: { src: string; alt: string };
+  /**
+   * Imagen adjunta (flyer de cumpleaños). Se pinta bajo el mensaje con su
+   * ancho y alto intrínsecos, para reservar espacio sin saltos de layout.
+   */
+  image?: { src: string; alt: string; width: number; height: number };
 }
 
 /** Dedicatorias en orden de aparición (el orden del fichero = el del hilo). */
