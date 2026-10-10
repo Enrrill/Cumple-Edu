@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo } from "react";
 import LightboxViewer from "yet-another-react-lightbox";
-import { Counter } from "yet-another-react-lightbox/plugins";
+import { Counter, Zoom } from "yet-another-react-lightbox/plugins";
 import type { Slide } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/counter.css";
@@ -22,7 +22,10 @@ export interface LightboxProps {
  * - Overlay negro oscuro semitransparente con desenfoque de fondo para sensación de foto flotando.
  * - Título de la imagen en texto suelto sobre un velo degradado inferior: sin
  *   píldora, sin borde y con doble sombra de texto para que respire en cualquier foto.
- * - Sin botones adicionales de zoom en la barra superior.
+ * - Sin botones adicionales de zoom en la barra superior: el zoom existe,
+ *   pero solo por gestos (plugin `Zoom`), nunca como botón.
+ * - Zoom por gestos: pinch con dos dedos y doble-tap en móvil, rueda del
+ *   ratón en escritorio; la imagen se mueve arrastrando cuando está ampliada.
  * - Touch swipe natural e inmersivo en móviles.
  */
 
@@ -103,14 +106,24 @@ export function Lightbox({ photos, index, onClose, onNavigate }: LightboxProps) 
       on={{
         view: ({ index: active }) => onNavigate(active),
       }}
-      plugins={[Counter]}
+      plugins={[Counter, Zoom]}
       controller={{ closeOnBackdropClick: true }}
       carousel={{
         padding: 0,
         imageFit: "contain",
         finite: false,
       }}
-      animation={{ fade: 260, swipe: 200 }}
+      zoom={{
+        // Zoom por gestos (sin botones): pinch y doble-tap en móvil,
+        // rueda del ratón en escritorio. A tamaño real (1×) hasta 8×,
+        // duplicando el nivel por cada gesto.
+        minZoom: 1,
+        maxZoom: 8,
+        zoomInMultiplier: 2,
+        // Máximo 2 saltos de acercamiento por doble-tap (4× sobre 1×).
+        doubleClickMaxStops: 2,
+      }}
+      animation={{ fade: 260, swipe: 200, zoom: 260 }}
       render={{
         iconPrev: () => <IconPrev />,
         iconNext: () => <IconNext />,
