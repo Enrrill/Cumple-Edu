@@ -50,6 +50,7 @@ area: galeria-fotos
 - [x] Arranque **siempre en Esmeralda**: la elección de modo pasa de `localStorage` a `sessionStorage` (dura la sesión; el script anti-flash purga la clave antigua), así ninguna sesión hereda un modo distinto del verde por defecto; docs y vault resincronizados
 - [x] Cuarta tanda de fotos: 8 imágenes sueltas en `public/images/` (exportadas de WhatsApp) clasificadas y numeradas (edu 49-53, amigos 36-38) con sus entradas en `albums.json` (títulos con guiño y `alt` exactos sin emojis, `featured: false`); recuentos actualizados a 174 fotos en docs y vault
 - [x] Quinta tanda: dedicatorias reales en `dedications.json` (Enrrill, Valeria, Gabo y Gaby; fuera las 5 de ejemplo) con soporte de varios párrafos (`text: string | string[]`, un `<p>` por párrafo) y de imagen adjunta (`image` con `width`/`height` intrínsecos); dos flyers de cumpleaños integrados al final del hilo (Stephany y Xhiara) convertidos a `.webp` en `public/images/dedications/`; docs y vault resincronizados
+- [x] Sexta tanda: zoom por gestos en el visor (plugin `Zoom` de YARL): pinch y doble-tap en móvil y rueda en escritorio, de 1× a 8×, sin botones nuevos en la barra y con teclado como alternativa (`+`/`−`, flechas, `Cmd/Ctrl+0`); docs y vault resincronizados
 - [ ] Entrega del regalo: editar bio y dedicatoria a mano en `albums.json` y compartir la URL
 
 ## Documentación relacionada

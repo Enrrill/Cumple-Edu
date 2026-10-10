@@ -117,6 +117,7 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
   - Título en texto suelto centrado sobre un velo degradado inferior, con doble sombra de texto (sin píldora, sin borde), legible sobre cualquier foto.
   - Contador en la esquina superior izquierda, en Geist Mono y con sombra de lectura.
   - Navegación ← →, Escape y clic en el fondo; fundido de 260 ms.
+  - **Zoom por gestos** (plugin `Zoom` de YARL): pinch con dos dedos y doble-tap en móvil, rueda del ratón en escritorio, de 1× a 8× (doble-tap hasta 4×). Al ampliar, la foto se mueve arrastrando. **Sin botones de zoom en la barra** (el plugin no pinta controles por sí solo): el acercamiento es exclusivamente gestual, para no romper el lenguaje de controles minimalistas.
 - **Hero** (`Hero`):
   - Título conceptual festivo: *"Historias & Miradas"*, subtítulo de regalo y badge *"Edición Especial · Cumpleaños"* en chip verde sólido (`accent-strong` con texto `canvas`: contraste 5,3:1 en claro, 4,9:1 en esmeralda y 9,8:1 en oscuro, legible sobre la foto en los tres modos).
   - Elimina cualquier redundancia con el álbum de retratos.
@@ -151,7 +152,7 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
 - Foco visible con anillo `accent` en todo lo interactivo (`globals.css`).
 - Flechas `→` de las placas: `aria-hidden` + texto equivalente («Ver la colección» / «Ver todas las dedicatorias») en el mismo enlace.
 - Enlace de retorno `sr-only focus:not-sr-only`: invisible a la vista, visible con foco de teclado.
-- Lightbox: ← → navega, Escape cierra, foco atrapado y devuelto.
+- Lightbox: ← → navega, Escape cierra, foco atrapado y devuelto. El zoom por gestos tiene equivalente con teclado: `+` y `−` amplían y reducen, las flechas desplazan la foto ampliada y `Cmd/Ctrl+0` vuelve al tamaño real; `prefers-reduced-motion` respetado.
 - `NavSidebar`: disparador `<button>` con `aria-expanded`/`aria-controls`, panel con `role="dialog"` y `aria-modal`, foco inicial en el cierre, Escape para cerrar y foco devuelto al disparador; durante el fundido de salida el panel queda `inert`.
 - Botones flotantes (navegación y retorno): 48×48 px y `aria-label` (más `title` en el de retorno); se ocultan con el lightbox para no pisar el visor.
 - Objetivos táctiles ≥ 44 px; contraste AA verificado en todos los niveles de elevación y en los tres modos de color.
