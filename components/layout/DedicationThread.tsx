@@ -135,9 +135,9 @@ export function DedicationThread({ dedications }: DedicationThreadProps) {
                   </blockquote>
                 )}
 
-                {/* Imagen adjunta (flyer): a ancho de lectura, sin estirarse */}
+                {/* Imagen adjunta (flyer): a ancho de lectura, centrada y sin estirarse */}
                 {dedication.image && (
-                  <figure className="mt-4">
+                  <figure className="mt-4 flex justify-center">
                     <Image
                       src={dedication.image.src}
                       alt={dedication.image.alt}
