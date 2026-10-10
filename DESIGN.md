@@ -126,6 +126,8 @@ Tres fuentes, una por nivel de jerarquía. La de títulos se eligió por su **im
   - Cabecera con el mismo ritmo editorial que las salas: separador con número en mono, título en Syne con **flecha `→`** que enlaza a la página propia `/dedicatorias` y contador `N dedicatorias`.
   - La portada muestra el hilo completo y la página nueva lo repite, el mismo patrón que las colecciones entre portada y `/categoria/[slug]`.
   - El hilo vive en `DedicationThread` (lista + CSS de entrada), compartido por ambas vistas: columna única (`max-w-2xl`, 672 px) de tarjetas `rounded-2xl` sobre `bg-surface/70` con `border-line/70` y `backdrop-blur`, el mismo lenguaje de superficie del resto del sitio.
+  - El mensaje admite uno o varios párrafos (`text: string | string[]`, un `<p>` por párrafo dentro del `<blockquote>` con `space-y-3`), de modo que los saltos de línea reales no se colapsan.
+  - Cada dedicatoria puede llevar una **imagen adjunta** (`image`, p. ej. un flyer de cumpleaños): se pinta bajo el mensaje en un `<figure>` acotado a `max-w-80` con `h-auto`, esquinas `rounded-xl` y borde `border-line/60`, con `width`/`height` intrínsecos para reservar espacio sin saltos de layout.
   - Cabecera de página `/dedicatorias`: `h1` en Syne, contador en mono y descripción; retorno con `FloatingBackButton` (sin `slug`). Si no hay dedicatorias, la página devuelve 404 y la sección desaparece de la portada y del `NavSidebar`.
   - Avatar opcional con `next/image`; sin él, inicial de la persona en círculo `bg-accent/15` + `text-accent`.
   - Autor en Syne, meta (vínculo · fecha) en Geist Mono versalitas y mensaje en `<blockquote>` con `text-ink`.

@@ -177,10 +177,11 @@ Campos de cada dedicatoria:
 
 - `id`: obligatorio, único y sin espacios ni acentos (por ejemplo, `nombre-2026`).
 - `author`: obligatorio; nombre de la persona que escribe.
-- `text`: obligatorio; el mensaje, puede ocupar varias líneas.
+- `text`: el mensaje. Una cadena (un párrafo) o una lista de cadenas (un párrafo por elemento); opcional si la dedicatoria solo lleva imagen adjunta.
 - `relation`: opcional; vínculo con el homenajeado («Hermana», «Compañero de carrera»…).
 - `date`: opcional, en formato `AAAA-MM-DD`; se muestra junto al vínculo, en versalitas mono, como «02 oct 2026».
 - `avatar`: opcional `{ src, alt }`. Sin avatar se pinta la inicial de la persona en un círculo esmeralda.
+- `image`: opcional `{ src, alt, width, height }`; imagen adjunta (flyer de cumpleaños) que se pinta bajo el mensaje, acotada al ancho de lectura, con las dimensiones intrínsecas para reservar espacio sin saltos de layout.
 
 El tipo `Dedication` y el helper `getDedications()` viven en `lib/dedications.ts`, con el mismo patrón que `lib/albums.ts`: el componente recibe las dedicatorias por props y no importa el JSON. Si el array está vacío, `app/page.tsx` omite la sección y su entrada en el `NavSidebar`, y `app/dedicatorias/page.tsx` responde 404. El hilo se pinta con `DedicationThread`, que comparten la portada (`Dedications`) y la página propia (`/dedicatorias`).
 
